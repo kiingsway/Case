@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="table.css">
+	<meta charset="utf-8">
+	<title>Criar curso</title>
+</head>
+<body>
+	<h1>Case</h1>
+	<h5><a href="../index.html">Home</a> | <a href="../cursos.html">Cursos</a> | Criar cursos</h5>
+	<input type="text" placeholder="Nome do curso" name="">
+	<select>
+		<option value="volvo">Presencial</option>
+		<option value="saab">Online</option>
+	</select><br>
+	<input type="date" min="2018-03-31" placeholder="Data inicial do curso">
+	<input type="date" min="2018-03-31" placeholder="Data final do curso"><br>
+	<input type="text" placeholder="Hora inicial do curso">
+	<input type="text" placeholder="Hora final do curso"><br>
+	<input type="number" min="0" placeholder="Número de vagas"><br>
+	<input type="number" min="0" placeholder="Carga horária"> horas<br>
+	<input type="number" min="0" placeholder="Frequencia mínima"> %<br>
+	<table><tr><th colspan="4">Categorias</th></tr>
+		<tr><th colspan="2">Sócio</th>
+		<th colspan="2">Não sócio</th>
+		</tr>
+		<tr><td><input type="checkbox">Aperfeiçoando</td>
+			<td><input type="checkbox">Residente</td>
+			<td><input type="checkbox">Estudante de Medicina</td>
+			<td><input type="checkbox">Associado a Entidade Parceiras</td>
+		</tr>
+		<tr><td><input type="checkbox">Aspirante</td>
+			<td><input type="checkbox">Titular</td>
+			<td><input type="checkbox">Médico</td>
+			<td><input type="checkbox">Físicos, Biólogos</td>
+		</tr>
+		<tr><td><input type="checkbox">Coligado</td>
+			<td></td>
+			<td><input type="checkbox">Técnico e Tecnólogo</td>
+			<td></td>
+		</tr>
+	</table>
+	<table>
+		<tr><th colspan="4">Valores</th>
+		</tr>
+		<tr><th>Valor</th>
+			<th>Valor sócio</th>
+			<th>Valor não quite</th>
+			<th>Valor parceiro</th>
+		</tr>
+		<tr><td><input type="number" min="0.00" max="10000.00" step="0.01"></td>
+			<td><input type="number" min="0.00" max="10000.00" step="0.01"></td>
+			<td><input type="number" min="0.00" max="10000.00" step="0.01"></td>
+			<td><input type="number" min="0.00" max="10000.00" step="0.01"></td>
+		</tr>
+	</table>
+	Tipo de vencimento:
+	<select>
+		<option>Fixo</option>
+		<option>Inscrição</option>
+		<option>Inscrição + n dias</option>
+		<option>Inscrição + n dias com limite</option>
+	</select><br>
+	n dias:	<input type="number" min="1" max="30"><br>
+	Vencimento: <input type="date" min="2018-04-01"><br>
+	<button>Criar Curso</button>
+</body>
+</html>
