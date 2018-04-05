@@ -20,12 +20,19 @@
 	</style>
 </head>
 <body>
+	<div class="section no-pad-bot" id="index-banner">
+  		<div class="container">
+	  		<div class="row center">
+					<div id="includedContent"></div>
+			</div>
+  		</div>
+  	</div>
 
-	<a class="waves-effect waves-light btn-large"><i class="material-icons left">add</i>Criar curso</a>
-<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">search</i></a>
-  <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">zoom_in</i></a>
-  <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">check_circle</i></a>
-  <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">delete_forever</i></a><br>
+	<a class="waves-effect waves-light btn-large" onclick="criarcurso()" ><i class="material-icons left">add</i>Criar curso</a>
+	<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">search</i></a>
+  	<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">zoom_in</i></a>
+  	<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">check_circle</i></a>
+  	<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">delete_forever</i></a><br>
 	<img src="midia/cursos.png">
 
 	<!--  Scripts-->
@@ -38,6 +45,16 @@
     	constrainWidth: false,
     	coverTrigger: false
     });
+
+	function criarcurso() {
+		removeBreadcrumb();
+	    $("#includedContent").load("criarcurso.html");
+	    $("#breadcrumb").append("<a id='bcCurso' class='breadcrumb'>Cursos</a>");
+	    $("#breadcrumb").append("<a id='bcCriarCurso' class='breadcrumb'>Criar Curso</a>");
+	}
+	function removeBreadcrumb(){
+			$("#bcCurso").remove();
+		}
   </script>
 </body>
 </html>

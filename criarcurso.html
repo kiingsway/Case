@@ -20,73 +20,7 @@
 	</style>
 </head>
 <body>
-	<nav class="red darken-1" role="navigation">
-    <div class="nav-wrapper container">
-    	<a id="logo-container" href="#" class="brand-logo">Case</a>
-    	<ul id="navSite" class="right hide-on-med-and-down">
-    		<li><a class="dropdown-trigger" href="#!" data-target="dropdownPessoas">Pessoas<i class="material-icons arrow right">arrow_drop_down</i></a></li>
-    		<li><a class="dropdown-trigger" href="#!" data-target="dropdownAtividades">Atividades<i class="material-icons arrow right">arrow_drop_down</i></a></li>
-    		<li><a class="dropdown-trigger" href="#!" data-target="dropdownFinanceiro">Financeiro<i class="material-icons arrow right">arrow_drop_down</i></a></li>
-    		<li><a class="dropdown-trigger" href="#!" data-target="dropdownUtilitarios">Utilitários<i class="material-icons arrow right">arrow_drop_down</i></a></li>
-      	</ul>
-      	<ul id="nav-mobile" class="sidenav">
-    		<li><a class="dropdown-trigger" href="#!" data-target="dropdownPessoasMobile">Pessoas<i class="material-icons arrow right">arrow_drop_down</i></a></li>
-    		<li><a class="dropdown-trigger" href="#!" data-target="dropdownAtividadesMobile">Atividades<i class="material-icons arrow right">arrow_drop_down</i></a></li>
-    		<li><a class="dropdown-trigger" href="#!" data-target="dropdownFinanceiroMobile">Financeiro<i class="material-icons arrow right">arrow_drop_down</i></a></li>
-    		<li><a class="dropdown-trigger" href="#!" data-target="dropdownUtilitariosMobile">Utilitários<i class="material-icons arrow right">arrow_drop_down</i></a></li>
-      	</ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    </div>
-
-  <!-- Dropdown Structure -->
-  <ul id='dropdownPessoas' class='dropdown-content'>
-    <li><a href="pf.html"><i class="material-icons icon">account_circle</i>Pessoas Física</a></li>
-    <li><a href="pj.html"><i class="material-icons icon">account_box</i>Pessoas Jurídicas</a></li>
-  </ul>
-  <ul id='dropdownPessoasMobile' class='dropdown-content'>
-    <li><a href="pf.html"><i class="material-icons icon">account_circle</i>Pessoas Física</a></li>
-    <li><a href="pj.html"><i class="material-icons icon">account_box</i>Pessoas Jurídicas</a></li>
-  </ul>
-  <ul id='dropdownAtividades' class='dropdown-content'>
-    <li><a href="cursos.html"><i class="material-icons icon">event_note</i>Cursos</a></li>
-    <li><a href="livros.html"><i class="material-icons icon">book</i>Livros</a></li>
-    <li><a href="inscr.html"><i class="material-icons icon">assignment</i>Inscrições</a></li>
-    <li><a href="voucher.html"><i class="material-icons icon">style</i>Voucher</a></li>
-  </ul>
-  <ul id='dropdownAtividadesMobile' class='dropdown-content'>
-    <li><a href="cursos.html"><i class="material-icons icon">event_note</i>Cursos</a></li>
-    <li><a href="livros.html"><i class="material-icons icon">book</i>Livros</a></li>
-    <li><a href="inscr.html"><i class="material-icons icon">assignment</i>Inscrições</a></li>
-    <li><a href="voucher.html"><i class="material-icons icon">style</i>Voucher</a></li>
-  </ul>
-  <ul id='dropdownFinanceiro' class='dropdown-content'>
-    <li><a href="#!"><i class="material-icons icon">attach_money</i>Contas a Pagar</a></li>
-    <li><a href="#!"><i class="material-icons icon">monetization_on</i>Contas a Receber</a></li>
-  </ul>
-  <ul id='dropdownFinanceiroMobile' class='dropdown-content'>
-    <li><a href="#!"><i class="material-icons icon">attach_money</i>Contas a Pagar</a></li>
-    <li><a href="#!"><i class="material-icons icon">monetization_on</i>Contas a Receber</a></li>
-  </ul>
-  <ul id='dropdownUtilitarios' class='dropdown-content'>
-    <li><a href="#!"><i class="material-icons icon">assignment_ind</i>Usuários</a></li>
-  </ul>
-  <ul id='dropdownUtilitariosMobile' class='dropdown-content'>
-    <li><a href="#!"><i class="material-icons icon">assignment_ind</i>Usuários</a></li>
-  </ul>
-
-<nav class="red lighten-1" role="navigation"> 
-    <div class="nav-wrapper container">
-      <div class="col s12">
-        <a href="index.html" class="breadcrumb">Home</a>
-        <a href="cursos.html" class="breadcrumb">Cursos</a>
-        <a class="breadcrumb">Criar curso</a>
-      </div>
-    </div>
-  </nav>
-
-	<h1>Case</h1>
-	<h5><a href="../index.html">Home</a> | <a href="../cursos.html">Cursos</a> | Criar cursos</h5>
-	<input type="text" placeholder="Nome do curso" name="">
+	<input type="text" id="nomeCurso" name="">
 	<select>
 		<option value="presencial">Presencial</option>
 		<option value="online">Online</option>
@@ -143,14 +77,6 @@
 	Vencimento: <input type="date" min="2018-04-01"><br>
 	<button>Criar Curso</button>
 
-
- <footer class="page-footer orange">
-    <div class="footer-copyright">
-      <div class="container">
-      Made by <a href="https://github.com/kiingsway" target="_blank">King Sway</a>
-      </div>
-    </div>
-      </footer>
 	<!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
