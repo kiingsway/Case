@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+	<!-- CSS  -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 	<!--Import Google Icon Font-->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!--Import materialize.css-->
@@ -9,55 +15,64 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<meta charset="utf-8">
 	<title>Case :: by ks</title>
-	
 </head>
 <body>
-	<nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo right">Case</a>
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a href="#">Sass</a></li>
-        <li><a href="#">Components</a></li>
-        <li><a href="#">JavaScript</a></li>
+	<nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+    	<a id="logo-container" href="#" class="brand-logo">Case</a>
+    	<ul id="navSite" class="right hide-on-med-and-down">
+    		<li><a class="dropdown-trigger" href="#!" data-target="dropdownPessoas">Pessoas<i class="material-icons right">arrow_drop_down</i></a></li>
+    		<li><a class="dropdown-trigger" href="#!" data-target="dropdownAtividades">Atividades<i class="material-icons right">arrow_drop_down</i></a></li>
+    		<li><a class="dropdown-trigger" href="#!" data-target="dropdownFinanceiro">Financeiro<i class="material-icons right">arrow_drop_down</i></a></li>
+    		<li><a class="dropdown-trigger" href="#!" data-target="dropdownUtilitarios">Utilitários<i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
-  </nav>
   <!-- Dropdown Structure -->
-<ul id="dropdown1" class="dropdown-content">
-  <li><a href="#">one</a></li>
-  <li><a href="#">two</a></li>
-  <li class="divider"></li>
-  <li><a href="#">three</a></li>
-</ul>
-<nav>
-  <div class="nav-wrapper">
-    <a href="#" class="brand-logo">Logo</a>
-    <ul class="right hide-on-med-and-down">
-      <li><a href="#">Sass</a></li>
-      <li><a href="#">Components</a></li>
-      <!-- Dropdown Trigger -->
-      <li><a class="dropdown-button" href="#" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
-    </ul>
-  </div>
-</nav>
-	<h5>Home</a></h5>
-	<h2>Pessoas</h2>
-	<h3><a href="pf.html">Pessoas Física</a></h3>
-	<h3><a href="pj.html">Pessoas Jurídica</a></h3>
-	<h2>Atividades</h2>
-	<h3><a href="cursos.html">Cursos</a></h3>
-	<h3><a href="livros.html">Livros</a></h3>
-	<h3><a href="inscr.html">Inscrições</a></h3>
-	<h3><a href="voucher.html">Voucher</a></h3>
-	<h2>Financeiro</h2>
-	<h3><a href="pagar.html">Contas a pagar</a></h3>
-	<h3><a href="receber.html">Contas a receber</a></h3>
-	<h2>Utilitários</h2>
-	<h3><a href="usuarios.html">Usuários</a></h3>
-	<h5>[indicadores]</h5>
-	
-	<!--JavaScript at end of body for optimized loading-->
-	<script type="text/javascript" src="materialize/js/materialize.js"></script>
-	<script src="http://code.jquery.com/jquery-latest.js"></script>
+  <ul id='dropdownPessoas' class='dropdown-content'>
+    <li><a href="pf.html"><i class="material-icons">account_circle</i>Pessoas Física</a></li>
+    <li><a href="pj.html"><i class="material-icons">account_box</i>Pessoas Jurídicas</a></li>
+  </ul>
+  <ul id='dropdownAtividades' class='dropdown-content'>
+    <li><a href="cursos.html"><i class="material-icons">event_note</i>Cursos</a></li>
+    <li><a href="livros.html"><i class="material-icons">book</i>Livros</a></li>
+    <li><a href="inscr.html"><i class="material-icons">assignment</i>Inscrições</a></li>
+    <li><a href="voucher.html"><i class="material-icons">style</i>Voucher</a></li>
+  </ul>
+  <ul id='dropdownFinanceiro' class='dropdown-content'>
+    <li><a href="#!"><i class="material-icons">attach_money</i>Contas a Pagar</a></li>
+    <li><a href="#!"><i class="material-icons">monetization_on</i>Contas a Receber</a></li>
+  </ul>
+  <ul id='dropdownUtilitarios' class='dropdown-content'>
+    <li><a href="#!"><i class="material-icons">assignment_ind</i>Usuários</a></li>
+  </ul>
+
+
+
+  <footer class="page-footer orange">
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a href="https://github.com/kiingsway" target="_blank">King Sway</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script>
+    $('.dropdown-trigger').dropdown({
+    	hover: false,
+    	constrainWidth: false,
+    	coverTrigger: false
+    });
+  </script>
+
+
 </body>
 </html>
