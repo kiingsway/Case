@@ -1,23 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+	<!-- CSS  -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 	<!--Import Google Icon Font-->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!--Import materialize.css-->
 	<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection"/>
 	<!--Let browser know website is optimized for mobile-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<meta charset="utf-8">
-	<title>Livros</title>
+	<title>Case :: Cursos</title>
+	<style >
+		i.icon {color: #c62828;}
+		i.arrow {color: #ffcdd2;}
+	</style>
 </head>
 <body>
-	<h1>Case</h1>
-	<h5><a href="index.html">Home</a> | Livros</h5>
-	<h2><a href="#">Adicionar livro</a></h2>
-	<input type="text"><button>Buscar</button>
-	<button>Busca avançada</button>
-	<button>Marcar todos</button>
-	<button disabled>Excluir</button><br>
-	<img src="midia/livros.png">
+
+	<a class="waves-effect waves-light btn-large"><i class="material-icons left">add</i>Adicionar Livro</a>
+	<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">search</i></a>
+  	<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">zoom_in</i></a>
+  	<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">check_circle</i></a>
+  	<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">delete_forever</i></a><br>
+	<img src="midia/cursos.png">
+
+	<!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script>
+    $('.dropdown-trigger').dropdown({
+    	hover: false,
+    	constrainWidth: false,
+    	coverTrigger: false
+    });
+  </script>
 </body>
 </html>
