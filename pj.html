@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-		<!--Ícones Material Design Google-->
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<!-- CSS  -->
-		<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-		<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-		<!--Let browser know website is optimized for mobile-->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<title>Case :: PEssoas Jurídicas</title>
-		<style>
-			i.icon {color: #c62828;}
-			i.arrow {color: #fff;}
-		</style>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!--Ícones Material Design Google-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- CSS  -->
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Case :: Pessoas Jurídicas</title>
+    <style>
+      i.icon {color: #c62828;}
+      i.arrow {color: #fff;}
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      /* display: none; <- Crashes Chrome on hover */
+      -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    }
+    tr {color: black; padding: 1px; text-align: center;}
+    th {color: black; padding: 1px; text-align: center;}
+    td {color: black; padding: 1px; text-align: center;}
+    table {width: 30%px; height: 100px;}
+    
+  </style>
 </head>
 <body>
-	
-	<!--Navegação cabeçalho-->
+  <!--Navegação cabeçalho-->
   <nav class="red darken-1" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo">Case</a>
@@ -78,17 +89,101 @@
       <div class="nav-wrapper container">
         <div id="breadcrumb" class="col s12">
           <a href="index.html" class="breadcrumb">Home</a>
-          <a href="index.html" class="breadcrumb">Pessoas Jurídica</a>
+          <a href="index.html" class="breadcrumb">Pessoas Jurídicas</a>
         </div>
       </div>
     </nav>
+    <div class="container center">
+  <a class="btn-floating btn-large waves-effect waves-light red hoverable"><i class="material-icons">search</i></a>
+    <a class="btn-floating btn-large waves-effect waves-light red modal-trigger hoverable" href="#modal1"><i class="material-icons">zoom_in</i></a>
+    <a class="btn-floating btn-large waves-effect waves-light red hoverable"><i class="material-icons">check_circle</i></a>
+    <a class="btn-floating btn-large waves-effect waves-light red hoverable"><i class="material-icons">delete_forever</i></a><br>
+
     <div class="container">
-  <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">search</i></a>
-  <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">zoom_in</i></a>
-  <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">check_circle</i></a>
-  <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">delete_forever</i></a><br>
-	<img src="midia/pf.jpg">
+    <table class="centered" cellpadding="1">
+      <tr class="hoverable">
+        <th>Nome</th>
+        <th>Identificação</th>
+        <th>Contato</th>
+        <th>Opções</th>
+      </tr>
+      <tr class="hoverable">
+        <td>King Sway</td>
+        <td><b>CNPJ:</b> 384.215.411/1000-25</td>
+        <td><b>Celular:</b> (11) 12152.5852</td>
+        <td class="hoverable"><u>Acessar site</u></td>
+      </tr>
+      <tr class="hoverable">
+        <td>King Sway</td>
+        <td><b>CNPJ:</b> 384.215.411/1000-25</td>
+        <td><b>Celular:</b> (11) 12152.5852</td>
+        <td class="hoverable"><u>Acessar site</u></td>
+      </tr>
+    </table>
+    </div>
+  </div>   
+  <!-- Modal Structure, para buscas avançadas -->
+  <div id="modal1" class="modal"><div class="modal-content"><div class="row">
+    <form class="col s12"><div class="row">
+          <div class="input-field col s6">
+              <input id="txtNome" type="text" class="validate">
+              <label for="txtNome">Nome Fantasia</label>
+          </div>
+          <div class="input-field col s6">
+              <input id="txtEmail" type="email" class="validate">
+              <label for="txtEmail">Razão Social</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+              <input id="txtRG" type="number" class="validate">
+              <label for="txtRG">E-mail</label>
+          </div>
+          <div class="input-field col s6">
+              <input id="txtCPF" type="number" class="validate">
+              <label for="txtCPF">CNPJ</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <select multiple>
+          <option value="" disabled selected>Situação</option>
+            <option value="1">Ativo</option>
+            <option value="2">Aguardando Ativação</option>
+            <option value="3">Correspondente</option>
+            <option value="4">Desligado</option>
+        </select>
+      </div>
+      <div class="input-field col s12">
+            <select multiple>
+          <option value="" disabled selected>Categoria</option>
+          <optgroup label="Sócio">
+              <option value="1">Aperfeiçoando</option>
+              <option value="2">Aspirante</option>
+              <option value="3">Coligado</option>
+              <option value="4">Residente</option>
+              <option value="4">Titular</option>
+          </optgroup>
+          <optgroup label="Não sócio">
+              <option value="1">Estudante de Medicina</option>
+              <option value="2">Entidades Parceiras</option>
+              <option value="3">Médico</option>
+              <option value="4">Residente</option>
+              <option value="4">Técnico e Tecnólogo em Radiologia</option>
+              <option value="4">Físicos, Biólogos, Radiofarmacêuticos,Químicos e Biomédicos em Radiologia</option>              
+          </optgroup>
+        </select>
+      </div>
+        </div>
+        <br><br>
+      </form>
+  </div>
+      <div class="modal-footer">
+          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat"><i class="material-icons">search</i>Buscar</a>
+      </div>
+  </div>
 </div>
+<!--Footer ou Rodapé-->
     <footer class="page-footer orange">
       <div class="footer-copyright">
         <div class="container">
@@ -96,15 +191,21 @@
         </div>
       </div>
     </footer>
-	<!--  Scripts-->
+  <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
   <script>
     $('.dropdown-trigger').dropdown({
-    	hover: false,
-    	constrainWidth: false,
-    	coverTrigger: false
+      hover: false,
+      constrainWidth: false,
+      coverTrigger: false
+    });
+    $(document).ready(function(){
+      $('.modal').modal();
+    });
+    $(document).ready(function(){
+    $('select').formSelect();
     });
   </script>
 </body>
