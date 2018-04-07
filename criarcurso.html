@@ -38,6 +38,7 @@
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
+</nav>
 
     <!-- Dropdown Structure PC-->
     <ul id='dropdownPessoas' class='dropdown-content'>
@@ -107,24 +108,20 @@
 				</div>
 				<div class="row">
 					<div class="input-field col s3 hoverable">
-						<input type="text" style="color: black" id="inputDataInicialCurso" class="datepicker">
+						<input type="text" id="inputDataInicialCurso" class="datepicker">
 						<label for="inputDataInicialCurso">Data inicial do curso</label>
 					</div>
 					<div class="input-field col s3 hoverable">
-						<select>
 							<input type="text" id="inputHoraInicialCurso" class="timepicker">
 							<label for="inputHoraInicialCurso">Hora inicial do curso</label>
-						</select>
 					</div>
 					<div class="input-field col s3 hoverable">
-						<input type="text" style="color: black" id="inputDataFinalCurso" class="datepicker">
+						<input type="text" id="inputDataFinalCurso" class="datepicker">
 						<label for="inputDataFinalCurso">Data final do curso</label>
 					</div>
 					<div class="input-field col s3 hoverable">
-						<select>
 							<input type="text" id="inputHoraFinalCurso" class="timepicker">
 							<label for="inputHoraFinalCurso">Hora final do curso</label>
-						</select>
 					</div>
 				</div>
 				<div class="row">
@@ -160,7 +157,8 @@
 								</tr>
 								<tr>
 									<td class="hoverable"><label><input type="checkbox"/><span>Coligado</span></label></td>
-									<td class="hoverable" colspan="2"><label><input type="checkbox"/><span>Titular</span></label></td>
+									<td class="hoverable"><label><input type="checkbox"/><span>Titular</span></label></td>
+									<td></td>
 								</tr>
 								<tr>
 								<th colspan="2" style="color: black">
@@ -187,7 +185,7 @@
 								<td class="hoverable"><input type="number" name="valorCurso" id="txtValorCurso" class="validate"><label for="txtValorCurso">Valor</label></td>
 								<td class="hoverable"><input type="number" name="valorSocioCurso" id="txtValorSocioCurso" class="validate"><label for="txtValorSocioCurso">Valor Sócio</label></td>
 								<td class="hoverable"><input type="number" name="valorParceiroCurso" id="txtValorParceiroCurso" class="validate"><label for="txtValorParceiroCurso">Valor Parceiro</label></td>
-								<td class="hoverable"><input type="number" name="valorNaoSocioCurso" id="txtValorNaoSocioCurso" class="validate"><label for="txtValorNaoSocioCurso">Valor Não Sócio</label></td>
+								<td class="hoverable"><input type="number" name="valorNaoSocioCurso" id="txtValorNaoSocioCurso" class="validate"><label for="txtValorNaoSocioCurso">Valor Não Quite</label></td>
 							</tr>
 						</table>
 					</div>
@@ -231,6 +229,7 @@
     $(document).ready(function(){
     $('.datepicker').datepicker();
   });
+    showDaysInNextAndPreviousMonths:true;
     $(document).ready(function(){
     $('.timepicker').timepicker();
 

@@ -9,6 +9,11 @@
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+    <meta name="theme-color" content="#c62828">
+
+
     <title>Case :: Pessoas Físicas</title>
     <style>
       i.icon {color: #c62828;}
@@ -21,8 +26,8 @@
 		margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 		}
     tr {color: black; padding: 1px; text-align: center;}
-		th {color: black; padding: 1px; text-align: center;}
-		td {color: black; padding: 1px; text-align: center;}
+		th {color: black; padding: 1px; text-align: left;}
+		td {text-align: left;}
 		table {width: 30%px; height: 100px;}
 		
 	</style>
@@ -46,6 +51,7 @@
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
+  </nav>
 
     <!-- Dropdown Structure PC-->
     <ul id='dropdownPessoas' class='dropdown-content'>
@@ -92,33 +98,50 @@
           <a href="index.html" class="breadcrumb">Pessoas Física</a>
         </div>
       </div>
-    </nav>
-    <div class="container center">
-	<a class="btn-floating btn-large waves-effect waves-light red hoverable"><i class="material-icons">search</i></a>
-  	<a class="btn-floating btn-large waves-effect waves-light red modal-trigger hoverable" href="#modal1"><i class="material-icons">zoom_in</i></a>
-  	<a class="btn-floating btn-large waves-effect waves-light red hoverable"><i class="material-icons">check_circle</i></a>
-  	<a class="btn-floating btn-large waves-effect waves-light red hoverable modal-trigger" href="#modalApagar"><i class="material-icons">delete_forever</i></a><br>
-
+    </nav><br>
+    <div class="center">
+	<a class="btn-floating btn-large waves-effect waves-light red hoverable tooltipped" data-position="top" data-tooltip="Busca"><i class="material-icons">search</i></a>
+  	<a class="btn-floating btn-large waves-effect waves-light red modal-trigger hoverable tooltipped" data-position="top" data-tooltip="Busca avançada" href="#modal1"><i class="material-icons">zoom_in</i></a>
+  	<a class="btn-floating btn-large waves-effect waves-light red hoverable tooltipped" data-position="top" data-tooltip="Marcar todos"><i class="material-icons">check_circle</i></a>
+  	<a class="btn-floating btn-large waves-effect waves-light red hoverable modal-trigger tooltipped" data-position="top" data-tooltip="Apagar" href="#modalApagar"><i class="material-icons">delete_forever</i></a><br>
+    <br>
     <div class="container">
-    <table class="centered" cellpadding="1">
+    <table cellpadding="1">
       <tr class="hoverable">
         <th>Nome</th>
-        <th>Identificação</th>
+        <th>Detalhes</th>
         <th>Contato</th>
         <th>Opções</th>
       </tr>
       <tr class="hoverable">
-        <td>King Sway</td>
-        <td><b>CPF:</b> 384.215.411-25</td>
-        <td><b>Celular:</b> (11) 12152.5852</td>
-        <td class="hoverable"><u>Acessar site</u></td>
+        <td><span style="font-size: 20px"><b>King Sway</b></span><br><b>Categoria: </b>Titular<br><b>Situação: </b>Ativo</td>
+        <td><b>CPF:</b> 384.215.411-25<br><b>RG: </b>36.525.685-98<br><b>Nascimento: </b>06/09/2015<br><b>Cadastro aqui: </b>07/04/2018</td>
+        <td><b>Cidade:</b> São Paulo<br><b>Celular:</b> (11) 12152.5852<br>(11) 95555.2222<br><b>E-mail: </b>king@sway.com<br></td>
+        <td class="hoverable"><a class="btn tooltipped" data-tooltip="Editar" href="#"><i class="material-icons">edit</i></a>
+          <a class="btn tooltipped" data-tooltip="Acessar estação" href="#"><i class="material-icons">open_in_browser</i></a></td>
       </tr>
       <tr class="hoverable">
-        <td>King Sway</td>
-        <td><b>CPF:</b> 384.215.411-25</td>
-        <td><b>Celular:</b> (11) 12152.5852</td>
-        <td class="hoverable"><u>Acessar site</u></td>
+        <td><span style="font-size: 20px"><b>Sérgio Calebe Marcos Vinicius Assis</b></span><br><b>Categoria: </b>Titular<br><b>Situação: </b>Ativo</td>
+        <td><b>CPF:</b> 384.215.411-25<br><b>RG: </b>36.525.685-98<br><b>Nascimento: </b>06/09/2015<br><b>Cadastro aqui: </b>07/04/2018</td>
+        <td><b>Cidade:</b> São Paulo<br><b>Celular:</b> (11) 12152.5852<br>(11) 95555.2222<br><b>E-mail: </b>king@sway.com<br></td>
+        <td class="hoverable"><a class="btn tooltipped" data-tooltip="Editar" href="#"><i class="material-icons">edit</i></a>
+          <a class="btn tooltipped" data-tooltip="Acessar estação" href="#"><i class="material-icons">open_in_browser</i></a></td>
       </tr>
+      <tr class="hoverable">
+        <td><span style="font-size: 20px"><b>Gustavo Diogo Bruno Nascimento</b></span><br><b>Categoria: </b>Titular<br><b>Situação: </b>Ativo</td>
+        <td><b>CPF:</b> 384.215.411-25<br><b>RG: </b>36.525.685-98<br><b>Nascimento: </b>06/09/2015<br><b>Cadastro aqui: </b>07/04/2018</td>
+        <td><b>Cidade:</b> São Paulo<br><b>Celular:</b> (11) 12152.5852<br>(11) 95555.2222<br><b>E-mail: </b>king@sway.com<br></td>
+        <td class="hoverable"><a class="btn tooltipped" data-tooltip="Editar" href="#"><i class="material-icons">edit</i></a>
+          <a class="btn tooltipped" data-tooltip="Acessar estação" href="#"><i class="material-icons">open_in_browser</i></a></td>
+      </tr>
+      <tr class="hoverable">
+        <td><span style="font-size: 20px"><b>Marcos Luís da Rosa</b></span><br><b>Categoria: </b>Titular<br><b>Situação: </b>Ativo</td>
+        <td><b>CPF:</b> 384.215.411-25<br><b>RG: </b>36.525.685-98<br><b>Nascimento: </b>06/09/2015<br><b>Cadastro aqui: </b>07/04/2018</td>
+        <td><b>Cidade:</b> São Paulo<br><b>Celular:</b> (11) 12152.5852<br>(11) 95555.2222<br><b>E-mail: </b>king@sway.com<br></td>
+        <td class="hoverable"><a class="btn tooltipped" data-tooltip="Editar" href="#"><i class="material-icons">edit</i></a>
+          <a class="btn tooltipped" data-tooltip="Acessar estação" href="#"><i class="material-icons">open_in_browser</i></a></td>
+      </tr>
+
     </table>
     </div>
   </div>   
@@ -218,6 +241,9 @@
     $(document).ready(function(){
     $('select').formSelect();
   	});
+    $(document).ready(function(){
+    $('.tooltipped').tooltip();
+  });
   </script>
 </body>
 </html>

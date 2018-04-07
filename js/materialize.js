@@ -8647,7 +8647,7 @@ $jscomp.polyfill = function (e, r, p, m) {
     showMonthAfterYear: false,
 
     // Render days of the calendar grid that fall in the next or previous month
-    showDaysInNextAndPreviousMonths: false,
+    showDaysInNextAndPreviousMonths: true,
 
     // Specify a DOM element to render the calendar in
     container: null,
@@ -8662,7 +8662,7 @@ $jscomp.polyfill = function (e, r, p, m) {
       done: 'Ok',
       previousMonth: '‹',
       nextMonth: '›',
-      months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+      months: ['Janeiro', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
       monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       weekdays: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
       weekdaysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
