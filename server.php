@@ -65,20 +65,23 @@
 		
 		if (count($errors) == 0) {
 
+			/*$query = "SELECT login, email, status FROM dbusuarios";
+      		$result = mysqli_query($db, $query);*/
+
 			$senha = md5($senha);
 			$query = "SELECT * FROM dbusuarios WHERE login='$usuario' AND senha='$senha'";
 			$results = mysqli_query($db, $query);
+			$user = mysqli_fetch_assoc($results);
 
-			if (mysqli_num_rows($results) == 1) {
+			if (mysqli_num_rows($results) == 1 && $user['status'] == 1) {
 				
 				$_SESSION['usuario'] = $usuario;
 				$_SESSION['success'] = "You are now logged in";
 
 
 				header('location: index.php');
-			}else {
-				array_push($errors, "Usuário ou senha incorretos");
-			}
+			} else if ($user['status'] === '0') {array_push($errors, "Seu usuário está desativado"); }
+			else { array_push($errors, "Usuário ou senha incorretos"); }
 		}
 	}
 ?>
