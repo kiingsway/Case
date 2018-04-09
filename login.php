@@ -14,7 +14,6 @@
 	    <meta name="theme-color" content="#c62828">
 	    <!-- Título -->
 	    <title>Case</title>
-	    
 	</head>
 	<body>
 

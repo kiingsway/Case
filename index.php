@@ -1,16 +1,4 @@
-<?php 
-  session_start(); 
-
-  if (!isset($_SESSION['usuario'])) {
-  	$_SESSION['msg'] = "You must log in first";
-  	header('location: login.php');
-  }
-  if (isset($_GET['logout'])) {
-  	session_destroy();
-  	unset($_SESSION['usuario']);
-  	header("location: login.php");
-  }
-?>
+<?php include ('sessaoStart.php');?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -26,6 +14,7 @@
 		<meta name="theme-color" content="#c62828">
 		<!-- Título -->
 		<title>Case :: by ks</title>
+		<style>.disabled {color: black; pointer-events: none;cursor: default;}</style>
 	</head>
 	<body>
 		<!--Navegação cabeçalho-->
@@ -46,6 +35,9 @@
 					<li><a class="dropdown-trigger" href="#!" data-target="dropdownAtividadesMobile">Atividades<i class="material-icons arrow right">arrow_drop_down</i></a></li>
 					<li><a class="dropdown-trigger" href="#!" data-target="dropdownFinanceiroMobile">Financeiro<i class="material-icons arrow right">arrow_drop_down</i></a></li>
 					<li><a class="dropdown-trigger" href="#!" data-target="dropdownUtilitariosMobile">Utilitários<i class="material-icons arrow right">arrow_drop_down</i></a></li>
+					<?php  if (isset($_SESSION['usuario'])) : ?>
+					<li><a class="dropdown-trigger" href="#!" data-target="dropdownLoginMobile"><?php echo $_SESSION['usuario']; ?><i class="material-icons arrow right">arrow_drop_down</i></a></li>
+					<?php endif ?>
 				</ul>
 				<a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 			</div>
@@ -54,22 +46,22 @@
 
 		<!-- Dropdown Structure PC-->
 		<ul id='dropdownPessoas' class='dropdown-content'>
-			<li><a class="link" href="pf.html"><i class="material-icons icon">account_circle</i>Pessoas Física</a></li>
-			<li><a href="pj.html"><i class="material-icons icon">account_box</i>Pessoas Jurídicas</a></li>
+			<li><a class="link" href="pf.php" class="disabled" style="color:grey"><i class="material-icons icon">account_circle</i>Pessoas Física</a></li>
+			<li><a href="pj.php" class="disabled" style="color:grey"><i class="material-icons icon">account_box</i>Pessoas Jurídicas</a></li>
 		</ul>
 		<ul id='dropdownAtividades' class='dropdown-content'>
-			<li><a href="cursos.html"><i class="material-icons icon">event_note</i>Cursos</a></li>
-			<li><a href="livros.html"><i class="material-icons icon">book</i>Livros</a></li>
-			<li><a href="inscr.html"><i class="material-icons icon">assignment</i>Inscrições</a></li>
-			<li><a href="voucher.html"><i class="material-icons icon">style</i>Voucher</a></li>
+			<li><a href="cursos.php"><i class="material-icons icon">event_note</i>Cursos</a></li>
+			<li><a href="livros.php" class="disabled" style="color:grey"><i class="material-icons icon">book</i>Livros</a></li>
+			<li><a href="inscr.php" class="disabled" style="color:grey"><i class="material-icons icon">assignment</i>Inscrições</a></li>
+			<li><a href="voucher.php" class="disabled" style="color:grey"><i class="material-icons icon">style</i>Voucher</a></li>
 		</ul>
 		<ul id='dropdownFinanceiro' class='dropdown-content'>
-			<li><a href="pagar.html"><i class="material-icons icon">attach_money</i>Contas a Pagar</a></li>
-			<li><a href="receber.html"><i class="material-icons icon">monetization_on</i>Contas a Receber</a></li>
+			<li><a href="pagar.php" class="disabled" style="color:grey"><i class="material-icons icon">attach_money</i>Contas a Pagar</a></li>
+			<li><a href="receber.php" class="disabled" style="color:grey"><i class="material-icons icon">monetization_on</i>Contas a Receber</a></li>
 		</ul>
 		<ul id='dropdownUtilitarios' class='dropdown-content'>
 			<li><a href="usuarios.php"><i class="material-icons icon">assignment_ind</i>Usuários</a></li>
-			<li><a href="projeto.php"><i class="material-icons icon">add_to_queue</i>Projeto</a></li>
+			<li><a href="projeto.php" class="disabled" style="color:grey"><i class="material-icons icon">add_to_queue</i>Projeto</a></li>
 		</ul>
 		<ul id='dropdownLogin' class='dropdown-content'>
 			<li><a href="index.php?logout='1'"><i class="material-icons icon">exit_to_app</i>Sair</a></li>
@@ -78,23 +70,27 @@
 
 		<!-- Dropdown Structure Mobile-->
 		<ul id='dropdownPessoasMobile' class='dropdown-content'>
-			<li><a href="pf.html"><i class="material-icons icon">account_circle</i>Pessoas Física</a></li>
-			<li><a href="pj.html"><i class="material-icons icon">account_box</i>Pessoas Jurídicas</a></li>
+			<li><a href="pf.php"><i class="material-icons icon">account_circle</i>Pessoas Física</a></li>
+			<li><a href="pj.php"><i class="material-icons icon">account_box</i>Pessoas Jurídicas</a></li>
 		</ul>
 		<ul id='dropdownAtividadesMobile' class='dropdown-content'>
-			<li><a href="cursos.html"><i class="material-icons icon">event_note</i>Cursos</a></li>
-			<li><a href="livros.html"><i class="material-icons icon">book</i>Livros</a></li>
-			<li><a href="inscr.html"><i class="material-icons icon">assignment</i>Inscrições</a></li>
-			<li><a href="voucher.html"><i class="material-icons icon">style</i>Voucher</a></li>
+			<li><a href="cursos.php"><i class="material-icons icon">event_note</i>Cursos</a></li>
+			<li><a href="livros.php"><i class="material-icons icon">book</i>Livros</a></li>
+			<li><a href="inscr.php"><i class="material-icons icon">assignment</i>Inscrições</a></li>
+			<li><a href="voucher.php"><i class="material-icons icon">style</i>Voucher</a></li>
 		</ul>
 		<ul id='dropdownFinanceiroMobile' class='dropdown-content'>
-			<li><a href="pagar.html"><i class="material-icons icon">attach_money</i>Contas a Pagar</a></li>
-			<li><a href="receber.html"><i class="material-icons icon">monetization_on</i>Contas a Receber</a></li>
+			<li><a href="pagar.php"><i class="material-icons icon">attach_money</i>Contas a Pagar</a></li>
+			<li><a href="receber.php"><i class="material-icons icon">monetization_on</i>Contas a Receber</a></li>
 		</ul>
 		<ul id='dropdownUtilitariosMobile' class='dropdown-content'>
-			<li><a href="usuarios.html"><i class="material-icons icon">assignment_ind</i>Usuários</a></li>
-			<li><a href="projeto.html"><i class="material-icons icon">add_to_queue</i>Projeto</a></li>
-		</ul><!-- Fim Dropdown Structure Mobile-->
+			<li><a href="usuarios.php"><i class="material-icons icon">assignment_ind</i>Usuários</a></li>
+			<li><a href="projeto.php"><i class="material-icons icon">add_to_queue</i>Projeto</a></li>
+		</ul>
+		<ul id='dropdownLogin' class='dropdown-content'>
+			<li><a href="index.php?logout='1'"><i class="material-icons icon">exit_to_app</i>Sair</a></li>
+		</ul>
+		<!-- Fim Dropdown Structure Mobile-->
 
 		<!-- Breadcrumb, caminho de navegação -->
 		<nav class="red lighten-1" role="navigation"> 
