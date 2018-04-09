@@ -78,16 +78,6 @@
     </div>
     <!-- Fim Div Login -->
 
-
- 
-
-
-
-
-
-
-
-
 		<!-- Footer ou Rodapé -->
 	    <footer class="page-footer orange">
 	      <div class="footer-copyright">

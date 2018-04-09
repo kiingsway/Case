@@ -5,6 +5,7 @@
 	$usuario = "";
 	$email = "";
 	$errors = array();
+	$_SESSION['success'] = "";
 
 	// Conectando ao banco
 	$db = mysqli_connect('localhost', 'root', '', 'dbregistro');
@@ -29,11 +30,11 @@
 
 		  if ($user) { // if user exists
 		    if ($user['usuario'] === $usuario) {
-		      array_push($errors, "Username already exists");
+		      array_push($errors, "Usuário já utilizado");
 		    }
 
 		    if ($user['email'] === $email) {
-		      array_push($errors, "email already exists");
+		      array_push($errors, "E-mail já utilizado");
 		    }
 		  }
 
@@ -43,33 +44,40 @@
 			mysqli_query($db, $sql);
 			$_SESSION['usuario'] = $usuario;
 			$_SESSION['sucesso'] = "Você está logado";
-			header('location: home.html');
+			header('location: index.php');
 		}
 	}
 
 	// LOGIN USER
-	if (isset($_POST['btnLogin'])) {
-		$login = mysqli_real_escape_string($db, $_POST['usuario']);
-		$senha = mysqli_real_escape_string($db, $_POST['senha']);
 
-		if (empty($login)) {
-			array_push($errors, "Usuário is required");
+	if (isset($_POST['btnLogin'])) {
+
+		$usuario = $_POST['usuario'];
+		$senha = $_POST['senha'];
+
+		if (empty($usuario)) {
+			array_push($errors, "Insira seu usuário");
 		}
 		if (empty($senha)) {
-			array_push($errors, "Senha is required");
+			array_push($errors, "Insira sua senha");
 		}
-
+		
+		
 		if (count($errors) == 0) {
+
 			$senha = md5($senha);
-			$query = "SELECT * FROM dbusuarios WHERE login='$login' AND senha='$senha'";
+			$query = "SELECT * FROM dbusuarios WHERE login='$usuario' AND senha='$senha'";
 			$results = mysqli_query($db, $query);
 
 			if (mysqli_num_rows($results) == 1) {
-				$_SESSION['usuário'] = $login;
+				
+				$_SESSION['usuario'] = $usuario;
 				$_SESSION['success'] = "You are now logged in";
+
+
 				header('location: index.php');
 			}else {
-				array_push($errors, "Wrong usuário/senha combination");
+				array_push($errors, "Usuário ou senha incorretos");
 			}
 		}
 	}

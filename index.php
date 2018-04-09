@@ -1,3 +1,16 @@
+<?php 
+  session_start(); 
+
+  if (!isset($_SESSION['usuario'])) {
+  	$_SESSION['msg'] = "You must log in first";
+  	header('location: login.php');
+  }
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['usuario']);
+  	header("location: login.php");
+  }
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -24,7 +37,9 @@
 					<li><a class="dropdown-trigger" href="#!" data-target="dropdownAtividades">Atividades<i class="material-icons arrow right">arrow_drop_down</i></a></li>
 					<li><a class="dropdown-trigger" href="#!" data-target="dropdownFinanceiro">Financeiro<i class="material-icons arrow right">arrow_drop_down</i></a></li>
 					<li><a class="dropdown-trigger" href="#!" data-target="dropdownUtilitarios">Utilitários<i class="material-icons arrow right">arrow_drop_down</i></a></li>
-					<li><a class="dropdown-trigger" href="#!" data-target="dropdownLogin">Login<i class="material-icons arrow right">arrow_drop_down</i></a></li>
+					<?php  if (isset($_SESSION['usuario'])) : ?>
+					<li><a class="dropdown-trigger" href="#!" data-target="dropdownLogin"><?php echo $_SESSION['usuario']; ?><i class="material-icons arrow right">arrow_drop_down</i></a></li>
+					<?php endif ?>
 				</ul>
 				<ul id="nav-mobile" class="sidenav">
 					<li><a class="dropdown-trigger" href="#!" data-target="dropdownPessoasMobile">Pessoas<i class="material-icons arrow right">arrow_drop_down</i></a></li>
@@ -57,7 +72,7 @@
 			<li><a href="projeto.html"><i class="material-icons icon">add_to_queue</i>Projeto</a></li>
 		</ul>
 		<ul id='dropdownLogin' class='dropdown-content'>
-			<li><a href="#"><i class="material-icons icon">exit_to_app</i>Sair</a></li>
+			<li><a href="index.php?logout='1'"><i class="material-icons icon">exit_to_app</i>Sair</a></li>
 		</ul>
 		<!-- Fim Dropdown Structure PC -->
 
@@ -84,10 +99,22 @@
 		<!-- Breadcrumb, caminho de navegação -->
 		<nav class="red lighten-1" role="navigation"> 
 			<div class="nav-wrapper container">
-				<a href="index.html" class="breadcrumb">Home</a>
+				<a href="index.html" class="breadcrumb"><i class="material-icons">home</i>Home</a>
 			</div>
 		</nav>	  		
 		<!-- Fim Breadcrumb, caminho de navegação -->
+
+		<!-- notification message -->
+		<?php if (isset($_SESSION['success'])) : ?>
+			<div class="error success" >
+				<h3>
+					<?php 
+						echo $_SESSION['success']; 
+						unset($_SESSION['success']);
+					?>
+				</h3>
+			</div>
+		<?php endif ?>
 
 		<!--Footer, Rodapé-->
 		<footer class="page-footer orange">
