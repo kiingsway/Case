@@ -13,7 +13,14 @@
 	    <!-- Cor da barra de navegação do Chrome para Android -->
 	    <meta name="theme-color" content="#c62828">
 	    <!-- Título -->
-	    <title>Case</title>
+	    <title>Case :: Login</title>
+	    <style>
+			input {color: white;}
+			::placeholder {color: #e0e0e0 ;opacity: 1; /* Firefox */}
+			:-ms-input-placeholder { /* Internet Explorer 10-11 */color: #e0e0e0 ;}
+			::-ms-input-placeholder { /* Microsoft Edge */color: #e0e0e0 ;}
+		</style>
+
 	</head>
 	<body>
 
@@ -21,51 +28,31 @@
     <nav class="red darken-1" role="navigation">
       <div class="nav-wrapper container">
         <a id="logo-container" class="brand-logo"><i class="large material-icons">art_track</i>Case</a>
-        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       </div>
     </nav>
     <!-- Fim navegação do cabeçalho -->
 
-    <!-- Div Login -->
+    <!-- Login em Card -->
     <div class="container">
-		<div class="row">
-			<form class="col s12" method="POST" action="login.php">
-				<div class="row">
-					<div class="input-field col s8"></div>
-					<div class="input-field col s4 header">
-						<h2>Login</h2>
-					</div>
-				</div>
-				<!-- Validações de rrros aparecem aqui -->
-				<?php include('errors.php');?>
-				<div class="row">
-					<div class="input-field col s8"></div>
-					<div class="input-field col s4">
-						<input type="text" name="usuario">
-						<label>Usuário</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s8"></div>
-					<div class="input-field col s4">
-						<input type="password" name="senha">
-						<label>Senha</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s8"></div>
-					<div class="input-field col s4">
-						<button type="submit" name="btnLogin" class="btn">Login</button>
-						<a href="register.php" class="btn">Registre</a>
-					</div>
-				</div>
+    	<div class="row">
+    		<form class="col s12" method="POST" action="login.php">
+    			<div class="col s12 m4">
+    				<div class="card orange darken-2 hoverable">
+    					<div class="card-content white-text input-field">
+    						<span class="card-title">Login</span>
+    						<?php include('errors.php');?>
+    						<input type="text" placeholder="Usuário" name="usuario">
+    						<input type="password" placeholder="Senha" name="senha">
+    					</div>
+    					<div class="card-action">
+    						<button type="submit" name="btnLogin" class="btn">Login</button>
+    						<a href="register.php" class="btn">Cadastro</a>
+    					</div>
+    				</div>
+    			</div>
     		</form>
     	</div>
     </div>
-    <!-- Fim Div Login -->
-
-
-    
 
 
 		<!-- Footer ou Rodapé -->
