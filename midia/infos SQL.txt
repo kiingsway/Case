@@ -1,0 +1,19 @@
+cat_socio
+1 Aperfeiçoando
+2 Residente
+3 Coligado
+4 Aspirante
+5 Titular
+
+cat_naosocio
+1 Estudante de Medicina
+2 Medico
+3 Físicos, Biólogos
+4 Técnicos
+5 Entidades Parceiras
+
+tipo_vencimento
+fixo
+inscrição
+ndias
+limite

@@ -144,21 +144,7 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
-  <script>
-    $('.dropdown-trigger').dropdown({
-    	hover: false,
-    	constrainWidth: false,
-    	coverTrigger: false
-    });
-    $(document).ready(function(){
-    	$('.modal').modal();
-  	});
-    $(document).ready(function(){
-    $('select').formSelect();
-  	});
-    $(document).ready(function(){
-    $('.tooltipped').tooltip();
-  });
-  </script>
+  <script src="js/trigger.js"></script>
+  <script src="js/functionSearch.js"></script>
 </body>
 </html>

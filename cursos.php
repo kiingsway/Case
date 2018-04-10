@@ -130,30 +130,49 @@
             <th>Status</th>
             <th>Opções</th>
           </tr>
+
+          <?php
+          $db = mysqli_connect('localhost', 'root', '', 'dbatividades');
+          if (!$db) { die(mysql_error());}
+          $query = "SELECT nomeCurso, dataInicial, horaInicial, dataFinal, horaFinal, categorias, vagas, cargaHoraria, freqMinima, valor, valorSocio, valorParceiro, valorNaoQuite, tipoVencimento, vencimento, nDias, status FROM tbcursos";
+          $result = mysqli_query($db, $query);
+          while ($user = mysqli_fetch_assoc($result)){ ?>
           <tr class="hoverable">
-            <td><span style="font-size: 20px"><b>Radiologia</b></span><br>01/04/18 ~ 03/04/18<br>08:00 ~ 12:00</td>
-            <td><b>Valor: </b>R$300<br><b>Sócio: </b>R$250<br><b>Não quite: </b>R$300<br><b>Parceiro: </b>R$250<br></td>
-            <td><b>Vagas: </b>24<br><b>Carga Horária: </b>12 horas<br><b>Frquência Mínima: </b>100%<br></td>
-            <td><span data-badge-caption="Aperfeiçoando" class="new badge light-blue darken-1"></span> <span data-badge-caption="Residente" class="new badge light-blue darken-1"></span><br>
-              <span data-badge-caption="Coligado" class="new badge light-blue darken-1"></span> <span data-badge-caption="Aspirante" class="new badge light-blue darken-1"></span><br>
-              <span data-badge-caption="Titular" class="new badge light-blue darken-1"></span> <span data-badge-caption="Estudante de Medicina" class="new badge orange darken-1"></span><br>
-              <span data-badge-caption="Médico" class="new badge orange darken-1"></span> <span data-badge-caption="Físicos, Biólogos" class="new badge orange darken-1"></span><br>
-              <span data-badge-caption="Técnicos" class="new badge orange darken-1"></span> <span data-badge-caption="Entidades Parceiras" class="new badge orange darken-1"></span>
-              <td class="center hoverable"><a class="btn tooltipped green" data-tooltip="Online" href="#"><i class="material-icons">cloud_done</i></a></td>
+            <td style="font-size: 20px; font-weight: bold;"><?php echo $user['nomeCurso']?></td>
+            <td><b>Valor: </b>R$<?php echo $user['valor']?><br>
+              <b>Sócio: </b>R$<?php echo $user['valorSocio']?><br>
+              <b>Não quite: </b>R$<?php echo $user['valorParceiro']?><br>
+              <b>Parceiro: </b>R$<?php echo $user['valorNaoQuite']?><br></td>
+              <td><b>Vagas: </b><?php echo $user['vagas']?><br>
+                <b>Carga Horária: </b><?php echo $user['cargaHoraria']?><br>
+                <b>Frquência Mínima: </b><?php echo $user['freqMinima']?>%<br>
+                <?php echo $user['dataInicial']?> ~ <?php echo $user['dataFinal']?><br><?php echo $user['horaInicial']?> ~ <?php echo $user['horaFinal']?></td>
+                
+                <td>
+                <?php
+                $cats = array('','Aperfeiçoando','Residente','Coligado','Aspirante','Titular','Estudante de Medicina','Médico','Físicos, Biólogos','Técnicos','Entidades Parceiras');
+                $categorias = explode(',',$user['categorias']);
+                $corBadge = "light-blue darken-1";
+
+                foreach ($categorias as &$value) {
+                  $value > 5 ? $corBadge = "orange darken-1" : "light-blue darken-1";
+                  echo '<span data-badge-caption="'.$cats[$value].'" class="new badge '. $corBadge .'"></span> ';
+                  if ($value%2 == 0) echo "<br>";
+                }
+                ?>
+                </td>>
+
+
+
+              <?php
+              if ($user['status'] == 0) { echo '<td class="center hoverable"><a class="btn tooltipped red" data-tooltip="Offline" href="#"><i class="material-icons">cloud_off</i></a></td>';}
+              if ($user['status'] == 1) { echo '<td class="center hoverable"><a class="btn tooltipped green" data-tooltip="Online" href="#"><i class="material-icons">cloud_done</i></a></td>';}
+              ?>
               <td class="center hoverable"><a class="btn tooltipped" data-tooltip="Editar" href="#"><i class="material-icons">edit</i></a>
               </tr>
-          <tr class="hoverable">
-            <td><span style="font-size: 20px"><b>Radiologia</b></span><br>01/04/18 ~ 03/04/18<br>08:00 ~ 12:00</td>
-            <td><b>Valor: </b>R$300<br><b>Sócio: </b>R$250<br><b>Não quite: </b>R$300<br><b>Parceiro: </b>R$250<br></td>
-            <td><b>Vagas: </b>24<br><b>Carga Horária: </b>12 horas<br><b>Frquência Mínima: </b>100%<br></td>
-            <td><span data-badge-caption="Aperfeiçoando" class="new badge light-blue darken-1"></span> <span data-badge-caption="Residente" class="new badge light-blue darken-1"></span><br>
-              <span data-badge-caption="Coligado" class="new badge light-blue darken-1"></span> <span data-badge-caption="Aspirante" class="new badge light-blue darken-1"></span><br>
-              <span data-badge-caption="Titular" class="new badge light-blue darken-1"></span> <span data-badge-caption="Estudante de Medicina" class="new badge orange darken-1"></span><br>
-              <span data-badge-caption="Médico" class="new badge orange darken-1"></span> <span data-badge-caption="Físicos, Biólogos" class="new badge orange darken-1"></span><br>
-              <span data-badge-caption="Técnicos" class="new badge orange darken-1"></span> <span data-badge-caption="Entidades Parceiras" class="new badge orange darken-1"></span>
-              <td class="center hoverable"><a class="btn tooltipped red" data-tooltip="Offline" href="#"><i class="material-icons">cloud_off</i></a></td>
-              <td class="center hoverable"><a class="btn tooltipped" data-tooltip="Editar" href="#"><i class="material-icons">edit</i></a>
-              </tr>
+              <?php 
+            }
+            ?>
             </table>
           </div>
     <!-- Fim conteúdo -->
@@ -245,6 +264,7 @@
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
   <script src="js/trigger.js"></script>
+  <script src="js/functionSearch.js"></script>
   <script>
     
   </script>
