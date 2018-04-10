@@ -76,7 +76,7 @@
 			if (mysqli_num_rows($results) == 1 && $user['status'] == 1) {
 				
 				$_SESSION['usuario'] = $usuario;
-				$_SESSION['success'] = "You are now logged in";
+				$_SESSION['success'] = "Você está logado!";
 
 
 				header('location: index.php');
