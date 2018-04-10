@@ -1,3 +1,4 @@
+<?php include ('sessaoStart.php');?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -13,6 +14,7 @@
     <meta name="theme-color" content="#c62828">
     <!-- Título -->
     <title>Case :: Pessoas Jurídicas</title>
+    <style>.disabled {color: black; pointer-events: none;cursor: default;}</style>
   </head>
 <body>
     <!--Navegação cabeçalho-->
@@ -24,12 +26,18 @@
           <li><a class="dropdown-trigger" href="#!" data-target="dropdownAtividades">Atividades<i class="material-icons arrow right">arrow_drop_down</i></a></li>
           <li><a class="dropdown-trigger" href="#!" data-target="dropdownFinanceiro">Financeiro<i class="material-icons arrow right">arrow_drop_down</i></a></li>
           <li><a class="dropdown-trigger" href="#!" data-target="dropdownUtilitarios">Utilitários<i class="material-icons arrow right">arrow_drop_down</i></a></li>
+          <?php  if (isset($_SESSION['usuario'])) : ?>
+          <li><a class="dropdown-trigger" href="#!" data-target="dropdownLogin"><?php echo $_SESSION['usuario']; ?><i class="material-icons arrow right">arrow_drop_down</i></a></li>
+          <?php endif ?>
         </ul>
         <ul id="nav-mobile" class="sidenav">
           <li><a class="dropdown-trigger" href="#!" data-target="dropdownPessoasMobile">Pessoas<i class="material-icons arrow right">arrow_drop_down</i></a></li>
           <li><a class="dropdown-trigger" href="#!" data-target="dropdownAtividadesMobile">Atividades<i class="material-icons arrow right">arrow_drop_down</i></a></li>
           <li><a class="dropdown-trigger" href="#!" data-target="dropdownFinanceiroMobile">Financeiro<i class="material-icons arrow right">arrow_drop_down</i></a></li>
           <li><a class="dropdown-trigger" href="#!" data-target="dropdownUtilitariosMobile">Utilitários<i class="material-icons arrow right">arrow_drop_down</i></a></li>
+          <?php  if (isset($_SESSION['usuario'])) : ?>
+          <li><a class="dropdown-trigger" href="#!" data-target="dropdownLoginMobile"><?php echo $_SESSION['usuario']; ?><i class="material-icons arrow right">arrow_drop_down</i></a></li>
+          <?php endif ?>
         </ul>
         <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       </div>
@@ -38,49 +46,56 @@
 
     <!-- Dropdown Structure PC-->
     <ul id='dropdownPessoas' class='dropdown-content'>
-      <li><a class="link" href="pf.html"><i class="material-icons icon">account_circle</i>Pessoas Física</a></li>
-      <li><a href="pj.html"><i class="material-icons icon">account_box</i>Pessoas Jurídicas</a></li>
+      <li><a href="pf.php" class="disabled" style="color:grey"><i class="material-icons icon">account_circle</i>Pessoas Física</a></li>
+      <li><a href="pj.php"><i class="material-icons icon">account_box</i>Pessoas Jurídicas</a></li>
     </ul>
     <ul id='dropdownAtividades' class='dropdown-content'>
-      <li><a href="cursos.html"><i class="material-icons icon">event_note</i>Cursos</a></li>
-      <li><a href="livros.html"><i class="material-icons icon">book</i>Livros</a></li>
-      <li><a href="inscr.html"><i class="material-icons icon">assignment</i>Inscrições</a></li>
-      <li><a href="voucher.html"><i class="material-icons icon">style</i>Voucher</a></li>
+      <li><a href="cursos.php"><i class="material-icons icon">event_note</i>Cursos</a></li>
+      <li><a href="livros.php" class="disabled" style="color:grey"><i class="material-icons icon">book</i>Livros</a></li>
+      <li><a href="inscr.php" class="disabled" style="color:grey"><i class="material-icons icon">assignment</i>Inscrições</a></li>
+      <li><a href="voucher.php" class="disabled" style="color:grey"><i class="material-icons icon">style</i>Voucher</a></li>
     </ul>
     <ul id='dropdownFinanceiro' class='dropdown-content'>
-      <li><a href="pagar.html"><i class="material-icons icon">attach_money</i>Contas a Pagar</a></li>
-      <li><a href="receber.html"><i class="material-icons icon">monetization_on</i>Contas a Receber</a></li>
+      <li><a href="pagar.php" class="disabled" style="color:grey"><i class="material-icons icon">attach_money</i>Contas a Pagar</a></li>
+      <li><a href="receber.php" class="disabled" style="color:grey"><i class="material-icons icon">monetization_on</i>Contas a Receber</a></li>
     </ul>
     <ul id='dropdownUtilitarios' class='dropdown-content'>
-      <li><a href="usuarios.html"><i class="material-icons icon">assignment_ind</i>Usuários</a></li>
-      <li><a href="projeto.html"><i class="material-icons icon">add_to_queue</i>Projeto</a></li>
+      <li><a href="usuarios.php"><i class="material-icons icon">assignment_ind</i>Usuários</a></li>
+      <li><a href="projeto.php"><i class="material-icons icon">add_to_queue</i>Projeto</a></li>
+    </ul>
+    <ul id='dropdownLogin' class='dropdown-content'>
+      <li><a href="index.php?logout='1'"><i class="material-icons icon">exit_to_app</i>Sair</a></li>
     </ul>
     <!-- Fim Dropdown Structure PC -->
 
     <!-- Dropdown Structure Mobile-->
     <ul id='dropdownPessoasMobile' class='dropdown-content'>
-      <li><a href="pf.html"><i class="material-icons icon">account_circle</i>Pessoas Física</a></li>
-      <li><a href="pj.html"><i class="material-icons icon">account_box</i>Pessoas Jurídicas</a></li>
+      <li><a href="pf.php"><i class="material-icons icon">account_circle</i>Pessoas Física</a></li>
+      <li><a href="pj.php"><i class="material-icons icon">account_box</i>Pessoas Jurídicas</a></li>
     </ul>
     <ul id='dropdownAtividadesMobile' class='dropdown-content'>
-      <li><a href="cursos.html"><i class="material-icons icon">event_note</i>Cursos</a></li>
-      <li><a href="livros.html"><i class="material-icons icon">book</i>Livros</a></li>
-      <li><a href="inscr.html"><i class="material-icons icon">assignment</i>Inscrições</a></li>
-      <li><a href="voucher.html"><i class="material-icons icon">style</i>Voucher</a></li>
+      <li><a href="cursos.php"><i class="material-icons icon">event_note</i>Cursos</a></li>
+      <li><a href="livros.php"><i class="material-icons icon">book</i>Livros</a></li>
+      <li><a href="inscr.php"><i class="material-icons icon">assignment</i>Inscrições</a></li>
+      <li><a href="voucher.php"><i class="material-icons icon">style</i>Voucher</a></li>
     </ul>
     <ul id='dropdownFinanceiroMobile' class='dropdown-content'>
-      <li><a href="pagar.html"><i class="material-icons icon">attach_money</i>Contas a Pagar</a></li>
-      <li><a href="receber.html"><i class="material-icons icon">monetization_on</i>Contas a Receber</a></li>
+      <li><a href="pagar.php"><i class="material-icons icon">attach_money</i>Contas a Pagar</a></li>
+      <li><a href="receber.php"><i class="material-icons icon">monetization_on</i>Contas a Receber</a></li>
     </ul>
     <ul id='dropdownUtilitariosMobile' class='dropdown-content'>
-      <li><a href="usuarios.html"><i class="material-icons icon">assignment_ind</i>Usuários</a></li>
-      <li><a href="projeto.html"><i class="material-icons icon">add_to_queue</i>Projeto</a></li>
-    </ul><!-- Fim Dropdown Structure Mobile-->
+      <li><a href="usuarios.php"><i class="material-icons icon">assignment_ind</i>Usuários</a></li>
+      <li><a href="projeto.php"><i class="material-icons icon">add_to_queue</i>Projeto</a></li>
+    </ul>
+    <ul id='dropdownLogin' class='dropdown-content'>
+      <li><a href="index.php?logout='1'"><i class="material-icons icon">exit_to_app</i>Sair</a></li>
+    </ul>
+    <!-- Fim Dropdown Structure Mobile-->
 
     <!-- Breadcrumb, caminho de navegação -->
     <nav class="red lighten-1" role="navigation"> 
       <div class="nav-wrapper container">
-        <a href="index.html" class="breadcrumb"><i class="material-icons">home</i>Home</a>
+        <a href="index.php" class="breadcrumb"><i class="material-icons">home</i>Home</a>
         <a href="index.html" class="breadcrumb">Pessoas Jurídicas</a>
       </div>
     </nav>        
@@ -112,20 +127,28 @@
         <th>Contato</th>
         <th>Opções</th>
       </tr>
-      <tr class="hoverable">
-        <td><span style="font-size: 20px"><b>Marco's</b></span><br><b>Razão Social:</b> Empresa de Desenvolvimento do Marcos<br><b>Situação: </b><span data-badge-caption="Ativo" class="new badge green"></span></td>
-        <td><br><b>CNPJ: </b>36.525.685/1000-10<br><b>Cadastro aqui: </b>07/04/2018</td>
-        <td><b>Cidade:</b> São Paulo<br><b>Celular:</b> (11) 12152.5852<br>(11) 95555.2222<br><b>E-mail: </b>king@sway.com<br></td>
-        <td class="hoverable"><a class="btn tooltipped" data-tooltip="Editar" href="#"><i class="material-icons">edit</i></a>
+
+      <?php
+        $db = mysqli_connect('localhost', 'root', '', 'dbpessoas');
+        if (!$db) { die(mysql_error());}
+        $user_check_query = "SELECT nome_fantasia, razao_social, cnpj, site, email, telefone1, telefone2, situacao, cadastroaqui, cidade, estado FROM pj";
+        $result = mysqli_query($db, $user_check_query);
+        while ($user = mysqli_fetch_assoc($result)){ ?>
+
+        <tr class="hoverable">
+          <td><span style="font-size: 20px"><b><?php echo $user['nome_fantasia'] ?></b></span><br><b>Razão Social:</b> <?php echo $user['razao_social'] ?><br><b>Situação: </b>
+            <?php if ($user['situacao'] == 0) { echo '<span data-badge-caption="Desligado" class="new badge red">'; }
+            if ($user['situacao'] == 1) { echo '<span data-badge-caption="Ativo" class="new badge green">'; } ?> </span><br>
+            <b>Site: </b> <?php echo $user['site'] ?>
+          </td>
+          <td><b>CNPJ: </b><?php echo $user['cnpj']?><br><b>Cadastro aqui: </b><?php echo $user['cadastroaqui']?></td>
+          <td><b>Cidade:</b> <?php echo $user['cidade']?><br><b>Celular:</b> <?php echo $user['telefone1']?><br><?php echo $user['telefone2']?><br><b>E-mail: </b><?php echo $user['email']?><br></td>
+          <td class="hoverable"><a class="btn tooltipped" data-tooltip="Editar" href="#"><i class="material-icons">edit</i></a>
           <a class="btn tooltipped" data-tooltip="Acessar ABCDI" href="#"><i class="material-icons">open_in_browser</i></a></td>
-      </tr>
-      <tr class="hoverable">
-        <td><span style="font-size: 20px"><b>Marco's</b></span><br><b>Razão Social:</b> Empresa de Desenvolvimento do Marcos<br><b>Situação: </b><span data-badge-caption="Ativo" class="new badge green"></span></td>
-        <td><br><b>CNPJ: </b>36.525.685/1000-10<br><b>Cadastro aqui: </b>07/04/2018</td>
-        <td><b>Cidade:</b> São Paulo<br><b>Celular:</b> (11) 12152.5852<br>(11) 95555.2222<br><b>E-mail: </b>king@sway.com<br></td>
-        <td class="hoverable"><a class="btn tooltipped" data-tooltip="Editar" href="#"><i class="material-icons">edit</i></a>
-          <a class="btn tooltipped" data-tooltip="Acessar ABCDI" href="#"><i class="material-icons">open_in_browser</i></a></td>
-      </tr>
+        </tr>
+      <?php   
+      }
+      ?>
     </table>
     </div>
     <!-- Fim conteúdo -->

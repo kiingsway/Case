@@ -13,7 +13,8 @@
     <!--Cor da barra de navegação do Chrome para android-->
     <meta name="theme-color" content="#c62828">
     <!--Título-->
-    <title>Case :: by ks</title>
+    <title>Case :: Projetos</title>
+    <style>.disabled {color: black; pointer-events: none;cursor: default;}</style>
   </head>
   <body>
     <!--Navegação cabeçalho-->
@@ -45,8 +46,8 @@
 
     <!-- Dropdown Structure PC-->
     <ul id='dropdownPessoas' class='dropdown-content'>
-      <li><a class="link" href="pf.php" class="disabled" style="color:grey"><i class="material-icons icon">account_circle</i>Pessoas Física</a></li>
-      <li><a href="pj.php" class="disabled" style="color:grey"><i class="material-icons icon">account_box</i>Pessoas Jurídicas</a></li>
+      <li><a href="pf.php" class="disabled" style="color:grey"><i class="material-icons icon">account_circle</i>Pessoas Física</a></li>
+      <li><a href="pj.php"><i class="material-icons icon">account_box</i>Pessoas Jurídicas</a></li>
     </ul>
     <ul id='dropdownAtividades' class='dropdown-content'>
       <li><a href="cursos.php"><i class="material-icons icon">event_note</i>Cursos</a></li>
@@ -94,8 +95,8 @@
     <!-- Breadcrumb, caminho de navegação -->
     <nav class="red lighten-1" role="navigation"> 
       <div class="nav-wrapper container">
-        <a href="index.php" class="breadcrumb">Home</a>
-        <a href="index.php" class="breadcrumb">Usuários</a>
+        <a href="index.php" class="breadcrumb"><i class="material-icons">home</i>Home</a>
+        <a href="index.php" class="breadcrumb">Projetos</a>
       </div>
     </nav>        
     <!-- Fim Breadcrumb, caminho de navegação -->
@@ -123,7 +124,6 @@
           ?>
           <td><?php echo $user['criadoem']?></td>
           <td><?php echo $user['implementadaem']?></td>
-          <td class="hoverable"><a class="btn tooltipped" data-tooltip="Editar" href="#"><i class="material-icons">edit</i></a></td>
         </tr>
       <?php   
       }
