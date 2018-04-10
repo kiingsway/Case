@@ -46,7 +46,7 @@
 
     <!-- Dropdown Structure PC-->
     <ul id='dropdownPessoas' class='dropdown-content'>
-      <li><a href="pf.php" class="disabled" style="color:grey"><i class="material-icons icon">account_circle</i>Pessoas Física</a></li>
+      <li><a href="pf.php"><i class="material-icons icon">account_circle</i>Pessoas Física</a></li>
       <li><a href="pj.php"><i class="material-icons icon">account_box</i>Pessoas Jurídicas</a></li>
     </ul>
     <ul id='dropdownAtividades' class='dropdown-content'>
@@ -75,35 +75,47 @@
     </ul>
     <ul id='dropdownAtividadesMobile' class='dropdown-content'>
       <li><a href="cursos.php"><i class="material-icons icon">event_note</i>Cursos</a></li>
-      <li><a href="livros.php"><i class="material-icons icon">book</i>Livros</a></li>
-      <li><a href="inscr.php"><i class="material-icons icon">assignment</i>Inscrições</a></li>
-      <li><a href="voucher.php"><i class="material-icons icon">style</i>Voucher</a></li>
+      <li><a href="livros.php" class="disabled"><i class="material-icons icon">book</i>Livros</a></li>
+      <li><a href="inscr.php" class="disabled"><i class="material-icons icon">assignment</i>Inscrições</a></li>
+      <li><a href="voucher.php" class="disabled"><i class="material-icons icon">style</i>Voucher</a></li>
     </ul>
     <ul id='dropdownFinanceiroMobile' class='dropdown-content'>
-      <li><a href="pagar.php"><i class="material-icons icon">attach_money</i>Contas a Pagar</a></li>
-      <li><a href="receber.php"><i class="material-icons icon">monetization_on</i>Contas a Receber</a></li>
+      <li><a href="pagar.php" class="disabled"><i class="material-icons icon">attach_money</i>Contas a Pagar</a></li>
+      <li><a href="receber.php" class="disabled"><i class="material-icons icon">monetization_on</i>Contas a Receber</a></li>
     </ul>
     <ul id='dropdownUtilitariosMobile' class='dropdown-content'>
       <li><a href="usuarios.php"><i class="material-icons icon">assignment_ind</i>Usuários</a></li>
       <li><a href="projeto.php"><i class="material-icons icon">add_to_queue</i>Projeto</a></li>
     </ul>
-    <ul id='dropdownLogin' class='dropdown-content'>
+    <ul id='dropdownLoginMobile' class='dropdown-content'>
       <li><a href="index.php?logout='1'"><i class="material-icons icon">exit_to_app</i>Sair</a></li>
     </ul>
     <!-- Fim Dropdown Structure Mobile-->
 
-		<!-- Breadcrumb, caminho de navegação -->
-		<nav class="red lighten-1" role="navigation"> 
-			<div class="nav-wrapper container">
-				<a href="index.php" class="breadcrumb"><i class="material-icons">home</i>Home</a>
-				<a href="index.php" class="breadcrumb">Usuários</a>
+    <!-- Breadcrumb, caminho de navegação -->
+    <nav class="red lighten-1" role="navigation"> 
+      <div class="nav-wrapper container">
+        <a href="index.php" class="breadcrumb"><i class="material-icons">home</i>Home</a>
+				<a class="breadcrumb">Usuários</a>
 			</div>
 		</nav>	  		
 		<!-- Fim Breadcrumb, caminho de navegação -->
-
+    <!-- Nav Search -->
+    <nav class="red lighten-2 hoverable">
+      <div class="container nav-wrapper">
+        <form>
+          <div class="input-field">
+            <input type="search" id="searchNav" onkeyup="functionSearch()">
+            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+            <i class="material-icons">close</i>
+          </div>
+        </form>
+      </div>
+    </nav><br>
+    <!-- Fim Nav Search -->
 		<!-- Conteúdo -->
 		<div class="container">
-			<table class="centered">
+			<table id="table" class="centered">
 				<tr>
 					<th>Login</th>
 					<th>E-mail</th>
@@ -119,7 +131,7 @@
 				while ($user = mysqli_fetch_assoc($result)){ ?>
 
 				<tr class="hoverable">
-      		<td><?php echo $user['login']?></td>
+      		<td style="font-weight: bold"><?php echo $user['login']?></td>
       		<td><?php echo $user['email']?></td>
       		<?php
       		if ($user['status'] == 0) { echo '<td class="center hoverable"><a class="btn tooltipped modal-trigger hoverable red" data-tooltip="Offline" href="#modalStatus"><i class="material-icons">cloud_off</i></a></td>';}
@@ -160,5 +172,6 @@
 		<script src="js/init.js"></script>
 		<!-- Gatilho -->
 		<script src="js/trigger.js"></script>
+    <script src="js/functionSearch.js"></script>
 	</body>
 </html>

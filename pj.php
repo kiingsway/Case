@@ -46,7 +46,7 @@
 
     <!-- Dropdown Structure PC-->
     <ul id='dropdownPessoas' class='dropdown-content'>
-      <li><a href="pf.php" class="disabled" style="color:grey"><i class="material-icons icon">account_circle</i>Pessoas Física</a></li>
+      <li><a href="pf.php"><i class="material-icons icon">account_circle</i>Pessoas Física</a></li>
       <li><a href="pj.php"><i class="material-icons icon">account_box</i>Pessoas Jurídicas</a></li>
     </ul>
     <ul id='dropdownAtividades' class='dropdown-content'>
@@ -75,19 +75,19 @@
     </ul>
     <ul id='dropdownAtividadesMobile' class='dropdown-content'>
       <li><a href="cursos.php"><i class="material-icons icon">event_note</i>Cursos</a></li>
-      <li><a href="livros.php"><i class="material-icons icon">book</i>Livros</a></li>
-      <li><a href="inscr.php"><i class="material-icons icon">assignment</i>Inscrições</a></li>
-      <li><a href="voucher.php"><i class="material-icons icon">style</i>Voucher</a></li>
+      <li><a href="livros.php" class="disabled"><i class="material-icons icon">book</i>Livros</a></li>
+      <li><a href="inscr.php" class="disabled"><i class="material-icons icon">assignment</i>Inscrições</a></li>
+      <li><a href="voucher.php" class="disabled"><i class="material-icons icon">style</i>Voucher</a></li>
     </ul>
     <ul id='dropdownFinanceiroMobile' class='dropdown-content'>
-      <li><a href="pagar.php"><i class="material-icons icon">attach_money</i>Contas a Pagar</a></li>
-      <li><a href="receber.php"><i class="material-icons icon">monetization_on</i>Contas a Receber</a></li>
+      <li><a href="pagar.php" class="disabled"><i class="material-icons icon">attach_money</i>Contas a Pagar</a></li>
+      <li><a href="receber.php" class="disabled"><i class="material-icons icon">monetization_on</i>Contas a Receber</a></li>
     </ul>
     <ul id='dropdownUtilitariosMobile' class='dropdown-content'>
       <li><a href="usuarios.php"><i class="material-icons icon">assignment_ind</i>Usuários</a></li>
       <li><a href="projeto.php"><i class="material-icons icon">add_to_queue</i>Projeto</a></li>
     </ul>
-    <ul id='dropdownLogin' class='dropdown-content'>
+    <ul id='dropdownLoginMobile' class='dropdown-content'>
       <li><a href="index.php?logout='1'"><i class="material-icons icon">exit_to_app</i>Sair</a></li>
     </ul>
     <!-- Fim Dropdown Structure Mobile-->
@@ -96,7 +96,7 @@
     <nav class="red lighten-1" role="navigation"> 
       <div class="nav-wrapper container">
         <a href="index.php" class="breadcrumb"><i class="material-icons">home</i>Home</a>
-        <a href="index.html" class="breadcrumb">Pessoas Jurídicas</a>
+        <a class="breadcrumb">Pessoas Jurídicas</a>
       </div>
     </nav>        
     <!-- Fim Breadcrumb, caminho de navegação -->
@@ -106,7 +106,7 @@
       <div class="container nav-wrapper">
         <form>
           <div class="input-field">
-            <input id="search" type="search" required>
+            <input type="search" id="searchNav" onkeyup="functionSearch()">
             <label class="label-icon" for="search"><i class="material-icons">search</i></label>
             <i class="material-icons">close</i>
           </div>
@@ -120,7 +120,7 @@
       <a class="btn-floating btn-large waves-effect waves-light red modal-trigger hoverable tooltipped" data-position="top" data-tooltip="Busca avançada" href="#modal1"><i class="material-icons">zoom_in</i></a>
       <a class="btn-floating btn-large waves-effect waves-light red hoverable tooltipped" data-position="top" data-tooltip="Marcar todos"><i class="material-icons">check_circle</i></a>
       <a class="btn-floating btn-large waves-effect waves-light red hoverable modal-trigger tooltipped" data-position="top" data-tooltip="Apagar" href="#modalApagar"><i class="material-icons">delete_forever</i></a><br><br>
-        <table cellpadding="1">
+        <table id="table">
       <tr class="hoverable">
         <th>Nome</th>
         <th>Detalhes</th>
@@ -136,13 +136,10 @@
         while ($user = mysqli_fetch_assoc($result)){ ?>
 
         <tr class="hoverable">
-          <td><span style="font-size: 20px"><b><?php echo $user['nome_fantasia'] ?></b></span><br><b>Razão Social:</b> <?php echo $user['razao_social'] ?><br><b>Situação: </b>
-            <?php if ($user['situacao'] == 0) { echo '<span data-badge-caption="Desligado" class="new badge red">'; }
-            if ($user['situacao'] == 1) { echo '<span data-badge-caption="Ativo" class="new badge green">'; } ?> </span><br>
-            <b>Site: </b> <?php echo $user['site'] ?>
-          </td>
-          <td><b>CNPJ: </b><?php echo $user['cnpj']?><br><b>Cadastro aqui: </b><?php echo $user['cadastroaqui']?></td>
-          <td><b>Cidade:</b> <?php echo $user['cidade']?><br><b>Celular:</b> <?php echo $user['telefone1']?><br><?php echo $user['telefone2']?><br><b>E-mail: </b><?php echo $user['email']?><br></td>
+          <td style="font-size: 20px; font-weight: bold;"><?php echo $user['nome_fantasia'] ?></td>
+          <td><b>Razão Social:</b> <?php echo $user['razao_social'] ?><br><b>CNPJ: </b><?php echo $user['cnpj']?><br><b>Cadastro aqui: </b><?php echo $user['cadastroaqui']?><br><b>Situação: </b><?php if ($user['situacao'] == 0) { echo '<span data-badge-caption="Desligado" class="new badge red">'; }
+            if ($user['situacao'] == 1) { echo '<span data-badge-caption="Ativo" class="new badge green">'; } ?> </span></td>
+          <td><b>Cidade:</b> <?php echo $user['cidade']?><br><b>Celular:</b> <?php echo $user['telefone1']?><br><?php echo $user['telefone2']?><br><b>Site: </b> <?php echo $user['site'] ?><br><b>E-mail: </b><?php echo $user['email']?><br></td>
           <td class="hoverable"><a class="btn tooltipped" data-tooltip="Editar" href="#"><i class="material-icons">edit</i></a>
           <a class="btn tooltipped" data-tooltip="Acessar ABCDI" href="#"><i class="material-icons">open_in_browser</i></a></td>
         </tr>
@@ -242,5 +239,6 @@
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
   <script src="js/trigger.js"></script>
+  <script src="js/functionSearch.js"></script>
 </body>
 </html>
