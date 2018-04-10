@@ -61,7 +61,7 @@
 		</ul>
 		<ul id='dropdownUtilitarios' class='dropdown-content'>
 			<li><a href="usuarios.php"><i class="material-icons icon">assignment_ind</i>Usuários</a></li>
-			<li><a href="projeto.php" class="disabled" style="color:grey"><i class="material-icons icon">add_to_queue</i>Projeto</a></li>
+			<li><a href="projeto.php"><i class="material-icons icon">add_to_queue</i>Projeto</a></li>
 		</ul>
 		<ul id='dropdownLogin' class='dropdown-content'>
 			<li><a href="index.php?logout='1'"><i class="material-icons icon">exit_to_app</i>Sair</a></li>

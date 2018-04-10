@@ -1,3 +1,4 @@
+<?php include ('sessaoStart.php');?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -24,12 +25,18 @@
           <li><a class="dropdown-trigger" href="#!" data-target="dropdownAtividades">Atividades<i class="material-icons arrow right">arrow_drop_down</i></a></li>
           <li><a class="dropdown-trigger" href="#!" data-target="dropdownFinanceiro">Financeiro<i class="material-icons arrow right">arrow_drop_down</i></a></li>
           <li><a class="dropdown-trigger" href="#!" data-target="dropdownUtilitarios">Utilitários<i class="material-icons arrow right">arrow_drop_down</i></a></li>
+          <?php  if (isset($_SESSION['usuario'])) : ?>
+          <li><a class="dropdown-trigger" href="#!" data-target="dropdownLogin"><?php echo $_SESSION['usuario']; ?><i class="material-icons arrow right">arrow_drop_down</i></a></li>
+          <?php endif ?>
         </ul>
         <ul id="nav-mobile" class="sidenav">
           <li><a class="dropdown-trigger" href="#!" data-target="dropdownPessoasMobile">Pessoas<i class="material-icons arrow right">arrow_drop_down</i></a></li>
           <li><a class="dropdown-trigger" href="#!" data-target="dropdownAtividadesMobile">Atividades<i class="material-icons arrow right">arrow_drop_down</i></a></li>
           <li><a class="dropdown-trigger" href="#!" data-target="dropdownFinanceiroMobile">Financeiro<i class="material-icons arrow right">arrow_drop_down</i></a></li>
           <li><a class="dropdown-trigger" href="#!" data-target="dropdownUtilitariosMobile">Utilitários<i class="material-icons arrow right">arrow_drop_down</i></a></li>
+          <?php  if (isset($_SESSION['usuario'])) : ?>
+          <li><a class="dropdown-trigger" href="#!" data-target="dropdownLoginMobile"><?php echo $_SESSION['usuario']; ?><i class="material-icons arrow right">arrow_drop_down</i></a></li>
+          <?php endif ?>
         </ul>
         <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       </div>
@@ -37,54 +44,62 @@
     <!-- Fim navegação do cabeçalho -->
 
     <!-- Dropdown Structure PC-->
-    <div id="divDropdown">
     <ul id='dropdownPessoas' class='dropdown-content'>
-      <li><a class="link" href="pf.html"><i class="material-icons icon">account_circle</i>Pessoas Física</a></li>
-      <li><a href="pj.html"><i class="material-icons icon">account_box</i>Pessoas Jurídicas</a></li>
+      <li><a class="link" href="pf.php" class="disabled" style="color:grey"><i class="material-icons icon">account_circle</i>Pessoas Física</a></li>
+      <li><a href="pj.php" class="disabled" style="color:grey"><i class="material-icons icon">account_box</i>Pessoas Jurídicas</a></li>
     </ul>
     <ul id='dropdownAtividades' class='dropdown-content'>
-      <li><a href="cursos.html"><i class="material-icons icon">event_note</i>Cursos</a></li>
-      <li><a href="livros.html"><i class="material-icons icon">book</i>Livros</a></li>
-      <li><a href="inscr.html"><i class="material-icons icon">assignment</i>Inscrições</a></li>
-      <li><a href="voucher.html"><i class="material-icons icon">style</i>Voucher</a></li>
+      <li><a href="cursos.php"><i class="material-icons icon">event_note</i>Cursos</a></li>
+      <li><a href="livros.php" class="disabled" style="color:grey"><i class="material-icons icon">book</i>Livros</a></li>
+      <li><a href="inscr.php" class="disabled" style="color:grey"><i class="material-icons icon">assignment</i>Inscrições</a></li>
+      <li><a href="voucher.php" class="disabled" style="color:grey"><i class="material-icons icon">style</i>Voucher</a></li>
     </ul>
     <ul id='dropdownFinanceiro' class='dropdown-content'>
-      <li><a href="pagar.html"><i class="material-icons icon">attach_money</i>Contas a Pagar</a></li>
-      <li><a href="receber.html"><i class="material-icons icon">monetization_on</i>Contas a Receber</a></li>
+      <li><a href="pagar.php" class="disabled" style="color:grey"><i class="material-icons icon">attach_money</i>Contas a Pagar</a></li>
+      <li><a href="receber.php" class="disabled" style="color:grey"><i class="material-icons icon">monetization_on</i>Contas a Receber</a></li>
     </ul>
     <ul id='dropdownUtilitarios' class='dropdown-content'>
-      <li><a href="usuarios.html"><i class="material-icons icon">assignment_ind</i>Usuários</a></li>
-      <li><a href="projeto.html"><i class="material-icons icon">add_to_queue</i>Projeto</a></li>
-    </ul></div>
+      <li><a href="usuarios.php"><i class="material-icons icon">assignment_ind</i>Usuários</a></li>
+      <li><a href="projeto.php"><i class="material-icons icon">add_to_queue</i>Projeto</a></li>
+    </ul>
+    <ul id='dropdownLogin' class='dropdown-content'>
+      <li><a href="index.php?logout='1'"><i class="material-icons icon">exit_to_app</i>Sair</a></li>
+    </ul>
+    <!-- Fim Dropdown Structure PC -->
 
     <!-- Dropdown Structure Mobile-->
     <ul id='dropdownPessoasMobile' class='dropdown-content'>
-      <li><a href="pf.html"><i class="material-icons icon">account_circle</i>Pessoas Física</a></li>
-      <li><a href="pj.html"><i class="material-icons icon">account_box</i>Pessoas Jurídicas</a></li>
+      <li><a href="pf.php"><i class="material-icons icon">account_circle</i>Pessoas Física</a></li>
+      <li><a href="pj.php"><i class="material-icons icon">account_box</i>Pessoas Jurídicas</a></li>
     </ul>
     <ul id='dropdownAtividadesMobile' class='dropdown-content'>
-      <li><a href="cursos.html"><i class="material-icons icon">event_note</i>Cursos</a></li>
-      <li><a href="livros.html"><i class="material-icons icon">book</i>Livros</a></li>
-      <li><a href="inscr.html"><i class="material-icons icon">assignment</i>Inscrições</a></li>
-      <li><a href="voucher.html"><i class="material-icons icon">style</i>Voucher</a></li>
+      <li><a href="cursos.php"><i class="material-icons icon">event_note</i>Cursos</a></li>
+      <li><a href="livros.php"><i class="material-icons icon">book</i>Livros</a></li>
+      <li><a href="inscr.php"><i class="material-icons icon">assignment</i>Inscrições</a></li>
+      <li><a href="voucher.php"><i class="material-icons icon">style</i>Voucher</a></li>
     </ul>
     <ul id='dropdownFinanceiroMobile' class='dropdown-content'>
-      <li><a href="pagar.html"><i class="material-icons icon">attach_money</i>Contas a Pagar</a></li>
-      <li><a href="receber.html"><i class="material-icons icon">monetization_on</i>Contas a Receber</a></li>
+      <li><a href="pagar.php"><i class="material-icons icon">attach_money</i>Contas a Pagar</a></li>
+      <li><a href="receber.php"><i class="material-icons icon">monetization_on</i>Contas a Receber</a></li>
     </ul>
     <ul id='dropdownUtilitariosMobile' class='dropdown-content'>
-      <li><a href="usuarios.html"><i class="material-icons icon">assignment_ind</i>Usuários</a></li>
-      <li><a href="projeto.html"><i class="material-icons icon">add_to_queue</i>Projeto</a></li>
+      <li><a href="usuarios.php"><i class="material-icons icon">assignment_ind</i>Usuários</a></li>
+      <li><a href="projeto.php"><i class="material-icons icon">add_to_queue</i>Projeto</a></li>
     </ul>
+    <ul id='dropdownLogin' class='dropdown-content'>
+      <li><a href="index.php?logout='1'"><i class="material-icons icon">exit_to_app</i>Sair</a></li>
+    </ul>
+    <!-- Fim Dropdown Structure Mobile-->
 
+    <!-- Breadcrumb, caminho de navegação -->
     <nav class="red lighten-1" role="navigation"> 
       <div class="nav-wrapper container">
-        <div id="breadcrumb" class="col s12">
-          <a href="index.html" class="breadcrumb"><i class="material-icons">home</i>Home</a>
-          <a href="index.html" class="breadcrumb">Projeto</a>
-        </div>
+        <a href="index.php" class="breadcrumb">Home</a>
+        <a href="index.php" class="breadcrumb">Usuários</a>
       </div>
-    </nav>
+    </nav>        
+    <!-- Fim Breadcrumb, caminho de navegação -->
+
     <div class="container">
     <table cellpadding="1">
       <tr class="hoverable">
@@ -93,65 +108,26 @@
         <th>Criado em</th>
         <th>Implementado em</th>
       </tr>
-      <tr class="hoverable">
-        <td>Adicionar Status na criação do CUrso</td>
-        <td><span class="new badge green" data-badge-caption="Não"></span></td>
-        <td>08/04/2018</td>
-        
-      </tr>
-      <tr class="hoverable">
-        <td>Adicionar Projeto.html em todos os Dropdown</td>
-        <td><span class="new badge green" data-badge-caption="Sim"></span></td>
-        <td>07/04/2018</td>
-        <td>07/04/2018</td>
-      </tr>
-      <tr class="hoverable">
-        <td>Fechar NAV em todos os HTMLs</td>
-        <td><span class="new badge green" data-badge-caption="Sim"></span></td>
-        <td>07/04/2018</td>
-        <td>07/04/2018</td>
-      </tr>
-      <tr class="hoverable">
-        <td>Adicionar Search</td>
-        <td><span class="new badge green" data-badge-caption="Sim"></span></td>
-        <td>07/04/2018</td>
-        <td>07/04/2018</td>
-      </tr>
-      <tr class="hoverable">
-        <td>Adicionar Badges nas Situação das Pessoas</td>
-        <td><span class="new badge green" data-badge-caption="Sim"></span></td>
-        <td>07/04/2018</td>
-        <td>07/04/2018</td>
-      </tr>
-      <tr class="hoverable">
-        <td>Colorir botões do Dropdown</td>
-        <td><span class="new badge red" data-badge-caption="Não"></span></td>
-        <td>07/04/2018</td>
-        <td></td>
-      </tr>
-      <tr class="hoverable">
-        <td>Reduzir navegação, fazer com que a de PC de Mobile sejam na mesma tag</td>
-        <td><span class="new badge red" data-badge-caption="Não"></span></td>
-        <td>07/04/2018</td>
-        <td></td>
-      </tr>
-      <tr class="hoverable">
-        <td>Testar table no Modal</td>
-        <td><span class="new badge red" data-badge-caption="Não"></span></td>
-        <td>07/04/2018</td>
-        <td></td>
-      </tr>
-      <tr class="hoverable">
-        <td>Badges nas Categorias</td>
-        <td><span class="new badge green" data-badge-caption="Sim"></span></td>
-        <td>07/04/2018</td>
-        <td>07/04/2018</td>
-      </tr>
-        <td>Ícones do Breadcrumb</td>
-        <td><span class="new badge green" data-badge-caption="Sim"></span></td>
-        <td>07/04/2018</td>
-        <td>07/04/2018</td>
-      </tr>
+      <?php
+        $db = mysqli_connect('localhost', 'root', '', 'dbregistro');
+        if (!$db) { die(mysql_error());}
+        $query = "SELECT funcao, implementada, criadoem, implementadaem FROM tbprojetos ORDER BY criadoem DESC";
+        $result = mysqli_query($db, $query);
+        while ($user = mysqli_fetch_assoc($result)){ ?>
+
+        <tr class="hoverable">
+          <td><?php echo $user['funcao']?></td>
+          <?php
+          if ($user['implementada'] == 0) { echo '<td><span class="new badge red" data-badge-caption="Não"></span></td>';}
+          if ($user['implementada'] == 1) { echo '<td><span class="new badge green" data-badge-caption="Sim"></span></td>';}
+          ?>
+          <td><?php echo $user['criadoem']?></td>
+          <td><?php echo $user['implementadaem']?></td>
+          <td class="hoverable"><a class="btn tooltipped" data-tooltip="Editar" href="#"><i class="material-icons">edit</i></a></td>
+        </tr>
+      <?php   
+      }
+      ?>
     </table>
     </div>
   </div>   
