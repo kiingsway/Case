@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 10-Abr-2018 às 13:41
+-- Generation Time: 11-Abr-2018 às 14:40
 -- Versão do servidor: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -42,9 +42,9 @@ CREATE TABLE `dbusuarios` (
 
 INSERT INTO `dbusuarios` (`id`, `login`, `email`, `senha`, `status`) VALUES
 (5, 'king', 'king@sway.com', '5eac43aceba42c8757b54003a58277b5', 1),
-(6, 'king1', 'kng@a.com', '5eac43aceba42c8757b54003a58277b5', 0),
+(6, 'king1', 'kng@a.com', '5eac43aceba42c8757b54003a58277b5', 1),
 (7, 'giovannafeia', 'giovanna@feia.com', '827ccb0eea8a706c4c34a16891f84e7b', 0),
-(8, 'king2', 'aaa@aaa.com', '5eac43aceba42c8757b54003a58277b5', 1);
+(8, 'king2', 'aaa@aaa.com', '5eac43aceba42c8757b54003a58277b5', 0);
 
 -- --------------------------------------------------------
 
@@ -54,9 +54,9 @@ INSERT INTO `dbusuarios` (`id`, `login`, `email`, `senha`, `status`) VALUES
 
 CREATE TABLE `tbprojetos` (
   `id` int(255) NOT NULL,
-  `funcao` varchar(255) NOT NULL,
+  `funcao` varchar(255) CHARACTER SET utf32 NOT NULL,
   `implementada` int(1) NOT NULL DEFAULT '0',
-  `criadoem` timestamp(6) NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `criadoem` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `implementadaem` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -65,18 +65,11 @@ CREATE TABLE `tbprojetos` (
 --
 
 INSERT INTO `tbprojetos` (`id`, `funcao`, `implementada`, `criadoem`, `implementadaem`) VALUES
-(1, 'Ícones do Breadcrumb', 1, '2018-04-07 03:00:00.000000', '2018-04-07'),
-(3, 'Badges nas Categorias', 1, '2018-04-07 05:00:00.000000', '2018-04-07'),
-(4, 'Adicionar Badges nas Situação das Pessoas', 1, '2018-04-07 06:00:00.000000', '2018-04-07'),
-(5, 'Adicionar Search', 1, '2018-04-07 04:00:00.000000', '2018-04-07'),
-(6, 'Fechar NAV em todos os HTMLs', 1, '2018-04-07 07:00:00.000000', '2018-04-07'),
-(7, 'Adicionar Projeto.html em todos os Dropdown', 1, '2018-04-07 08:00:00.000000', '2018-04-07'),
-(8, 'Testar table no Modal', 0, '2018-04-07 09:00:00.000000', NULL),
-(9, 'Reduzir navegação, fazer com que a de PC de Mobile sejam na mesma tag', 0, '2018-04-07 10:00:00.000000', NULL),
-(10, 'Colorir botões do Dropdown', 0, '2018-04-07 11:00:00.000000', NULL),
-(11, 'Adicionar Status na criação do Curso', 0, '2018-04-08 03:00:00.000000', NULL),
-(13, 'Permissionamento para usuários', 0, '2018-04-10 00:56:00.000000', NULL),
-(15, 'Usar Cards para login e registro', 1, '2018-04-10 02:20:00.000000', '2018-04-10');
+(1, 'Colorir botões do Dropdown', 0, '2018-04-11 10:56:11', NULL),
+(2, 'Botão de editar funcionando', 0, '2018-04-11 10:57:26', NULL),
+(3, 'Botão Status do Usuários funcionando igual o Implementada daqui', 0, '2018-04-11 11:00:45', NULL),
+(4, 'Acentuação aqui', 0, '2018-04-11 11:14:17', NULL),
+(5, 'Sites inseguros, é possível entrar neles sem passar pelo login', 0, '2018-04-11 11:17:05', NULL);
 
 --
 -- Indexes for dumped tables
@@ -108,7 +101,7 @@ ALTER TABLE `dbusuarios`
 -- AUTO_INCREMENT for table `tbprojetos`
 --
 ALTER TABLE `tbprojetos`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

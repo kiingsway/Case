@@ -1,4 +1,4 @@
-<?php include ('sessaoStart.php');?>
+<?php include ('server.php');?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -43,38 +43,29 @@
 				</tr>
 
 				<?php
+				$idbtnStatus;
 				$db = mysqli_connect('localhost', 'root', '', 'dbregistro');
 				if (!$db) { die(mysql_error());}
-				$user_check_query = "SELECT login, email, status FROM dbusuarios";
+				$user_check_query = "SELECT id, login, email, status FROM dbusuarios";
 				$result = mysqli_query($db, $user_check_query);
-				while ($user = mysqli_fetch_assoc($result)){ ?>
-
+				while ($user = mysqli_fetch_assoc($result)){  ?>
+				<form method="POST" action="#">
 				<tr class="hoverable">
-      		<td style="font-weight: bold"><?php echo $user['login']?></td>
-      		<td><?php echo $user['email']?></td>
+      		<td style="font-weight: bold"><?php echo $user['login'];?></td>
+      		<td><?php echo $user['email'];?></td>
       		<?php
-      		if ($user['status'] == 0) { echo '<td class="center hoverable"><a class="btn tooltipped modal-trigger hoverable red" data-tooltip="Offline" href="#modalStatus"><i class="material-icons">cloud_off</i></a></td>';}
-      		if ($user['status'] == 1) { echo '<td class="center hoverable"><a class="btn tooltipped modal-trigger hoverable green" data-tooltip="Online" href="#modalStatus"><i class="material-icons">cloud_done</i></a></td>';}
+      		if ($user['status'] == 0) {echo '<td class="center hoverable"><button name="btnStatusUsuarios" value="'.$user['id'].'" class="btn tooltipped modal-trigger hoverable red" data-tooltip="Offline"><i class="material-icons">cloud_off</i></button></td>';}
+      		if ($user['status'] == 1) {echo '<td class="center hoverable"><button name="btnStatusUsuarios" value="'.$user['id'].'" class="btn tooltipped modal-trigger hoverable green" data-tooltip="Online"><i class="material-icons">cloud_done</i></button></td>';}
+
       		?>
       		<td class="hoverable"><a class="btn tooltipped" data-tooltip="Editar" href="#"><i class="material-icons">edit</i></a></td>
       	</tr>
-      <?php 	
-      }
-      ?>
+      </form>
+<?php } ?>
     </table>
     </div>
     <br>
 		<!-- Fim conteúdo -->
-
-		<!-- Modar Apagar -->
-<div id="modalStatus" class="modal"><div class="modal-content"><div class="row">
-  <div class="input-field col s12"><p>Clique em <i class="tiny material-icons">done</i> para dar certeza que quer mudar o status dele.</p></div>
-  <div class="modal-footer">
-    <a href="#!" class="btn modal-action modal-close"><i class="material-icons">close</i></a>
-    <button class="btn modal-action modal-close" name="btnMudarStatus"><i class="material-icons">done</i></button>
-  </div>
-	</div></div></div>
-  <!-- Fim Modar Apagar -->
 
   <!-- Carrega e insere o rodapé do site -->
     <?php require_once("padroes/footer.php") ?>

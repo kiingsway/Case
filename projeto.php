@@ -1,7 +1,8 @@
-<?php include ('sessaoStart.php');?>
+<?php include ('server.php');?>
 <!DOCTYPE html>
 <html>
   <head>
+    
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <!--Ícones Material Design Google-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -30,6 +31,7 @@
     <!-- Fim Breadcrumb, caminho de navegação -->
 
     <div class="container">
+      <form method="POST" action="#" class="col s12">
     <table cellpadding="1">
       <tr class="hoverable">
         <th>Função</th>
@@ -40,15 +42,15 @@
       <?php
         $db = mysqli_connect('localhost', 'root', '', 'dbregistro');
         if (!$db) { die(mysql_error());}
-        $query = "SELECT funcao, implementada, criadoem, implementadaem FROM tbprojetos ORDER BY criadoem DESC";
+        $query = "SELECT id, funcao, implementada, criadoem, implementadaem FROM tbprojetos ORDER BY criadoem DESC";
         $result = mysqli_query($db, $query);
         while ($user = mysqli_fetch_assoc($result)){ ?>
 
         <tr class="hoverable">
           <td><?php echo $user['funcao']?></td>
           <?php
-          if ($user['implementada'] == 0) { echo '<td><span class="new badge red" data-badge-caption="Não"></span></td>';}
-          if ($user['implementada'] == 1) { echo '<td><span class="new badge green" data-badge-caption="Sim"></span></td>';}
+          if ($user['implementada'] == 0) { echo '<td><Button name="btnImplementado" value="'.$user['id'].'" class="btn-small red"><i class="material-icons">clear</i></Button></td>';}
+          if ($user['implementada'] == 1) { echo '<td><Button name="btnImplementado" value="'.$user['id'].'" class="btn-small green"><i class="material-icons">done</i></Button></td>';}
           ?>
           <td><?php echo $user['criadoem']?></td>
           <td><?php echo $user['implementadaem']?></td>
@@ -57,9 +59,25 @@
       }
       ?>
     </table>
+    </form>
+    <br>
+    <br>
+    <form method="POST" action="#" class="col s12">
+      <div class="row">
+        <div class="input-field col s10">
+          <input type="text" name="txtFuncao">
+          <label>Função</label>
+        </div>
+        <div class="input-field col s2">
+          <button name="btnProjeto" class="btn-large" style="width: 100%"><i class="material-icons">arrow_upward</i></button>
+        </div>
+      </div>
+    </form>
     </div>
   </div>   
 <br>
+
+
 
 <!-- Carrega e insere o rodapé do site -->
     <?php require_once("padroes/footer.php") ?>

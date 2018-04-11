@@ -46,7 +46,7 @@
     						<input type="password" placeholder="Repita a senha" name="senha2">
     					</div>
     					<div class="card-action">
-							<button type="submit" name="register" class="btn">Registre</button>						
+							<button type="submit" name="btnRegister" class="btn">Registre</button>						
 							<a href="login.php" class="btn">Login</a>
     					</div>
     				</div>

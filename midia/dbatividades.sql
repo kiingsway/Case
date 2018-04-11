@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 10-Abr-2018 às 13:40
+-- Generation Time: 11-Abr-2018 às 14:40
 -- Versão do servidor: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -31,6 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `tbcursos` (
   `idCurso` int(10) UNSIGNED NOT NULL,
   `nomeCurso` varchar(255) NOT NULL,
+  `localCurso` varchar(255) NOT NULL,
   `dataInicial` date NOT NULL DEFAULT '0000-00-00',
   `horaInicial` time DEFAULT NULL,
   `dataFinal` date NOT NULL DEFAULT '0000-00-00',
@@ -53,9 +54,10 @@ CREATE TABLE `tbcursos` (
 -- Extraindo dados da tabela `tbcursos`
 --
 
-INSERT INTO `tbcursos` (`idCurso`, `nomeCurso`, `dataInicial`, `horaInicial`, `dataFinal`, `horaFinal`, `vagas`, `cargaHoraria`, `freqMinima`, `categorias`, `valor`, `valorSocio`, `valorParceiro`, `valorNaoQuite`, `tipoVencimento`, `vencimento`, `nDias`, `status`) VALUES
-(0, 'Radiologia', '2018-04-01', '08:00:00', '2018-04-03', '12:00:00', 24, 12, 100, '1,2,3,4,5,6,7,8,9,10', 300, 200, 250, 300, 'limite', '2018-03-29', 2, 1),
-(0, 'Densitometria', '2018-06-01', '07:00:00', '0000-00-00', NULL, 35, 12, 100, '1,2,3,4,5', 200, 200, 200, 200, 'fixo', '2018-05-30', NULL, 1);
+INSERT INTO `tbcursos` (`idCurso`, `nomeCurso`, `localCurso`, `dataInicial`, `horaInicial`, `dataFinal`, `horaFinal`, `vagas`, `cargaHoraria`, `freqMinima`, `categorias`, `valor`, `valorSocio`, `valorParceiro`, `valorNaoQuite`, `tipoVencimento`, `vencimento`, `nDias`, `status`) VALUES
+(0, 'Radiologia', '', '2018-04-01', '08:00:00', '2018-04-03', '12:00:00', 24, 12, 100, '1,2,3,4,5,6,7,8,9,10', 300, 200, 250, 300, 'limite', '2018-03-29', 2, 1),
+(0, 'Densitometria', '', '2018-06-01', '07:00:00', '0000-00-00', NULL, 35, 12, 100, '1,2,3,4,5', 200, 200, 200, 200, 'fixo', '2018-05-30', NULL, 1),
+(0, 'a', 'Presencial', '0000-00-00', '08:00:00', '0000-00-00', '12:00:00', 20, 20, 100, '1,2,3,6,7', 300, 200, 250, 300, '4', '0000-00-00', 2, 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

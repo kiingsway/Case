@@ -1,3 +1,6 @@
+<?php include ('sessaoStart.php');?>
+<?php include ('server.php');?>
+<!DOCTYPE html>
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -34,45 +37,47 @@
 			<form method="POST" action="#" class="col s12">
 				<div class="row">
 					<div class="input-field col s6 hoverable">
-						<input type="text" name="nomeCurso" id="txtNomeCurso" class="validate">
-						<label for="txtNomeCurso">Nome</label>
+						<input type="text" name="txtNomeCurso" class="ative">
+						<label>Nome do Curso</label>
 					</div>
 					<div class="input-field col s6 hoverable">
-						<select>
-							<option value="1" selected>Presencial</option>
-							<option value="2">Online</option>
+						<select name="optLocalCurso">
+							<option value="Presencial" selected>Presencial</option>
+							<option value="Online">Online</option>
 						</select>
+						<span class="helper-text" data-error="wrong" data-success="right">Local do Curso</span>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s3 hoverable">
-						<input type="text" id="inputDataInicialCurso" class="datepicker">
-						<label for="inputDataInicialCurso">Data inicial do curso</label>
+						<input type="text" name="txtDataInicial" class="datepicker">
+						<span class="helper-text" data-error="wrong" data-success="right">Data inicial do curso</span>
+
 					</div>
 					<div class="input-field col s3 hoverable">
-							<input type="text" id="inputHoraInicialCurso" class="timepicker">
-							<label for="inputHoraInicialCurso">Hora inicial do curso</label>
+							<input type="text" name="txtHoraInicial" class="timepicker">
+							<span class="helper-text" data-error="wrong" data-success="right">Hora Inicial do Curso</span>
 					</div>
 					<div class="input-field col s3 hoverable">
-						<input type="text" id="inputDataFinalCurso" class="datepicker">
-						<label for="inputDataFinalCurso">Data final do curso</label>
+						<input type="text" name="txtDataFinal" class="datepicker">
+						<span class="helper-text" data-error="wrong" data-success="right">Data Final do Curso</span>
 					</div>
 					<div class="input-field col s3 hoverable">
-							<input type="text" id="inputHoraFinalCurso" class="timepicker">
-							<label for="inputHoraFinalCurso">Hora final do curso</label>
+							<input type="text" name="txtHoraFinal" class="timepicker">
+							<span class="helper-text" data-error="wrong" data-success="right">Hora Final do Curso</span>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s4 hoverable">
-						<input type="number" id="inputVagas">
-							<label for="inputVagas">Vagas</label>
+						<input type="number" name="txtVagas">
+						<label>Vagas</label>
 					</div>
 					<div class="input-field col s4 hoverable">
-							<input type="number" id="inputCarga">
-							<label for="inputCarga">Carga horária</label>
+							<input type="number" name="txtCargaHoraria">
+							<label>Carga Horária</label>
 					</div>
 					<div class="input-field col s4 hoverable">
-						<input type="number" id="inputFrequenciaMinima">
+						<input type="number" name="txtFreqMinima">
 							<label for="inputFrequenciaMinima">Frequência Mínima (%)</label>
 					</div>
 				</div>
@@ -89,13 +94,13 @@
 								</th>
 								</tr>
 								<tr>
-									<td class="hoverable"><label><input type="checkbox"/><span>Aperfeiçoando</span></label></td>
-									<td class="hoverable"><label><input type="checkbox"/><span>Aspirante</span></label></td>
-									<td class="hoverable"><label><input type="checkbox"/><span>Residente</span></label></td>
+									<td class="hoverable"><label><input type="checkbox" name="cbxCategorias[]" value="1"/><span>Aperfeiçoando</span></label></td>
+									<td class="hoverable"><label><input type="checkbox" name="cbxCategorias[]" value="2"/><span>Aspirante</span></label></td>
+									<td class="hoverable"><label><input type="checkbox" name="cbxCategorias[]" value="3"/><span>Residente</span></label></td>
 								</tr>
 								<tr>
-									<td class="hoverable"><label><input type="checkbox"/><span>Coligado</span></label></td>
-									<td class="hoverable"><label><input type="checkbox"/><span>Titular</span></label></td>
+									<td class="hoverable"><label><input type="checkbox" name="cbxCategorias[]"  value="4"/><span>Coligado</span></label></td>
+									<td class="hoverable"><label><input type="checkbox" name="cbxCategorias[]" value="5"/><span>Titular</span></label></td>
 									<td></td>
 								</tr>
 								<tr>
@@ -107,29 +112,29 @@
 								</th>
 								</tr>
 								<tr>
-									<td class="hoverable"><label><input type="checkbox"/><span>Entidades Parceiras</span></label></td>
-									<td class="hoverable"><label><input type="checkbox"/><span>Estudante de Medicina</span></label></td>
-									<td class="hoverable"><label><input type="checkbox"/><span>Médico</span></label></td>
+									<td class="hoverable"><label><input type="checkbox" name="cbxCategorias[]" value="6"/><span>Entidades Parceiras</span></label></td>
+									<td class="hoverable"><label><input type="checkbox" name="cbxCategorias[]" value="7"/><span>Estudante de Medicina</span></label></td>
+									<td class="hoverable"><label><input type="checkbox" name="cbxCategorias[]" value="8"/><span>Médico</span></label></td>
 								</tr>
 								<tr>
-									<td class="hoverable"><label><input type="checkbox"/><span>Técnico e Tecnólogo em radiologia</span></label></td>
-									<td class="hoverable" colspan="2"><label><input type="checkbox"/><span>Físicos, Biólogos, Radiofarmacêuticos, Químicos e Biomédicos em Radiologia</span></label></td>
+									<td class="hoverable"><label><input type="checkbox" name="cbxCategorias[]" value="9"/><span>Técnico e Tecnólogo em radiologia</span></label></td>
+									<td class="hoverable" colspan="2"><label><input type="checkbox" name="cbxCategorias[]" value="10"/><span>Físicos, Biólogos, Radiofarmacêuticos, Químicos e Biomédicos em Radiologia</span></label></td>
 								</tr>
 						</table>
 					</div>
 					<div class="input-field col s12">
 						<table>
 							<tr>
-								<td class="hoverable"><input type="number" name="valorCurso" id="txtValorCurso" class="validate"><label for="txtValorCurso">Valor</label></td>
-								<td class="hoverable"><input type="number" name="valorSocioCurso" id="txtValorSocioCurso" class="validate"><label for="txtValorSocioCurso">Valor Sócio</label></td>
-								<td class="hoverable"><input type="number" name="valorParceiroCurso" id="txtValorParceiroCurso" class="validate"><label for="txtValorParceiroCurso">Valor Parceiro</label></td>
-								<td class="hoverable"><input type="number" name="valorNaoSocioCurso" id="txtValorNaoSocioCurso" class="validate"><label for="txtValorNaoSocioCurso">Valor Não Quite</label></td>
+								<td class="hoverable"><input type="number" name="txtValor" id="txtValorCurso"><label for="txtValorCurso">Valor</label></td>
+								<td class="hoverable"><input type="number" name="txtValorSocio" id="txtValorSocioCurso" class="validate"><label for="txtValorSocioCurso">Valor Sócio</label></td>
+								<td class="hoverable"><input type="number" name="txtValorParceiro" id="txtValorParceiroCurso"><label for="txtValorParceiroCurso">Valor Parceiro</label></td>
+								<td class="hoverable"><input type="number" name="txtValorNaoQuite" id="txtValorNaoSocioCurso"><label for="txtValorNaoSocioCurso">Valor Não Quite</label></td>
 							</tr>
 						</table>
 					</div>
 						<div class="row">
 							<div class="input-field col s6 hoverable">
-								<select>
+								<select name="optTipoVencimento">
 									<option value="1" selected>Fixo</option>
 									<option value="2">Inscrição</option>
 									<option value="3">Inscrição + n dias</option>
@@ -137,14 +142,28 @@
 								</select>
 							</div>
 							<div class="input-field col s3 hoverable">
-								<input type="text" class="datepicker" name="vencimentoCurso" id="txtVencimentoCurso"><label for="txtVencimentoCurso">Vencimento</label>
+								<input type="text" class="datepicker" name="txtVencimento" id="txtVencimentoCurso"><label for="txtVencimentoCurso">Vencimento</label>
 							</div>
 							<div class="input-field col s3 hoverable">
-								<input type="number" name="ndiasCurso" id="txtNdiasCurso"><label for="txtNdiasCurso">N dias</label>
+								<input type="number" name="txtNdias" id="txtNdiasCurso"><label for="txtNdiasCurso">N dias</label>
 							</div>
 						</div>
 						<div>
-							<button class="waves-effect waves-light btn-large" type="submit"><i class="material-icons">add</i>Criar curso</button>
+							 <!-- Switch -->
+						  <div class="switch">
+						  	Status: 
+						    <label>
+						      Off
+						      <input name="swcStatus" value="1" type="checkbox">
+						      <span class="lever"></span>
+						      On
+						    </label>
+						  </div>
+
+						</div>
+						<br>
+						<div>
+							<button class="waves-effect waves-light btn-large" type="submit" name="btnCriarCurso"><i class="material-icons">add</i>Criar curso</button>
 						</div>
 				</div>
 			</form>
