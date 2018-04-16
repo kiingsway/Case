@@ -1,4 +1,5 @@
 <?php include ('server.php');?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -38,6 +39,7 @@
 				<tr>
 					<th>Login</th>
 					<th>E-mail</th>
+					<th>Permissões</th>
 					<th>Status</th>
 					<th>Opções</th>
 				</tr>
@@ -46,21 +48,33 @@
 				$idbtnStatus;
 				$db = mysqli_connect('localhost', 'root', '', 'dbregistro');
 				if (!$db) { die(mysql_error());}
-				$user_check_query = "SELECT id, login, email, status FROM dbusuarios";
+				$user_check_query = "SELECT id, login, email, permissoes, status FROM dbusuarios";
 				$result = mysqli_query($db, $user_check_query);
 				while ($user = mysqli_fetch_assoc($result)){  ?>
 				<form method="POST" action="#">
 				<tr class="hoverable">
       		<td style="font-weight: bold"><?php echo $user['login'];?></td>
       		<td><?php echo $user['email'];?></td>
+      		<td><?php
+                $perms = array('Sem permissões','Pessoas Física','Pessoas Jurídicas','Cursos','Livros','Inscrições','Voucher','Contas a Pagar','Contas a Receber',' Usuários','Projeto');
+                $permissoes = explode(',',$user['permissoes']);
+
+                foreach ($permissoes as &$value) {
+                  echo '<span data-badge-caption="'.$perms[$value].'" class="new badge red darken-1"></span> ';
+                  if ($value%2 == 0) echo "<br>";
+                }
+                ?>
+            </td>
       		<?php
       		if ($user['status'] == 0) {echo '<td class="center hoverable"><button name="btnStatusUsuarios" value="'.$user['id'].'" class="btn tooltipped modal-trigger hoverable red" data-tooltip="Offline"><i class="material-icons">cloud_off</i></button></td>';}
       		if ($user['status'] == 1) {echo '<td class="center hoverable"><button name="btnStatusUsuarios" value="'.$user['id'].'" class="btn tooltipped modal-trigger hoverable green" data-tooltip="Online"><i class="material-icons">cloud_done</i></button></td>';}
 
       		?>
-      		<td class="hoverable"><a class="btn tooltipped" data-tooltip="Editar" href="#"><i class="material-icons">edit</i></a></td>
+      		</form>
+      		<form method="POST" action="editarUsuario.php">
+      		<td class="hoverable"><button class="btn tooltipped" data-tooltip="Editar" name="btnEditarUsuario" <?php echo 'value="'.$user['id'].'"' ?>><i class="material-icons">edit</i></button></td>
+      		</form>
       	</tr>
-      </form>
 <?php } ?>
     </table>
     </div>

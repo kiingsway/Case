@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 11-Abr-2018 às 14:40
+-- Generation Time: 16-Abr-2018 às 03:11
 -- Versão do servidor: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -33,6 +33,7 @@ CREATE TABLE `dbusuarios` (
   `login` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `senha` varchar(255) NOT NULL,
+  `permissoes` varchar(255) NOT NULL DEFAULT '0' COMMENT '1 - PF 2 - PJ 3 - Cursos 4 - Livros 5 - Inscrições 6 - Voucher 7 - Contas a Pagar 8 - A Receber 9 - Usuários 10 - Projetos',
   `status` int(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -40,11 +41,11 @@ CREATE TABLE `dbusuarios` (
 -- Extraindo dados da tabela `dbusuarios`
 --
 
-INSERT INTO `dbusuarios` (`id`, `login`, `email`, `senha`, `status`) VALUES
-(5, 'king', 'king@sway.com', '5eac43aceba42c8757b54003a58277b5', 1),
-(6, 'king1', 'kng@a.com', '5eac43aceba42c8757b54003a58277b5', 1),
-(7, 'giovannafeia', 'giovanna@feia.com', '827ccb0eea8a706c4c34a16891f84e7b', 0),
-(8, 'king2', 'aaa@aaa.com', '5eac43aceba42c8757b54003a58277b5', 0);
+INSERT INTO `dbusuarios` (`id`, `login`, `email`, `senha`, `permissoes`, `status`) VALUES
+(5, 'king', 'king@sway.com', '5eac43aceba42c8757b54003a58277b5', '1,2,3,4,5,6,7,8,9,10', 1),
+(6, 'king1', 'kng@a.com', '5eac43aceba42c8757b54003a58277b5', '1,2', 1),
+(7, 'giovannafeia', 'giovanna@feia.com', '827ccb0eea8a706c4c34a16891f84e7b', '0', 0),
+(8, 'king2', 'aaa@aaa.com', '5eac43aceba42c8757b54003a58277b5', '0', 0);
 
 -- --------------------------------------------------------
 
