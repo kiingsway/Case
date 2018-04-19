@@ -180,12 +180,15 @@
 			$id = $_POST['btnEditarUsuario'];
 			$login = $_POST['txtLogin'];
 			$email = $_POST['txtEmail'];
-			$cbxPermissoes = $_POST['cbxPermissoes'];
-
-			foreach ($cbxPermissoes as $i => $valor) {
-			if($i == 0) $permissoes = $valor;
-			else $permissoes .= ','.$valor;
+			
+			if (isset($_POST['cbxPermissoes'])) {
+				$cbxPermissoes = $_POST['cbxPermissoes'];
+				foreach ($cbxPermissoes as $i => $valor) {
+				if($i == 0) $permissoes = $valor;
+				else $permissoes .= ','.$valor;
 			$i++;}
+			} else $permissoes = 0;
+
 			if ($_POST['cbxStatus'] == 'on' ) $status = 1;
 			if ($_POST['cbxStatus'] == NULL ) $status = 0;
 
