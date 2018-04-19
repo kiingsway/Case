@@ -171,4 +171,26 @@
 			WHERE id = '".$_POST['btnStatusUsuarios']."';";
 			mysqli_query($db, $query) or die('Erro: '.mysqli_error($db));
 		}
+
+
+
+		if (isset($_POST['btnEditarUsuario'])) {
+
+			$db = mysqli_connect('localhost', 'root', '', 'dbregistro');
+			$id = $_POST['btnEditarUsuario'];
+			$login = $_POST['txtLogin'];
+			$email = $_POST['txtEmail'];
+			$cbxPermissoes = $_POST['cbxPermissoes'];
+
+			foreach ($cbxPermissoes as $i => $valor) {
+			if($i == 0) $permissoes = $valor;
+			else $permissoes .= ','.$valor;
+			$i++;}
+			if ($_POST['cbxStatus'] == 'on' ) $status = 1;
+			if ($_POST['cbxStatus'] == NULL ) $status = 0;
+
+			if (isset($_POST['status'])) $status = 1;
+			$query = "UPDATE dbusuarios SET login = '$login', email = '$email', permissoes = '$permissoes', status = '$status' WHERE id = $id";
+			mysqli_query($db, $query);
+		}
 ?>

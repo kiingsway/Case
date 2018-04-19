@@ -72,7 +72,7 @@
       		?>
       		</form>
       		<form method="POST" action="editarUsuario.php">
-      		<td class="hoverable"><button class="btn tooltipped" data-tooltip="Editar" name="btnEditarUsuario" <?php echo 'value="'.$user['id'].'"' ?>><i class="material-icons">edit</i></button></td>
+      		<td class="hoverable"><button class="btn tooltipped" data-tooltip="Editar" name="btnEditar" <?php echo 'value="'.$user['id'].'"' ?>><i class="material-icons">edit</i></button></td>
       		</form>
       	</tr>
 <?php } ?>
