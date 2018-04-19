@@ -38,6 +38,7 @@
     <main>
     <!-- Conteúdo em geral -->
     <br><div class="container center">
+      <a class="waves-effect waves-light btn-large" href="addpf.php"><i class="material-icons left">add</i>Adicionar associado</a>
       <a class="btn-floating btn-large waves-effect waves-light red modal-trigger hoverable tooltipped" data-position="top" data-tooltip="Busca avançada" href="#modal1"><i class="material-icons">zoom_in</i></a>
       <a class="btn-floating btn-large waves-effect waves-light red hoverable tooltipped" data-position="top" data-tooltip="Marcar todos"><i class="material-icons">check_circle</i></a>
       <a class="btn-floating btn-large waves-effect waves-light red hoverable modal-trigger tooltipped" data-position="top" data-tooltip="Apagar" href="#modalApagar"><i class="material-icons">delete_forever</i></a><br><br>

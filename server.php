@@ -175,7 +175,6 @@
 
 
 		if (isset($_POST['btnEditarUsuario'])) {
-
 			$db = mysqli_connect('localhost', 'root', '', 'dbregistro');
 			$id = $_POST['btnEditarUsuario'];
 			$login = $_POST['txtLogin'];
@@ -188,12 +187,31 @@
 				else $permissoes .= ','.$valor;
 			$i++;}
 			} else $permissoes = 0;
-
-			if ($_POST['cbxStatus'] == 'on' ) $status = 1;
-			if ($_POST['cbxStatus'] == NULL ) $status = 0;
-
-			if (isset($_POST['status'])) $status = 1;
+			if (isset($_POST['cbxStatus'])) $status = 1; else $status = 0;
 			$query = "UPDATE dbusuarios SET login = '$login', email = '$email', permissoes = '$permissoes', status = '$status' WHERE id = $id";
 			mysqli_query($db, $query);
 		}
+
+		if (isset($_POST['btnAddAssociado'])) {
+			$db = mysqli_connect('localhost', 'root', '', 'dbpessoas');
+			$nomePF = $_POST['txtNomePF'];
+			$RGPF = $_POST['txtRGPF'];
+			$CPFPF = $_POST['txtCPFPF'];
+			$nascimentoPF = $_POST['txtNascimentoPF'];
+			$cidadePF = $_POST['txtCidadePF'];
+			$estadoPF = $_POST['txtEstadoPF'];
+			$telefonePF = $_POST['txtTelefonePF'];
+			$celularPF = $_POST['txtCelularPF'];
+			$emailPF = $_POST['txtEmailPF'];
+			$categoriaPF = $_POST['txtCategoriaPF'];
+			$situacaoPF = $_POST['txtSituacaoPF'];
+			$senhaPF = $_POST['txtSenhaPF'];
+			
+			$query = "INSERT INTO pf (nome, rg, cpf, nascimento, categoria, situacao, cidade, estado, telefone, celular, email, senha, cadastroaqui) VALUES ('".$nomePF."', '".$RGPF."', '".$CPFPF."', '".$nascimentoPF."', '".$categoriaPF."', '".$situacaoPF."', '".$cidadePF."', '".$estadoPF."', '".$telefonePF."', '".$celularPF."', '".$emailPF."', '".$senhaPF."', NOW())";
+			echo $query;
+			echo "<script>alert('".$query."')</script>";
+
+			mysqli_query($db, $query);
+		}
 ?>
+
