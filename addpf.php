@@ -79,11 +79,26 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s4 hoverable">
-                            <input type="text" name="txtCategoriaPF">
-                            <label>Categoria</label>
+                            <select name="cbCategoriaPF">
+                                <option value="Aperfeiçoando" selected>Aperfeiçoando</option>
+                                <option value="Residente">Residente</option>
+                                <option value="Coligado">Coligado</option>
+                                <option value="Aspirante">Aspirante</option>
+                                <option value="Titular">Titular</option>
+                                <option value="Estudante de Medicina">Estudante de Medicina</option>
+                                <option value="Médico">Médico</option>
+                                <option value="Físicos, Biólogos">Físicos, Biólogos</option>
+                                <option value="Técnicos e Tecnólogos">Técnicos e Tecnólogos</option>
+                                <option value="Entidades Parceiras">Entidades Parceiras</option>
+                            </select>
+                            <label>Categorias</label>
                         </div>
                         <div class="input-field col s4 hoverable">
-                            <input type="text" name="txtSituacaoPF">
+                            <select name="cbSituacaoPF">
+                                <option value="0" selected>Desligado</option>
+                                <option value="1">Aguardando Ativação</option>
+                                <option value="2">Ativo</option>
+                            </select>
                             <label>Situação</label>
                         </div>
                         <div class="input-field col s4 hoverable">

@@ -203,10 +203,10 @@
 			$telefonePF = $_POST['txtTelefonePF'];
 			$celularPF = $_POST['txtCelularPF'];
 			$emailPF = $_POST['txtEmailPF'];
-			$categoriaPF = $_POST['txtCategoriaPF'];
-			$situacaoPF = $_POST['txtSituacaoPF'];
-			$senhaPF = $_POST['txtSenhaPF'];
-			
+			$categoriaPF = $_POST['cbCategoriaPF'];
+			$situacaoPF = $_POST['cbSituacaoPF'];
+			$senhaPF = md5($_POST['txtSenhaPF']);
+
 			$query = "INSERT INTO pf (nome, rg, cpf, nascimento, categoria, situacao, cidade, estado, telefone, celular, email, senha, cadastroaqui) VALUES ('".$nomePF."', '".$RGPF."', '".$CPFPF."', '".$nascimentoPF."', '".$categoriaPF."', '".$situacaoPF."', '".$cidadePF."', '".$estadoPF."', '".$telefonePF."', '".$celularPF."', '".$emailPF."', '".$senhaPF."', NOW())";
 			echo $query;
 			echo "<script>alert('".$query."')</script>";
