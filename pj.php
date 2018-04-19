@@ -32,6 +32,7 @@
     <!-- Carrega e insere a função de pesquisa -->
     <?php require_once ("padroes/search.php"); ?>
 
+    <main>
     <!-- Conteúdo em geral -->
     <br><div class="container center">
       <a class="btn-floating btn-large waves-effect waves-light red modal-trigger hoverable tooltipped" data-position="top" data-tooltip="Busca avançada" href="#modal1"><i class="material-icons">zoom_in</i></a>
@@ -66,6 +67,7 @@
     </table>
     </div>
     <!-- Fim conteúdo -->
+  </main>
 
     <!-- Modal Structure, para buscas avançadas -->
     <div id="modal1" class="modal"><div class="modal-content"><div class="row">

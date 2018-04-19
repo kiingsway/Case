@@ -32,6 +32,7 @@
     <!-- Carrega e insere a função de pesquisa -->
     <?php require_once ("padroes/search.php"); ?>
 
+    <main>
     <!-- Conteúdo em geral -->
     <br><div class="container center">
       <a class="waves-effect waves-light btn-large" href="criarcurso.php"><i class="material-icons left">add</i>Criar curso</a>
@@ -93,6 +94,7 @@
             </table>
           </div>
     <!-- Fim conteúdo -->
+  </main>
 
     <!-- Modal Structure, para buscas avançadas -->
     <div id="modal1" class="modal"><div class="modal-content"><div class="row">

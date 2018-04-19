@@ -30,7 +30,8 @@
     </nav>        
     <!-- Fim Breadcrumb, caminho de navegação -->
 
-    <div class="container">
+    <main>
+    <div class="container" style="overflow-x:auto;">
       <form method="POST" action="#" class="col s12">
     <table cellpadding="1">
       <tr class="hoverable">
@@ -38,6 +39,7 @@
         <th>Implementada?</th>
         <th>Criado em</th>
         <th>Implementado em</th>
+        <th>Opções</th>
       </tr>
       <?php
         $db = mysqli_connect('localhost', 'root', '', 'dbregistro');
@@ -54,6 +56,8 @@
           ?>
           <td><?php echo $user['criadoem']?></td>
           <td><?php echo $user['implementadaem']?></td>
+          <td><form method="POST" action="editarProjeto.php"><button name="btnEditProjeto" value=<?php echo $user['id']; ?> class="btn-small"><i class="material-icons">edit</i></button></form>
+            <button name="btnDeleteProjeto" value=<?php echo $user['id']; ?> class="btn-small"><i class="material-icons">delete</i> </td>
         </tr>
       <?php   
       }
@@ -76,6 +80,7 @@
     </div>
   </div>   
 <br>
+</main>
 
 
 

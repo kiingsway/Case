@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+<head>
+	<style> body {display: flex;min-height: 100vh;flex-direction: column;}
+	main {flex: 1 0 auto;}</style></head>
 <body>
 	<!--Footer, Rodapé-->
 	<footer class="page-footer orange">

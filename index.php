@@ -40,6 +40,7 @@
 				</h3>
 			</div>
 		<?php endif ?>
+		<main></main>
 
     <!-- Carrega e insere o rodapé do site -->
     <?php require_once("padroes/footer.php") ?>

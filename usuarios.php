@@ -33,8 +33,9 @@
     <!-- Carrega e insere a função de pesquisa -->
     <?php require_once ("padroes/search.php"); ?>
 
+    	<main>
 		<!-- Conteúdo -->
-		<div class="container">
+		<div class="container" style="overflow-x:auto;">
 			<table id="table" class="centered">
 				<tr>
 					<th>Login</th>
@@ -80,6 +81,7 @@
     </div>
     <br>
 		<!-- Fim conteúdo -->
+	</main>
 
   <!-- Carrega e insere o rodapé do site -->
     <?php require_once("padroes/footer.php") ?>

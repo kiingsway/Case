@@ -19,6 +19,8 @@
 			::placeholder {color: #e0e0e0 ;opacity: 1; /* Firefox */}
 			:-ms-input-placeholder { /* Internet Explorer 10-11 */color: #e0e0e0 ;}
 			::-ms-input-placeholder { /* Microsoft Edge */color: #e0e0e0 ;}
+			body {display: flex;min-height: 100vh;flex-direction: column;}
+      		main {flex: 1 0 auto;}
 		</style>
 	</head>
 	<body>
@@ -31,6 +33,7 @@
     </nav>
     <!-- Fim navegação do cabeçalho -->
 
+    <main>
     <!-- Login em Card -->
     <div class="container">
     	<div class="row">
@@ -54,6 +57,7 @@
     		</form>
     	</div>
     </div>
+</main>
 
 		<!-- Footer ou Rodapé -->
 	    <footer class="page-footer orange">
