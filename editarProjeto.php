@@ -50,11 +50,11 @@
 			<form method="POST" action="usuarios.php" class="col s12">
 				<div class="row">
 					<div class="input-field col s1">
-						<input disabled type="text" name="txtId" value=<?php echo $user['id']; ?> class="ative">
+						<input disabled type="text" name="txtId" value=<?php echo "'".$user['id']."'"; ?> class="ative">
 						<label>id</label>
 					</div>
 					<div class="input-field col s11 hoverable">
-						<input type="text" name="txtFuncao" value=<?php echo $funcaoProjeto."aaa"; ?> >
+						<input type="text" name="txtFuncao" value=<?php echo "'".$funcaoProjeto."'"; ?> >
 						<label>Função</label>
 					</div>
 				</div>

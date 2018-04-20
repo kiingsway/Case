@@ -55,7 +55,7 @@
           <?php
           $db = mysqli_connect('localhost', 'root', '', 'dbpessoas');
           if (!$db) { die(mysql_error());}
-          $user_check_query = "SELECT nome, rg, cpf, nascimento, categoria, situacao, cidade, estado, telefone, celular, email, cadastroaqui FROM pf";
+          $user_check_query = "SELECT id, nome, rg, cpf, nascimento, categoria, situacao, cidade, estado, telefone, celular, email, cadastroaqui FROM pf";
           $result = mysqli_query($db, $user_check_query);
           while ($user = mysqli_fetch_assoc($result)){ ?>
 
@@ -67,8 +67,9 @@
             if ($user['situacao'] == 2) { echo '<span data-badge-caption="Ativo" class="new badge green">'; } ?></td>
             <td><b>CPF:</b> <?php echo $user['cpf'] ?><br><b>RG: </b><?php echo $user['rg'] ?><br><b>Nascimento: </b><?php echo $user['nascimento'] ?><br><b>Cadastro aqui: </b><?php echo $user['cadastroaqui'] ?></td>
             <td><b>Cidade:</b> <?php echo $user['cidade'] ?><br><b>Telefone:</b> <?php echo $user['telefone'] ?><br><?php echo $user['celular'] ?><br><b>E-mail: </b><?php echo $user['email'] ?><br></td>
-            <td class="hoverable"><a class="btn tooltipped" data-tooltip="Editar" href="#"><i class="material-icons">edit</i></a>
-              <a class="btn tooltipped" data-tooltip="Acessar estação" href="#"><i class="material-icons">open_in_browser</i></a></td>
+            <form method="POST" action="editarpf.php">
+            <td class="hoverable"><button name="btnEditarPF" class="btn tooltipped" data-tooltip="Editar" <?php echo 'value="'.$user['id'].'"' ?> href="#"><i class="material-icons">edit</i></button>
+              <a class="btn tooltipped" data-tooltip="Acessar estação" href="#"><i class="material-icons">open_in_browser</i></a></td></form>
           </tr>
 
           

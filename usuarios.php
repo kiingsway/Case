@@ -23,11 +23,11 @@
 
     <!-- Breadcrumb, caminho de navegação -->
     <nav class="red lighten-1" role="navigation"> 
-      <div class="nav-wrapper container">
-        <a href="index.php" class="breadcrumb"><i class="material-icons">home</i>Home</a>
-				<a class="breadcrumb">Usuários</a>
-			</div>
-		</nav>	  		
+		<div class="nav-wrapper container">
+        	<a href="index.php" class="breadcrumb"><i class="material-icons">home</i>Home</a>
+			<a class="breadcrumb">Usuários</a>
+		</div>
+	</nav>	  		
 		<!-- Fim Breadcrumb, caminho de navegação -->
 
     <!-- Carrega e insere a função de pesquisa -->

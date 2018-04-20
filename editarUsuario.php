@@ -49,11 +49,11 @@
 			<form method="POST" action="usuarios.php" class="col s12">
 				<div class="row">
 					<div class="input-field col s1">
-						<input disabled type="text" name="txtId" value=<?php echo $user['id'] ?> class="ative">
+						<input disabled type="text" name="txtId" value=<?php echo "'".$user['id']."'" ?> class="ative">
 						<label>id</label>
 					</div>
 					<div class="input-field col s3 hoverable">
-						<input type="text" name="txtLogin" value=<?php echo $user['login'] ?> class="ative">
+						<input type="text" name="txtLogin" value=<?php echo "'".$user['login']."'" ?> class="ative">
 						<label>Login</label>
 					</div>
 					<div class="input-field col s2 hoverable">
@@ -65,7 +65,7 @@
 						<label>Repita a senha</label>
 					</div>
 					<div class="input-field col s4 hoverable">
-						<input type="text" name="txtEmail" value=<?php echo $user['email'] ?> class="ative">
+						<input type="text" name="txtEmail" value=<?php echo "'".$user['email']."'" ?> class="ative">
 						<label>E-mail</label>
 					</div>
 				</div>
@@ -124,7 +124,7 @@
 						</div>
 						<br>
 						<div>
-							<button class="waves-effect waves-light btn-large" type="submit" name="btnEditarUsuario" value=<?php echo $user['id'] ?>><i class="material-icons">edit</i>Editar usuário</button>
+							<button class="waves-effect waves-light btn-large" type="submit" name="btnEditarUsuario" value=<?php echo "'".$user['id']."'" ?>><i class="material-icons">edit</i>Editar usuário</button>
 						</div>
 				</div>
 			</form>
