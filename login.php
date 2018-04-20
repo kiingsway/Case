@@ -21,6 +21,16 @@
 			::-ms-input-placeholder { /* Microsoft Edge */color: #e0e0e0 ;}
 			body {display: flex;min-height: 100vh;flex-direction: column;}
       		main {flex: 1 0 auto;}
+      		#mydiv {
+		    position:fixed;
+		    top: 50%;
+		    left: 50%;
+		    width:30em;
+		    height:18em;
+		    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+		    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+		    border: 1px solid #ccc;
+    		background-color: #f3f3f3;}
 		</style>
 
 	</head>
@@ -36,11 +46,11 @@
 
     <main>
     <!-- Login em Card -->
-    <div class="container">
+    <div class="container center">
     	<div class="row">
     		<form class="col s12" method="POST" action="login.php">
     			<div class="col s12 m4">
-    				<div class="card orange darken-2 hoverable">
+    				<div id="mydiv" class="card orange darken-2 hoverable">
     					<div class="card-content white-text input-field">
     						<span class="card-title">Login</span>
     						<?php include('errors.php');?>

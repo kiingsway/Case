@@ -208,8 +208,25 @@
 			$senhaPF = md5($_POST['txtSenhaPF']);
 
 			$query = "INSERT INTO pf (nome, rg, cpf, nascimento, categoria, situacao, cidade, estado, telefone, celular, email, senha, cadastroaqui) VALUES ('".$nomePF."', '".$RGPF."', '".$CPFPF."', '".$nascimentoPF."', '".$categoriaPF."', '".$situacaoPF."', '".$cidadePF."', '".$estadoPF."', '".$telefonePF."', '".$celularPF."', '".$emailPF."', '".$senhaPF."', NOW())";
-			echo $query;
-			echo "<script>alert('".$query."')</script>";
+			mysqli_query($db, $query);
+		}
+
+		if (isset($_POST['btnAddAssociadoPJ'])) {
+			$db = mysqli_connect('localhost', 'root', '', 'dbpessoas');
+			$nomeFantasiaPJ = $_POST['txtNomeFantasiaPJ'];
+			$razaoSocialPJ = $_POST['txtRazaoSocialPJ'];
+			$CNPJPJ = $_POST['txtCNPJPJ'];
+			$cidadePJ = $_POST['txtCidadePJ'];
+			$estadoPJ = $_POST['txtEstadoPJ'];
+			$telefonePJ = $_POST['txtTelefonePJ'];
+			$celularPJ = $_POST['txtCelularPJ'];
+			$emailPJ = $_POST['txtEmailPJ'];
+			$sitePJ = $_POST['txtSitePJ'];
+			$senhaPJ = md5($_POST['txtSenhaPJ']);
+			if (isset($_POST['cbxSituacaoPJ'])) $situacaoPJ = 1; else $situacaoPJ = 0;
+			//echo $situacaoPJ . "<br>";
+
+			$query = "INSERT INTO pj (nome_fantasia, razao_social, cnpj, cidade, estado, telefone1, telefone2, email, site, senha, situacao, cadastroaqui) VALUES ('".$nomeFantasiaPJ."', '".$razaoSocialPJ."', '".$CNPJPJ."', '".$cidadePJ."', '".$estadoPJ."', '".$telefonePJ."', '".$celularPJ."', '".$emailPJ."', '".$sitePJ."', '".$senhaPJ."', '".$situacaoPJ."', NOW())";
 
 			mysqli_query($db, $query);
 		}

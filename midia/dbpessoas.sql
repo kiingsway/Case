@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 16-Abr-2018 às 03:11
+-- Generation Time: 20-Abr-2018 às 13:49
 -- Versão do servidor: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -72,16 +72,19 @@ CREATE TABLE `pj` (
   `cadastroaqui` date NOT NULL,
   `telefone2` varchar(255) DEFAULT NULL,
   `cidade` varchar(255) NOT NULL,
-  `estado` varchar(2) NOT NULL
+  `estado` varchar(2) NOT NULL,
+  `senha` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `pj`
 --
 
-INSERT INTO `pj` (`id`, `nome_fantasia`, `razao_social`, `cnpj`, `site`, `email`, `telefone1`, `situacao`, `cadastroaqui`, `telefone2`, `cidade`, `estado`) VALUES
-(1, 'Marco\'s', 'Empresa de Desenvolvimento do Marcos', '53.572.393/0001-74', 'https://github.com/kiingsway', 'king@sway.com', '(11) 3576-4805', 1, '2018-04-09', '(11) 98697-3102', 'São Paulo', 'SP'),
-(2, 'Gael e Enrico Pães e Doces', 'Gael e Enrico Pães e Doces ME', '51.251.532/0001-32', 'www.gaeleenricopaesedocesme.com.br', 'faleconosco@gaeleenricopaesedocesme.com.br', '(11) 3596-4471', 0, '2018-04-09', '(11) 98326-8421', 'Belo Horizonte', 'MG');
+INSERT INTO `pj` (`id`, `nome_fantasia`, `razao_social`, `cnpj`, `site`, `email`, `telefone1`, `situacao`, `cadastroaqui`, `telefone2`, `cidade`, `estado`, `senha`) VALUES
+(1, 'Marco\'s', 'Empresa de Desenvolvimento do Marcos', '53.572.393/0001-74', 'https://github.com/kiingsway', 'king@sway.com', '(11) 3576-4805', 1, '2018-04-09', '(11) 98697-3102', 'São Paulo', 'SP', ''),
+(2, 'Gael e Enrico Pães e Doces', 'Gael e Enrico Pães e Doces ME', '51.251.532/0001-32', 'www.gaeleenricopaesedocesme.com.br', 'faleconosco@gaeleenricopaesedocesme.com.br', '(11) 3596-4471', 0, '2018-04-09', '(11) 98326-8421', 'Belo Horizonte', 'MG', ''),
+(4, 'Fernando e LavÃ­nia', 'Fernando e LavÃ­nia Marcenaria ME', '86719355000150', 'www.fernandoelaviniamarcenariame.com.br', 'financeiro@fernandoelaviniamarcenariame.com.br', '1136387830', 1, '2018-04-20', '11982793638', 'SÃ£o Paulo', 'SP', '202cb962ac59075b964b07152d234b70'),
+(5, 'FÃ¡tima e Josefa', 'FÃ¡tima e Josefa InformÃ¡tica ME', '44968879000135', 'www.fatimaejosefainformaticame.com.br', 'presidencia@fatimaejosefainformaticame.com.br', '1928575191', 0, '2018-04-20', '19994550347', 'Pirassununga', 'SP', '202cb962ac59075b964b07152d234b70');
 
 --
 -- Indexes for dumped tables
@@ -113,7 +116,7 @@ ALTER TABLE `pf`
 -- AUTO_INCREMENT for table `pj`
 --
 ALTER TABLE `pj`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
