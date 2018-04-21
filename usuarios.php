@@ -48,7 +48,7 @@
 				<?php
 				$idbtnStatus;
 				$db = mysqli_connect('localhost', 'root', '', 'dbregistro');
-				if (!$db) { die(mysql_error());}
+				if (!$db) {die(mysql_error());}
 				$user_check_query = "SELECT id, login, email, permissoes, status FROM dbusuarios";
 				$result = mysqli_query($db, $user_check_query);
 				while ($user = mysqli_fetch_assoc($result)){  ?>

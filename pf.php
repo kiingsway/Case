@@ -58,7 +58,7 @@
           $user_check_query = "SELECT id, nome, rg, cpf, nascimento, categoria, situacao, cidade, estado, telefone, celular, email, cadastroaqui FROM pf";
           $result = mysqli_query($db, $user_check_query);
           while ($user = mysqli_fetch_assoc($result)){ ?>
-
+          <form method="POST" action="#">
         <tr class="hoverable">
           <td style="font-size: 20px; font-weight: bold;"><?php echo $user['nome'] ?></td>
               <td><b>Categoria: </b><?php echo $user['categoria'] ?><br><b>Situação: </b>
@@ -67,93 +67,19 @@
             if ($user['situacao'] == 2) { echo '<span data-badge-caption="Ativo" class="new badge green">'; } ?></td>
             <td><b>CPF:</b> <?php echo $user['cpf'] ?><br><b>RG: </b><?php echo $user['rg'] ?><br><b>Nascimento: </b><?php echo $user['nascimento'] ?><br><b>Cadastro aqui: </b><?php echo $user['cadastroaqui'] ?></td>
             <td><b>Cidade:</b> <?php echo $user['cidade'] ?><br><b>Telefone:</b> <?php echo $user['telefone'] ?><br><?php echo $user['celular'] ?><br><b>E-mail: </b><?php echo $user['email'] ?><br></td>
+          </form>
             <form method="POST" action="editarpf.php">
-            <td class="hoverable"><button name="btnEditarPF" class="btn tooltipped" data-tooltip="Editar" <?php echo 'value="'.$user['id'].'"' ?> href="#"><i class="material-icons">edit</i></button>
-              <a class="btn tooltipped" data-tooltip="Acessar estação" href="#"><i class="material-icons">open_in_browser</i></a></td></form>
+            <td class="hoverable"><button class="btn tooltipped" data-tooltip="Editar" name="btnEditarPF" <?php echo 'value="'.$user['id'].'"' ?>><i class="material-icons">edit</i></button>
+              <!--<a class="btn tooltipped" data-tooltip="Acessar estação" href="#"><i class="material-icons">open_in_browser</i></a>-->
+              </td>
+            </form>
           </tr>
-
-          
-        </tr>
-      <?php   
-      }
-      ?>
+          <?php } ?>
         </table>
         </div>
-        
     </div>
     <!-- Fim conteúdo -->
   </main>
-
-    <!-- Modal Structure, para buscas avançadas -->
-    <div id="modal1" class="modal"><div class="modal-content"><div class="row">
-      <form class="col s12"><div class="row">
-        <div class="input-field col s6">
-          <input id="txtNome" type="text" class="validate">
-          <label for="txtNome">Nome</label>
-        </div>
-        <div class="input-field col s6">
-          <input id="txtEmail" type="email" class="validate">
-          <label for="txtEmail">E-mail</label>
-        </div></div>
-        <div class="row">
-          <div class="input-field col s6">
-            <input id="txtRG" type="number" class="validate">
-            <label for="txtRG">RG</label>
-          </div>
-          <div class="input-field col s6">
-            <input id="txtCPF" type="number" class="validate">
-            <label for="txtCPF">CPF</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <select multiple>
-              <option value="" disabled selected>Situação</option>
-              <option value="1">Ativo</option>
-              <option value="2">Aguardando Ativação</option>
-              <option value="3">Correspondente</option>
-              <option value="4">Desligado</option>
-            </select>
-          </div>
-          <div class="input-field col s12">
-            <select multiple>
-              <option value="" disabled selected>Categoria</option>
-              <optgroup label="Sócio">
-                <option value="1">Aperfeiçoando</option>
-                <option value="2">Aspirante</option>
-                <option value="3">Coligado</option>
-                <option value="4">Residente</option>
-                <option value="4">Titular</option>
-              </optgroup>
-              <optgroup label="Não sócio">
-                <option value="1">Estudante de Medicina</option>
-                <option value="2">Entidades Parceiras</option>
-                <option value="3">Médico</option>
-                <option value="4">Residente</option>
-                <option value="4">Técnico e Tecnólogo em Radiologia</option>
-                <option value="4">Físicos, Biólogos, Radiofarmacêuticos,Químicos e Biomédicos em Radiologia</option>
-              </optgroup>
-            </select>
-          </div>
-        </div><br><br>
-      </form>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat"><i class="material-icons">search</i>Buscar</a>
-    </div>
-	</div>
-</div>
-<!-- Fim Modal Structure, para buscas avançadas -->
-
-<!-- Modar Apagar -->
-<div id="modalApagar" class="modal"><div class="modal-content"><div class="row">
-  <div class="input-field col s12"><p style="color: black">Deseja apagar esses usuários?</p></div>
-  <div class="modal-footer">
-    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat"><i class="material-icons">close</i></a>
-    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat"><i class="material-icons">done</i></a>
-  </div>
-	</div></div></div>
-  <!-- Fim Modar Apagar -->
 
 
 <!-- Carrega e insere o rodapé do site -->

@@ -14,22 +14,21 @@
 		<!-- Cor da barra de navegação do Chrome para Android -->
 		<meta name="theme-color" content="#c62828">
 		<!-- Título -->
-		<title>Case :: by ks</title>
+		<title>Case :: Editar Usuário</title>
 		<style>.disabled {color: black; pointer-events: none;cursor: default;}</style>
 	</head>
 	<body>
-
     <!-- Carrega e insere o cabeçalho do site -->
 		<?php require_once ("padroes/navigation.php"); ?>
 
 		<?php
 		$db = mysqli_connect('localhost', 'root', '', 'dbregistro');
-		if (!$db) { die(mysql_error());}
+		if (!$db) {die(mysql_error());}
 		$user_check_query = "SELECT id, login, email, permissoes, status FROM dbusuarios WHERE id=".$_POST['btnEditar'];
-				$result = mysqli_query($db, $user_check_query);
-				while ($user = mysqli_fetch_assoc($result)){ 
-					$permissoes = explode(',',$user['permissoes']);
-					?>
+		$result = mysqli_query($db, $user_check_query);
+		while ($user = mysqli_fetch_assoc($result)){ 
+		$permissoes = explode(',',$user['permissoes']);
+		?>
 
 		<!-- Breadcrumb, caminho de navegação -->
 		<nav class="red lighten-1" role="navigation"> 
@@ -43,7 +42,7 @@
 
 		<!-- Conteúdo -->
 		<!--DIV do conteúdo-->
-		<br>
+		<main><br>
 	<div class="container center">
 		<div class="row">
 			<form method="POST" action="usuarios.php" class="col s12">
