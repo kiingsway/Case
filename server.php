@@ -234,7 +234,6 @@
 		if (isset($_POST['btnTerminoEditarPF'])){
 			echo "<script>alert('Foi')</script>";
 			$db = mysqli_connect('localhost','root','','dbpessoas');
-			//echo "<br><br>";
 			$query = "UPDATE pf SET nome = '".$_POST['txtNomePF']."',
 			rg = '".$_POST['txtRGPF']."',
 			cpf = '".$_POST['txtCPFPF']."',
@@ -248,7 +247,6 @@
 			email = '".$_POST['txtEmailPF']."',
 			senha = '".md5($_POST['txtSenhaPF'])."'
 			WHERE id = '".$_POST['txtId']."'";
-			//echo $query;
 			mysqli_query($db, $query) or die('Erro: '.mysqli_error($db));
 			header("Location: pf.php");exit;
 		}

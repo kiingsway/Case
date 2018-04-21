@@ -1,4 +1,4 @@
-<?php include ('sessaoStart.php');?>
+	<?php include ('sessaoStart.php');?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -14,7 +14,10 @@
 		<meta name="theme-color" content="#c62828">
 		<!-- Título -->
 		<title>Case :: by ks</title>
-		<style>.disabled {color: black; pointer-events: none;cursor: default;}</style>
+		<style>
+		.disabled {color: black; pointer-events: none;cursor: default;}
+		a.right {font-size: 13px; color: orange;}
+		</style>
 	</head>
 	<body>
 
@@ -40,7 +43,70 @@
 				</h3>
 			</div>
 		<?php endif ?>
-		<main></main>
+		
+		<?php
+			$db1 = mysqli_connect('localhost', 'root', '', 'dbpessoas');
+			$db2 = mysqli_connect('localhost', 'root', '', 'dbatividades');
+
+			if (!$db1) {die(mysql_error());}
+			if (!$db2) {die(mysql_error());}
+
+			$query1 = 'SELECT COUNT(id) AS totalPF FROM pf;';
+			$query2 = 'SELECT COUNT(id) AS associadosEsteMes FROM pf WHERE MONTH(cadastroaqui) = MONTH(CURRENT_DATE()) AND YEAR(cadastroaqui) = YEAR(CURRENT_DATE())';
+			$query3 = 'SELECT COUNT(id) AS totalCursos FROM tbcursos;';
+			$query4 = 'SELECT COUNT(id) AS cursosFuturos FROM tbcursos WHERE dataInicial >= NOW()';
+
+			$result1 = mysqli_query($db1, $query1);
+			$result2 = mysqli_query($db1, $query2);
+			$result3 = mysqli_query($db2, $query3);
+			$result4 = mysqli_query($db2, $query4);
+
+			while ($user = mysqli_fetch_assoc($result1)){$associados = $user['totalPF'];}
+			while ($user = mysqli_fetch_assoc($result2)){$novosAssociados = $user['associadosEsteMes'];}
+			while ($user = mysqli_fetch_assoc($result3)){$cursos = $user['totalCursos'];}
+			while ($user = mysqli_fetch_assoc($result4)){$cursosFuturos = $user['cursosFuturos'];}
+
+		?>
+
+		<!-- Conteúdo -->
+		<main><br>
+			<div class="container">
+				<div class="row">
+			      <div class="col m3 s6">
+			      	<div class="card blue-grey darken-1">
+			      		<div class="card-content white-text">
+			      			<p><?php echo $associados." associados"; ?></p><br>
+			      			<a href="pf.php" class="valign-wrapper right">Pessoas físicas<i class="material-icons">arrow_forward</i></a><br>
+			      		</div>
+			      	</div>
+			      </div>
+			      <div class="col m3 s6">
+			      	<div class="card blue-grey darken-1">
+			      		<div class="card-content white-text">
+			      			<p><?php echo $novosAssociados." novos associados este mês"; ?></p>
+			      			<a href="pf.php" class="valign-wrapper right">Pessoas Físicas<i class="material-icons">arrow_forward</i></a><br>
+			      		</div>
+			      	</div>
+			      </div>
+			      <div class="col m3 s6">
+			      	<div class="card blue-grey darken-1">
+			      		<div class="card-content white-text">
+			      			<p><?php echo $cursos." cursos criados"; ?></p><br>
+			      			<a href="cursos.php" class="valign-wrapper right">Cursos<i class="material-icons">arrow_forward</i></a><br>
+			      		</div>
+			      	</div>
+			      </div>
+			      <div class="col m3 s6">
+			      	<div class="card blue-grey darken-1">
+			      		<div class="card-content white-text">
+			      			<p><?php echo $cursosFuturos." cursos futuros"; ?></p><br>
+			      			<a href="cursos.php" class="valign-wrapper right">Cursos<i class="material-icons">arrow_forward</i></a><br>
+			      		</div>
+			      	</div>
+			      </div>
+			    </div>
+			</div>
+		</main>
 
     <!-- Carrega e insere o rodapé do site -->
     <?php require_once("padroes/footer.php") ?>
