@@ -1,4 +1,6 @@
 <?php include ('server.php');?>
+<?php include ('db_editar.php');?>
+
 <!DOCTYPE html>
 <html>
 	<head>
