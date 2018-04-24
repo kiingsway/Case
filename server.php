@@ -51,41 +51,29 @@
 	}
 
 	// LOGIN USER
-
 	if (isset($_POST['btnLogin'])) {
-
 		$usuario = $_POST['usuario'];
 		$senha = $_POST['senha'];
-
 		if (empty($usuario)) {
 			array_push($errors, "Insira seu usuário");
 		}
 		if (empty($senha)) {
 			array_push($errors, "Insira sua senha");
 		}
-		
-		
 		if (count($errors) == 0) {
-
-			/*$query = "SELECT login, email, status FROM dbusuarios";
-      		$result = mysqli_query($db, $query);*/
-
 			$senha = md5($senha);
 			$query = "SELECT * FROM dbusuarios WHERE login='$usuario' AND senha='$senha'";
 			$results = mysqli_query($db, $query);
 			$user = mysqli_fetch_assoc($results);
-
 			if (mysqli_num_rows($results) == 1 && $user['status'] == 1) {
-				
 				$_SESSION['usuario'] = $usuario;
 				$_SESSION['success'] = "Você está logado!";
-
-
 				header('location: index.php');
 			} else if ($user['status'] === '0') {array_push($errors, "Seu usuário está desativado"); }
 			else { array_push($errors, "Usuário ou senha incorretos"); }
 		}
 	}
+<<<<<<< HEAD
 
 	// INSERT
 
@@ -271,5 +259,7 @@
 			header("Location: pj.php");exit;
 		}
 
+=======
+>>>>>>> cbb98448917f35eabcea49d9751572489451dc4d
 ?>
 

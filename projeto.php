@@ -1,4 +1,5 @@
 <?php include ('server.php');?>
+<?php include ('db_add.php');?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -59,9 +60,7 @@
           <td><form method="POST" action="editarProjeto.php"><button name="btnEditProjeto" value=<?php echo $user['id']; ?> class="btn-small"><i class="material-icons">edit</i></button></form>
             <button name="btnDeleteProjeto" value=<?php echo $user['id']; ?> class="btn-small"><i class="material-icons">delete</i> </td>
         </tr>
-      <?php   
-      }
-      ?>
+      <?php } ?>
     </table>
     </form>
     <br>
@@ -82,10 +81,8 @@
 <br>
 </main>
 
-
-
-<!-- Carrega e insere o rodapé do site -->
-    <?php require_once("padroes/footer.php") ?>
+  <!-- Carrega e insere o rodapé do site -->
+  <?php require_once("padroes/footer.php") ?>
 
 	<!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

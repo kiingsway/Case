@@ -1,4 +1,6 @@
 <?php include ('server.php');?>
+<?php include ('db_add.php');?>
+
 <!DOCTYPE html>
 <html>
   <head>
