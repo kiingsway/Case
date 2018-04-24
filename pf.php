@@ -38,10 +38,7 @@
     <main>
     <!-- Conteúdo em geral -->
     <br><div class="container center">
-      <a class="waves-effect waves-light btn-large" href="addpf.php"><i class="material-icons left">add</i>Adicionar associado</a>
-      <a class="btn-floating btn-large waves-effect waves-light red modal-trigger hoverable tooltipped" data-position="top" data-tooltip="Busca avançada" href="#modal1"><i class="material-icons">zoom_in</i></a>
-      <a class="btn-floating btn-large waves-effect waves-light red hoverable tooltipped" data-position="top" data-tooltip="Marcar todos"><i class="material-icons">check_circle</i></a>
-      <a class="btn-floating btn-large waves-effect waves-light red hoverable modal-trigger tooltipped" data-position="top" data-tooltip="Apagar" href="#modalApagar"><i class="material-icons">delete_forever</i></a><br><br>
+      <a class="waves-effect waves-light btn-large" href="addpf.php"><i class="material-icons left">add</i>Adicionar associado</a><br><br>
       <div style="overflow-x:auto;">
         <table id="table">
           <tr>
@@ -70,7 +67,6 @@
           </form>
             <form method="POST" action="editarpf.php">
             <td class="hoverable"><button class="btn tooltipped" data-tooltip="Editar" name="btnEditarPF" <?php echo 'value="'.$user['id'].'"' ?>><i class="material-icons">edit</i></button>
-              <!--<a class="btn tooltipped" data-tooltip="Acessar estação" href="#"><i class="material-icons">open_in_browser</i></a>-->
               </td>
             </form>
           </tr>

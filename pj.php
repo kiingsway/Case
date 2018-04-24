@@ -35,10 +35,7 @@
     <main>
     <!-- Conteúdo em geral -->
     <br><div class="container center">
-      <a class="waves-effect waves-light btn-large" href="addpj.php"><i class="material-icons left">add</i>Adicionar associado Jurídico</a>
-      <a class="btn-floating btn-large waves-effect waves-light red modal-trigger hoverable tooltipped" data-position="top" data-tooltip="Busca avançada" href="#modal1"><i class="material-icons">zoom_in</i></a>
-      <a class="btn-floating btn-large waves-effect waves-light red hoverable tooltipped" data-position="top" data-tooltip="Marcar todos"><i class="material-icons">check_circle</i></a>
-      <a class="btn-floating btn-large waves-effect waves-light red hoverable modal-trigger tooltipped" data-position="top" data-tooltip="Apagar" href="#modalApagar"><i class="material-icons">delete_forever</i></a><br><br>
+      <a class="waves-effect waves-light btn-large" href="addpj.php"><i class="material-icons left">add</i>Adicionar associado Jurídico</a><br><br>
         <table id="table">
       <tr class="hoverable">
         <th>Nome Fantasia</th>
@@ -50,7 +47,7 @@
       <?php
         $db = mysqli_connect('localhost', 'root', '', 'dbpessoas');
         if (!$db) { die(mysql_error());}
-        $user_check_query = "SELECT nome_fantasia, razao_social, cnpj, site, email, telefone1, telefone2, situacao, cadastroaqui, cidade, estado FROM pj";
+        $user_check_query = "SELECT id, nome_fantasia, razao_social, cnpj, site, email, telefone1, telefone2, situacao, cadastroaqui, cidade, estado FROM pj";
         $result = mysqli_query($db, $user_check_query);
         while ($user = mysqli_fetch_assoc($result)){ ?>
 
@@ -59,8 +56,8 @@
           <td><b>Razão Social:</b> <?php echo $user['razao_social'] ?><br><b>CNPJ: </b><?php echo $user['cnpj']?><br><b>Cadastro aqui: </b><?php echo $user['cadastroaqui']?><br><b>Situação: </b><?php if ($user['situacao'] == 0) { echo '<span data-badge-caption="Desligado" class="new badge red">'; }
             if ($user['situacao'] == 1) { echo '<span data-badge-caption="Ativo" class="new badge green">'; } ?> </span></td>
           <td><b>Cidade:</b> <?php echo $user['cidade']?><br><b>Celular:</b> <?php echo $user['telefone1']?><br><?php echo $user['telefone2']?><br><b>Site: </b> <?php echo $user['site'] ?><br><b>E-mail: </b><?php echo $user['email']?><br></td>
-          <td class="hoverable"><a class="btn tooltipped" data-tooltip="Editar" href="#"><i class="material-icons">edit</i></a>
-          <a class="btn tooltipped" data-tooltip="Acessar ABCDI" href="#"><i class="material-icons">open_in_browser</i></a></td>
+          <form method="POST" action="editarpj.php">
+          <td class="hoverable"><button class="btn tooltipped" data-tooltip="Editar" name="btnEditarPJ" <?php echo 'value="'.$user['id'].'"' ?>><i class="material-icons">edit</i></button></form>
         </tr>
       <?php   
       }

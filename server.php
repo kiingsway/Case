@@ -232,7 +232,6 @@
 		}
 
 		if (isset($_POST['btnTerminoEditarPF'])){
-			echo "<script>alert('Foi')</script>";
 			$db = mysqli_connect('localhost','root','','dbpessoas');
 			$query = "UPDATE pf SET nome = '".$_POST['txtNomePF']."',
 			rg = '".$_POST['txtRGPF']."',
@@ -250,5 +249,27 @@
 			mysqli_query($db, $query) or die('Erro: '.mysqli_error($db));
 			header("Location: pf.php");exit;
 		}
+		
+		if (isset($_POST['btnTerminoEditarPJ'])){
+			if($_POST['cbxSituacaoPJ'] == 'on') $situacaoPJ = 1;
+			else $situacaoPJ = 0;
+			$db = mysqli_connect('localhost','root','','dbpessoas');
+			$query = "UPDATE pj SET nome_fantasia = '".$_POST['txtNomeFantasiaPJ']."',
+			razao_social = '".$_POST['txtRazaoSocialPJ']."',
+			cnpj = '".$_POST['txtCNPJPJ']."',
+			situacao = '".$situacaoPJ."',
+			cidade = '".$_POST['txtCidadePJ']."',
+			estado = '".$_POST['txtEstadoPJ']."',
+			telefone1 = '".$_POST['txtTelefonePJ']."',
+			telefone2 = '".$_POST['txtCelularPJ']."',
+			email = '".$_POST['txtEmailPJ']."',
+			site = '".$_POST['txtSitePJ']."',
+			senha = '".md5($_POST['txtSenhaPF'])."'
+			WHERE id = '".$_POST['txtId']."'";
+			echo $query;
+			mysqli_query($db, $query) or die('Erro: '.mysqli_error($db));
+			header("Location: pj.php");exit;
+		}
+
 ?>
 

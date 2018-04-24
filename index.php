@@ -1,4 +1,4 @@
-	<?php include ('sessaoStart.php');?>
+<?php include ('sessaoStart.php');?>
 <!DOCTYPE html>
 <html>
 	<head>
