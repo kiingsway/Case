@@ -36,9 +36,7 @@
     <!-- Conteúdo em geral -->
     <br><div class="container center">
       <a class="waves-effect waves-light btn-large" href="criarcurso.php"><i class="material-icons left">add</i>Criar curso</a>
-      <a class="btn-floating btn-large waves-effect waves-light red modal-trigger hoverable" href="#modal1"><i class="material-icons">zoom_in</i></a>
-      <a class="btn-floating btn-large waves-effect waves-light red hoverable"><i class="material-icons">check_circle</i></a>
-      <a class="btn-floating btn-large waves-effect waves-light red hoverable modal-trigger" href="#modalApagar"><i class="material-icons">delete_forever</i></a><br>
+
         <table id="table" cellpadding="1">
           <tr class="hoverable">
             <th>Identificação</th>
