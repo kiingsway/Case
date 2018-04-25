@@ -1,5 +1,6 @@
 <?php include ('server.php');?>
 <?php include ('db_add.php');?>
+<?php include ('db_editar.php');?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -45,7 +46,7 @@
       <?php
         $db = mysqli_connect('localhost', 'root', '', 'dbregistro');
         if (!$db) { die(mysql_error());}
-        $query = "SELECT id, funcao, implementada, criadoem, implementadaem FROM tbprojetos ORDER BY criadoem DESC";
+        $query = "SELECT id, funcao, implementada, criadoem, implementadaem FROM tbprojetos ORDER BY criadoem ASC";
         $result = mysqli_query($db, $query);
         while ($user = mysqli_fetch_assoc($result)){ ?>
 
