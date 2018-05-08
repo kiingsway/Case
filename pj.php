@@ -45,9 +45,9 @@
       </tr>
 
       <?php
-        $db = mysqli_connect('localhost', 'root', '', 'dbpessoas');
+        $db = mysqli_connect('localhost', 'root', '', 'dbcollege');
         if (!$db) { die(mysql_error());}
-        $user_check_query = "SELECT id, nome_fantasia, razao_social, cnpj, site, email, telefone1, telefone2, situacao, cadastroaqui, cidade, estado FROM pj";
+        $user_check_query = "SELECT id, nome_fantasia, razao_social, cnpj, site, email, telefone1, telefone2, situacao, cadastroaqui, cidade, estado FROM tb_pj";
         $result = mysqli_query($db, $user_check_query);
         while ($user = mysqli_fetch_assoc($result)){ ?>
 

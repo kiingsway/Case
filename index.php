@@ -45,14 +45,14 @@
 		<?php endif ?>
 		
 		<?php
-			$db1 = mysqli_connect('localhost', 'root', '', 'dbpessoas');
+			$db1 = mysqli_connect('localhost', 'root', '', 'dbcollege');
 			$db2 = mysqli_connect('localhost', 'root', '', 'dbatividades');
 
 			if (!$db1) {die(mysql_error());}
 			if (!$db2) {die(mysql_error());}
 
-			$query1 = 'SELECT COUNT(id) AS totalPF FROM pf;';
-			$query2 = 'SELECT COUNT(id) AS associadosEsteMes FROM pf WHERE MONTH(cadastroaqui) = MONTH(CURRENT_DATE()) AND YEAR(cadastroaqui) = YEAR(CURRENT_DATE())';
+			$query1 = 'SELECT COUNT(id) AS totalPF FROM tb_pf;';
+			$query2 = 'SELECT COUNT(id) AS associadosEsteMes FROM tb_pf WHERE MONTH(cadastroaqui) = MONTH(CURRENT_DATE()) AND YEAR(cadastroaqui) = YEAR(CURRENT_DATE())';
 			$query3 = 'SELECT COUNT(id) AS totalCursos FROM tbcursos;';
 			$query4 = 'SELECT COUNT(id) AS cursosFuturos FROM tbcursos WHERE dataInicial >= NOW()';
 

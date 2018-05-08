@@ -22,9 +22,9 @@
     <?php require_once ("padroes/navigation.php"); ?>
 
     <?php
-        $db = mysqli_connect('localhost', 'root', '', 'dbpessoas');
+        $db = mysqli_connect('localhost', 'root', '', 'dbcollege');
         if (!$db) {die(mysql_error());}
-        $query = "SELECT id, nome_fantasia, razao_social, cnpj, site, email, telefone1, telefone2, situacao, cadastroaqui, cidade, estado FROM pj WHERE id=".$_POST['btnEditarPJ'];
+        $query = "SELECT id, nome_fantasia, razao_social, cnpj, site, email, telefone1, telefone2, situacao, cadastroaqui, cidade, estado FROM tb_pj WHERE id=".$_POST['btnEditarPJ'];
         $result = mysqli_query($db, $query);
         while ($user = mysqli_fetch_assoc($result)){
 

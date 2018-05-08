@@ -117,9 +117,9 @@
 
 
     <!-- Carrega e insere o rodapé do site -->
-    <?php require_once("padroes/footer.php") ?>
+    <?php require_once("padroes/footer.php"); ?>
 
-        <!--  Scripts-->
+        <!--Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>

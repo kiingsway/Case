@@ -23,9 +23,10 @@
 		<?php require_once ("padroes/navigation.php"); ?>
 
 		<?php
-		$db = mysqli_connect('localhost', 'root', '', 'dbpessoas');
+		$db = mysqli_connect('localhost', 'root', '', 'dbcollege');
 		if (!$db) {die(mysql_error());}
-		$query = "SELECT id, nome, rg, cpf, nascimento, categoria, situacao, cidade, estado, telefone, celular, email, senha FROM pf WHERE id=".$_POST['btnEditarPF'];
+		$query = "SELECT id, nome, rg, cpf, nascimento, categoria, situacao, cidade, estado, telefone, celular, email, senha FROM tb_pf WHERE id=".$_POST['btnEditarPF'];
+        echo $query;
 		$result = mysqli_query($db, $query);
 		while ($user = mysqli_fetch_assoc($result)){
 		?>
@@ -134,7 +135,7 @@
 		<?php } ?>
 
     <!-- Carrega e insere o rodapé do site -->
-    <?php require_once("padroes/footer.php") ?>
+    <?php require_once("padroes/footer.php"); ?>
 
 		<!--  Scripts -->
 		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

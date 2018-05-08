@@ -52,9 +52,9 @@
           </tr>
           <!-- 0 Desligado 1 aguardando ativação 2 ativo -->
           <?php
-          $db = mysqli_connect('localhost', 'root', '', 'dbpessoas');
+          $db = mysqli_connect('localhost', 'root', '', 'dbcollege');
           if (!$db) { die(mysql_error());}
-          $user_check_query = "SELECT id, nome, rg, cpf, nascimento, categoria, situacao, cidade, estado, telefone, celular, email, cadastroaqui FROM pf";
+          $user_check_query = "SELECT id, nome, rg, cpf, nascimento, categoria, situacao, cidade, estado, telefone, celular, email, cadastroaqui FROM tb_pf";
           $result = mysqli_query($db, $user_check_query);
           while ($user = mysqli_fetch_assoc($result)){ ?>
           <form method="POST" action="#">
@@ -81,7 +81,7 @@
 
 
 <!-- Carrega e insere o rodapé do site -->
-    <?php require_once("padroes/footer.php") ?>
+    <?php require_once("padroes/footer.php"); ?>
 
 	<!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

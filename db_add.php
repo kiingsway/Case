@@ -44,7 +44,7 @@
 	}
 
 			if (isset($_POST['btnAddAssociadoPJ'])) {
-			$db = mysqli_connect('localhost', 'root', '', 'dbpessoas');
+			$db = mysqli_connect('localhost', 'root', '', 'dbcollege');
 			$nomeFantasiaPJ = $_POST['txtNomeFantasiaPJ'];
 			$razaoSocialPJ = $_POST['txtRazaoSocialPJ'];
 			$CNPJPJ = $_POST['txtCNPJPJ'];
@@ -58,13 +58,13 @@
 			if (isset($_POST['cbxSituacaoPJ'])) $situacaoPJ = 1; else $situacaoPJ = 0;
 			//echo $situacaoPJ . "<br>";
 
-			$query = "INSERT INTO pj (nome_fantasia, razao_social, cnpj, cidade, estado, telefone1, telefone2, email, site, senha, situacao, cadastroaqui) VALUES ('".$nomeFantasiaPJ."', '".$razaoSocialPJ."', '".$CNPJPJ."', '".$cidadePJ."', '".$estadoPJ."', '".$telefonePJ."', '".$celularPJ."', '".$emailPJ."', '".$sitePJ."', '".$senhaPJ."', '".$situacaoPJ."', NOW())";
+			$query = "INSERT INTO tb_pj (nome_fantasia, razao_social, cnpj, cidade, estado, telefone1, telefone2, email, site, senha, situacao, cadastroaqui) VALUES ('".$nomeFantasiaPJ."', '".$razaoSocialPJ."', '".$CNPJPJ."', '".$cidadePJ."', '".$estadoPJ."', '".$telefonePJ."', '".$celularPJ."', '".$emailPJ."', '".$sitePJ."', '".$senhaPJ."', '".$situacaoPJ."', NOW())";
 
 			mysqli_query($db, $query);
 			header("Location: pj.php");
 		}
 			if (isset($_POST['btnAddAssociado'])) {
-			$db = mysqli_connect('localhost', 'root', '', 'dbpessoas');
+			$db = mysqli_connect('localhost', 'root', '', 'dbcollege');
 			$nomePF = $_POST['txtNomePF'];
 			$RGPF = $_POST['txtRGPF'];
 			$CPFPF = $_POST['txtCPFPF'];
@@ -78,7 +78,7 @@
 			$situacaoPF = $_POST['cbSituacaoPF'];
 			$senhaPF = md5($_POST['txtSenhaPF']);
 
-			$query = "INSERT INTO pf (nome, rg, cpf, nascimento, categoria, situacao, cidade, estado, telefone, celular, email, senha, cadastroaqui) VALUES ('".$nomePF."', '".$RGPF."', '".$CPFPF."', '".$nascimentoPF."', '".$categoriaPF."', '".$situacaoPF."', '".$cidadePF."', '".$estadoPF."', '".$telefonePF."', '".$celularPF."', '".$emailPF."', '".$senhaPF."', NOW())";
+			$query = "INSERT INTO tb_pf (nome, rg, cpf, nascimento, categoria, situacao, cidade, estado, telefone, celular, email, senha, cadastroaqui) VALUES ('".$nomePF."', '".$RGPF."', '".$CPFPF."', '".$nascimentoPF."', '".$categoriaPF."', '".$situacaoPF."', '".$cidadePF."', '".$estadoPF."', '".$telefonePF."', '".$celularPF."', '".$emailPF."', '".$senhaPF."', NOW())";
 			mysqli_query($db, $query);
 			header("Location: pf.php");
 		}
