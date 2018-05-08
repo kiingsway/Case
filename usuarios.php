@@ -48,9 +48,9 @@
 
 				<?php
 				$idbtnStatus;
-				$db = mysqli_connect('localhost', 'root', '', 'dbregistro');
+				$db = mysqli_connect('localhost', 'root', '', 'dbcollege');
 				if (!$db) {die(mysql_error());}
-				$user_check_query = "SELECT id, login, email, permissoes, status FROM dbusuarios";
+				$user_check_query = "SELECT id, login, email, permissoes, status FROM tb_users";
 				$result = mysqli_query($db, $user_check_query);
 				while ($user = mysqli_fetch_assoc($result)){  ?>
 				<form method="POST" action="#">

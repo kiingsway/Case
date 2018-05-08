@@ -23,9 +23,9 @@
 		<?php require_once ("padroes/navigation.php"); ?>
 
 		<?php
-		$db = mysqli_connect('localhost', 'root', '', 'dbregistro');
+		$db = mysqli_connect('localhost', 'root', '', 'dbcollege');
 		if (!$db) { die(mysql_error());}
-		$user_check_query = "SELECT id, funcao, implementada, criadoem, implementadaem FROM tbprojetos WHERE id=".$_POST['btnEditProjeto'];
+		$user_check_query = "SELECT id, funcao, implementada, criadoem, implementadaem FROM tb_projetos WHERE id=".$_POST['btnEditProjeto'];
 				$result = mysqli_query($db, $user_check_query);
 				while ($user = mysqli_fetch_assoc($result)){ 
 					$funcaoProjeto = $user['funcao']

@@ -44,9 +44,9 @@
         <th>Opções</th>
       </tr>
       <?php
-        $db = mysqli_connect('localhost', 'root', '', 'dbregistro');
+        $db = mysqli_connect('localhost', 'root', '', 'dbcollege');
         if (!$db) { die(mysql_error());}
-        $query = "SELECT id, funcao, implementada, criadoem, implementadaem FROM tbprojetos ORDER BY criadoem ASC";
+        $query = "SELECT id, funcao, implementada, criadoem, implementadaem FROM tb_projetos ORDER BY criadoem ASC";
         $result = mysqli_query($db, $query);
         while ($user = mysqli_fetch_assoc($result)){ ?>
 
@@ -83,9 +83,9 @@
 </main>
 
   <!-- Carrega e insere o rodapé do site -->
-  <?php require_once("padroes/footer.php") ?>
+  <?php require_once("padroes/footer.php"); ?>
 
-	<!--  Scripts-->
+	<!-- Scripts -->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>

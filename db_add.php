@@ -1,8 +1,8 @@
 <?php
 	if (isset($_POST['btnProjeto'])) {		
 	$funcao = $_POST['txtFuncao'];
-	$db = mysqli_connect('localhost', 'root', '', 'dbregistro');
-	$query = "INSERT INTO tbprojetos (funcao, criadoem) VALUES ('$funcao', now())";
+	$db = mysqli_connect('localhost', 'root', '', 'dbcollege');
+	$query = "INSERT INTO tb_projetos (funcao, criadoem) VALUES ('$funcao', now())";
 	mysqli_query($db, $query) or die('Erro: '.mysqli_error($db));
 	header('location: projeto.php');
 	}
@@ -36,8 +36,8 @@
 		$status = $_POST['swcStatus'];
 		if ($status == null) $status = 0;
 
-		$db = mysqli_connect('localhost', 'root', '', 'dbatividades');
-		$query = "INSERT INTO tbcursos (nomeCurso, localCurso, dataInicial, horaInicial, dataFinal, horaFinal, vagas, cargaHoraria, freqMinima, categorias, valor, valorSocio, valorParceiro, valorNaoQuite, tipoVencimento, vencimento, ndias, status) VALUES ('$nomeCurso', '$localCurso', '$dataInicial', '$horaInicial', '$dataFinal', '$horaFinal', '$vagas', '$cargaHoraria', '$freqMinima', '$categorias', '$valor', '$valorSocio', '$valorParceiro', '$valorNaoQuite', '$tipoVencimento', '$vencimento', '$ndias', '$status')";
+		$db = mysqli_connect('localhost', 'root', '', 'dbcollege');
+		$query = "INSERT INTO tb_cursos (nomeCurso, localCurso, dataInicial, horaInicial, dataFinal, horaFinal, vagas, cargaHoraria, freqMinima, categorias, valor, valorSocio, valorParceiro, valorNaoQuite, tipoVencimento, vencimento, ndias, status) VALUES ('$nomeCurso', '$localCurso', '$dataInicial', '$horaInicial', '$dataFinal', '$horaFinal', '$vagas', '$cargaHoraria', '$freqMinima', '$categorias', '$valor', '$valorSocio', '$valorParceiro', '$valorNaoQuite', '$tipoVencimento', '$vencimento', '$ndias', '$status')";
 
 		mysqli_query($db, $query) or die('Erro: '.mysqli_error($db));
 		header('location: cursos.php');

@@ -45,21 +45,19 @@
 		<?php endif ?>
 		
 		<?php
-			$db1 = mysqli_connect('localhost', 'root', '', 'dbcollege');
-			$db2 = mysqli_connect('localhost', 'root', '', 'dbatividades');
+			$db = mysqli_connect('localhost', 'root', '', 'dbcollege');
 
-			if (!$db1) {die(mysql_error());}
-			if (!$db2) {die(mysql_error());}
+			if (!$db) {die(mysql_error());}
 
 			$query1 = 'SELECT COUNT(id) AS totalPF FROM tb_pf;';
 			$query2 = 'SELECT COUNT(id) AS associadosEsteMes FROM tb_pf WHERE MONTH(cadastroaqui) = MONTH(CURRENT_DATE()) AND YEAR(cadastroaqui) = YEAR(CURRENT_DATE())';
-			$query3 = 'SELECT COUNT(id) AS totalCursos FROM tbcursos;';
-			$query4 = 'SELECT COUNT(id) AS cursosFuturos FROM tbcursos WHERE dataInicial >= NOW()';
+			$query3 = 'SELECT COUNT(id) AS totalCursos FROM tb_cursos;';
+			$query4 = 'SELECT COUNT(id) AS cursosFuturos FROM tb_cursos WHERE dataInicial >= NOW()';
 
-			$result1 = mysqli_query($db1, $query1);
-			$result2 = mysqli_query($db1, $query2);
-			$result3 = mysqli_query($db2, $query3);
-			$result4 = mysqli_query($db2, $query4);
+			$result1 = mysqli_query($db, $query1);
+			$result2 = mysqli_query($db, $query2);
+			$result3 = mysqli_query($db, $query3);
+			$result4 = mysqli_query($db, $query4);
 
 			while ($user = mysqli_fetch_assoc($result1)){$associados = $user['totalPF'];}
 			while ($user = mysqli_fetch_assoc($result2)){$novosAssociados = $user['associadosEsteMes'];}
@@ -109,9 +107,9 @@
 		</main>
 
     <!-- Carrega e insere o rodapé do site -->
-    <?php require_once("padroes/footer.php") ?>
+    <?php require_once("padroes/footer.php"); ?>
 
-		<!--  Scripts -->
+		<!-- Scripts -->
 		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<script src="js/materialize.js"></script>
 		<script src="js/init.js"></script>

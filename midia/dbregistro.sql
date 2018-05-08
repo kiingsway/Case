@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 20-Abr-2018 às 12:46
+-- Generation Time: 08-Maio-2018 às 04:16
 -- Versão do servidor: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -43,9 +43,9 @@ CREATE TABLE `dbusuarios` (
 
 INSERT INTO `dbusuarios` (`id`, `login`, `email`, `senha`, `permissoes`, `status`) VALUES
 (5, 'king', 'king@sway.com', '5eac43aceba42c8757b54003a58277b5', '1,2,3,4,5,6,7,8,9,10', 1),
-(6, 'king1', 'kng@a.com', '5eac43aceba42c8757b54003a58277b5', '1,2,3,4,5,6', 1),
+(6, 'king12', 'kng@a.com', '5eac43aceba42c8757b54003a58277b5', '1,2,3,4,5,6,10', 1),
 (7, 'gi', 'gi@bcd.com', '827ccb0eea8a706c4c34a16891f84e7b', '4,5', 1),
-(8, 'king2', 'aaa@aaa.com', '5eac43aceba42c8757b54003a58277b5', '0', 0);
+(8, 'king2', 'aaa@aaa.com', '5eac43aceba42c8757b54003a58277b5', '2,5', 0);
 
 -- --------------------------------------------------------
 
@@ -72,7 +72,9 @@ INSERT INTO `tbprojetos` (`id`, `funcao`, `implementada`, `criadoem`, `implement
 (4, 'Acentuação aqui', 0, '2018-04-11 11:14:17', NULL),
 (5, 'Sites inseguros, é possível entrar neles sem passar pelo login', 0, '2018-04-11 11:17:05', NULL),
 (6, 'Table responsivo', 0, '2018-04-19 11:16:12', NULL),
-(7, 'BotÃ£o de editar e apagar projeto', 0, '2018-04-19 11:16:58', NULL);
+(7, 'BotÃ£o de editar e apagar projeto', 0, '2018-04-19 11:16:58', NULL),
+(8, 'Arrumar data de nascimento PF', 0, '2018-04-24 22:38:08', NULL),
+(9, 'Card Index: \"No prÃ³ximo curso temos x% das vagas confirmadas\"', 0, '2018-04-24 22:39:23', NULL);
 
 --
 -- Indexes for dumped tables
@@ -104,7 +106,7 @@ ALTER TABLE `dbusuarios`
 -- AUTO_INCREMENT for table `tbprojetos`
 --
 ALTER TABLE `tbprojetos`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

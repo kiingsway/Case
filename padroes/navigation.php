@@ -6,10 +6,10 @@
 </head>
 <body>
   <?php
-    $db = mysqli_connect('localhost', 'root', '', 'dbregistro');
+    $db = mysqli_connect('localhost', 'root', '', 'dbcollege');
     if (isset($_SESSION['usuario'])){
       $usuario = $_SESSION['usuario'];
-      $query = "SELECT permissoes FROM dbusuarios WHERE login='$usuario'";
+      $query = "SELECT permissoes FROM tb_users WHERE login='$usuario'";
       $result = mysqli_query($db, $query);
       while ($user = mysqli_fetch_assoc($result)){
         $permissoes = explode(',',$user['permissoes']);

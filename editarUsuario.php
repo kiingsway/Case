@@ -22,9 +22,9 @@
 		<?php require_once ("padroes/navigation.php"); ?>
 
 		<?php
-		$db = mysqli_connect('localhost', 'root', '', 'dbregistro');
+		$db = mysqli_connect('localhost', 'root', '', 'dbcollege');
 		if (!$db) {die(mysql_error());}
-		$user_check_query = "SELECT id, login, email, permissoes, status FROM dbusuarios WHERE id=".$_POST['btnEditar'];
+		$user_check_query = "SELECT id, login, email, permissoes, status FROM tb_users WHERE id=".$_POST['btnEditar'];
 		$result = mysqli_query($db, $user_check_query);
 		while ($user = mysqli_fetch_assoc($result)){ 
 		$permissoes = explode(',',$user['permissoes']);
@@ -132,9 +132,9 @@
 		<?php } ?>
 
     <!-- Carrega e insere o rodapé do site -->
-    <?php require_once("padroes/footer.php") ?>
+    <?php require_once("padroes/footer.php"); ?>
 
-		<!--  Scripts -->
+		<!-- Scripts -->
 		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<script src="js/materialize.js"></script>
 		<script src="js/init.js"></script>

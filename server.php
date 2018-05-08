@@ -9,7 +9,7 @@
 	$_SESSION['success'] = "";
 
 	// Conectando ao banco
-	$db = mysqli_connect('localhost', 'root', '', 'dbregistro');
+	$db = mysqli_connect('localhost', 'root', '', 'dbcollege');
 
 
 	// Quando o botão Registrar é clicado
@@ -26,7 +26,7 @@
 		if (empty($senha1)) {array_push($errors, "Campo de senha obrigatório");}
 		if ($senha1 != $senha2) {array_push($errors, "Senhas não conferem");}
 
-		$user_check_query = "SELECT * FROM dbusuarios WHERE login='$usuario' OR email='$email' LIMIT 1";
+		$user_check_query = "SELECT * FROM tb_users WHERE login='$usuario' OR email='$email' LIMIT 1";
 		$result = mysqli_query($db, $user_check_query);
 		$user = mysqli_fetch_assoc($result);
 
@@ -42,7 +42,7 @@
 
 		if (count($errors) == 0) {
 			$senha = md5($senha1); // Encripta a senha antes de armazenar no banco
-			$sql = "INSERT INTO dbusuarios (login, email, senha) VALUES ('$usuario', '$email', '$senha')";
+			$sql = "INSERT INTO tb_users (login, email, senha) VALUES ('$usuario', '$email', '$senha')";
 			mysqli_query($db, $sql);
 			$_SESSION['usuario'] = $usuario;
 			$_SESSION['sucesso'] = "Você está logado";
@@ -62,7 +62,7 @@
 		}
 		if (count($errors) == 0) {
 			$senha = md5($senha);
-			$query = "SELECT * FROM dbusuarios WHERE login='$usuario' AND senha='$senha'";
+			$query = "SELECT * FROM tb_users WHERE login='$usuario' AND senha='$senha'";
 			$results = mysqli_query($db, $query);
 			$user = mysqli_fetch_assoc($results);
 			if (mysqli_num_rows($results) == 1 && $user['status'] == 1) {

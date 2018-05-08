@@ -48,9 +48,9 @@
           </tr>
 
           <?php
-          $db = mysqli_connect('localhost', 'root', '', 'dbatividades');
+          $db = mysqli_connect('localhost', 'root', '', 'dbcollege');
           if (!$db) { die(mysql_error());}
-          $query = "SELECT nomeCurso, dataInicial, horaInicial, dataFinal, horaFinal, categorias, vagas, cargaHoraria, freqMinima, valor, valorSocio, valorParceiro, valorNaoQuite, tipoVencimento, vencimento, nDias, status FROM tbcursos";
+          $query = "SELECT nomeCurso, dataInicial, horaInicial, dataFinal, horaFinal, categorias, vagas, cargaHoraria, freqMinima, valor, valorSocio, valorParceiro, valorNaoQuite, tipoVencimento, vencimento, nDias, status FROM tb_cursos";
           $result = mysqli_query($db, $query);
           while ($user = mysqli_fetch_assoc($result)){ ?>
           <tr class="hoverable">
