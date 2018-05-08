@@ -32,7 +32,7 @@
 		senha = '".md5($_POST['txtSenhaPF'])."'
 		WHERE id = '".$_POST['txtId']."'";
 		mysqli_query($db, $query) or die('Erro: '.mysqli_error($db));
-		header("Location: pf.php");exit;
+		header("Location: page_pf.php");exit;
 	}
 	if (isset($_POST['btnStatusUsuarios'])) {
 		$db = mysqli_connect('localhost', 'root', '', 'dbcollege');
@@ -78,6 +78,6 @@
 		WHERE id = '".$_POST['txtId']."'";
 		echo $query;
 		mysqli_query($db, $query) or die('Erro: '.mysqli_error($db));
-		header("Location: pj.php");exit;
+		header("Location: page_pj.php");exit;
 	}
 ?>

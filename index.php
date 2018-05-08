@@ -74,7 +74,7 @@
 			      	<div class="card blue-grey darken-1">
 			      		<div class="card-content white-text">
 			      			<p><?php echo $associados." associados"; ?></p><br>
-			      			<a href="pf.php" class="valign-wrapper right">Pessoas físicas<i class="material-icons">arrow_forward</i></a><br>
+			      			<a href="page_pf.php" class="valign-wrapper right">Pessoas físicas<i class="material-icons">arrow_forward</i></a><br>
 			      		</div>
 			      	</div>
 			      </div>
@@ -82,7 +82,7 @@
 			      	<div class="card blue-grey darken-1">
 			      		<div class="card-content white-text">
 			      			<p><?php echo $novosAssociados." novos associados este mês"; ?></p>
-			      			<a href="pf.php" class="valign-wrapper right">Pessoas Físicas<i class="material-icons">arrow_forward</i></a><br>
+			      			<a href="page_pf.php" class="valign-wrapper right">Pessoas Físicas<i class="material-icons">arrow_forward</i></a><br>
 			      		</div>
 			      	</div>
 			      </div>
@@ -90,7 +90,7 @@
 			      	<div class="card blue-grey darken-1">
 			      		<div class="card-content white-text">
 			      			<p><?php echo $cursos." cursos criados"; ?></p><br>
-			      			<a href="cursos.php" class="valign-wrapper right">Cursos<i class="material-icons">arrow_forward</i></a><br>
+			      			<a href="page_cursos.php" class="valign-wrapper right">Cursos<i class="material-icons">arrow_forward</i></a><br>
 			      		</div>
 			      	</div>
 			      </div>
@@ -98,7 +98,7 @@
 			      	<div class="card blue-grey darken-1">
 			      		<div class="card-content white-text">
 			      			<p><?php echo $cursosFuturos." cursos futuros"; ?></p><br>
-			      			<a href="cursos.php" class="valign-wrapper right">Cursos<i class="material-icons">arrow_forward</i></a><br>
+			      			<a href="page_cursos.php" class="valign-wrapper right">Cursos<i class="material-icons">arrow_forward</i></a><br>
 			      		</div>
 			      	</div>
 			      </div>

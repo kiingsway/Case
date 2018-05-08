@@ -34,7 +34,7 @@
         <nav class="red lighten-1" role="navigation"> 
             <div class="nav-wrapper container">
                 <a href="index.php" class="breadcrumb"><i class="material-icons">home</i>Home</a>
-                <a href="pj.php" class="breadcrumb">Pessoas Jurídicas</a>
+                <a href="page_pj.php" class="breadcrumb">Pessoas Jurídicas</a>
                 <a class="breadcrumb">Editando: <div class="chip red darken-1"><?php echo $user['nome_fantasia']?></div></a>
             </div>
         </nav>          

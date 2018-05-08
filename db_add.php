@@ -4,7 +4,7 @@
 	$db = mysqli_connect('localhost', 'root', '', 'dbcollege');
 	$query = "INSERT INTO tb_projetos (funcao, criadoem) VALUES ('$funcao', now())";
 	mysqli_query($db, $query) or die('Erro: '.mysqli_error($db));
-	header('location: projeto.php');
+	header('location: page_projetos.php');
 	}
 
 	if (isset($_POST['btnCriarCurso'])) {
@@ -40,7 +40,7 @@
 		$query = "INSERT INTO tb_cursos (nomeCurso, localCurso, dataInicial, horaInicial, dataFinal, horaFinal, vagas, cargaHoraria, freqMinima, categorias, valor, valorSocio, valorParceiro, valorNaoQuite, tipoVencimento, vencimento, ndias, status) VALUES ('$nomeCurso', '$localCurso', '$dataInicial', '$horaInicial', '$dataFinal', '$horaFinal', '$vagas', '$cargaHoraria', '$freqMinima', '$categorias', '$valor', '$valorSocio', '$valorParceiro', '$valorNaoQuite', '$tipoVencimento', '$vencimento', '$ndias', '$status')";
 
 		mysqli_query($db, $query) or die('Erro: '.mysqli_error($db));
-		header('location: cursos.php');
+		header('location: page_cursos.php');
 	}
 
 			if (isset($_POST['btnAddAssociadoPJ'])) {
@@ -61,7 +61,7 @@
 			$query = "INSERT INTO tb_pj (nome_fantasia, razao_social, cnpj, cidade, estado, telefone1, telefone2, email, site, senha, situacao, cadastroaqui) VALUES ('".$nomeFantasiaPJ."', '".$razaoSocialPJ."', '".$CNPJPJ."', '".$cidadePJ."', '".$estadoPJ."', '".$telefonePJ."', '".$celularPJ."', '".$emailPJ."', '".$sitePJ."', '".$senhaPJ."', '".$situacaoPJ."', NOW())";
 
 			mysqli_query($db, $query);
-			header("Location: pj.php");
+			header("Location: page_pj.php");
 		}
 			if (isset($_POST['btnAddAssociado'])) {
 			$db = mysqli_connect('localhost', 'root', '', 'dbcollege');
@@ -80,6 +80,6 @@
 
 			$query = "INSERT INTO tb_pf (nome, rg, cpf, nascimento, categoria, situacao, cidade, estado, telefone, celular, email, senha, cadastroaqui) VALUES ('".$nomePF."', '".$RGPF."', '".$CPFPF."', '".$nascimentoPF."', '".$categoriaPF."', '".$situacaoPF."', '".$cidadePF."', '".$estadoPF."', '".$telefonePF."', '".$celularPF."', '".$emailPF."', '".$senhaPF."', NOW())";
 			mysqli_query($db, $query);
-			header("Location: pf.php");
+			header("Location: page_pf.php");
 		}
 ?>

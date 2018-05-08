@@ -73,7 +73,7 @@
 
       		?>
       		</form>
-      		<form method="POST" action="editarUsuario.php">
+      		<form method="POST" action="edit_usuario.php">
       		<td class="hoverable"><button class="btn tooltipped" data-tooltip="Editar" name="btnEditar" <?php echo 'value="'.$user['id'].'"' ?>><i class="material-icons">edit</i></button></td>
       		</form>
       	</tr>
@@ -85,9 +85,9 @@
 	</main>
 
   <!-- Carrega e insere o rodapé do site -->
-    <?php require_once("padroes/footer.php") ?>
+    <?php require_once("padroes/footer.php"); ?>
 
-		<!--  Scripts -->
+		<!-- Scripts -->
 		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<script src="js/materialize.js"></script>
 		<script src="js/init.js"></script>

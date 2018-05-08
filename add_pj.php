@@ -1,6 +1,5 @@
 <?php include ('server.php');?>
 <?php include ('db_add.php');?>
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -15,7 +14,7 @@
     <!-- Cor da barra de navegação do Chrome para Android -->
     <meta name="theme-color" content="#c62828">
     <!-- Título -->
-    <title>Case :: Adicionar Pessoa Física</title>
+    <title>Case :: Adicionar Pessoa Jurídicas</title>
     <style>.disabled {color: black; pointer-events: none;cursor: default;}</style>
   </head>
 <body>
@@ -26,8 +25,8 @@
     <nav class="red lighten-1" role="navigation"> 
       <div class="nav-wrapper container">
         <a href="index.php" class="breadcrumb"><i class="material-icons">home</i>Home</a>
-        <a href="pf.php" class="breadcrumb">Pessoas Físicas</a>
-          <a class="breadcrumb">Adicionar Pessoa Física</a>
+        <a href="page_pj.php" class="breadcrumb">Pessoas Jurídicas</a>
+          <a class="breadcrumb">Adicionar Pessoa Jurídicas</a>
         </div>
       </div>
     </nav>
@@ -39,76 +38,58 @@
                 <form method="POST" action="#" class="col s12">
                     <div class="row">
                         <div class="input-field col s6 hoverable">
-                            <input type="text" name="txtNomePF">
-                            <label>Nome</label>
+                            <input type="text" name="txtNomeFantasiaPJ">
+                            <label>Nome Fantasia</label>
                         </div>
-                        <div class="input-field col s3 hoverable">
-                            <input type="text" name="txtRGPF">
-                            <label>RG</label>
-                        </div>
-                        <div class="input-field col s3 hoverable">
-                            <input type="text" name="txtCPFPF">
-                            <label>CPF</label>
+                        <div class="input-field col s6 hoverable">
+                            <input type="text" name="txtRazaoSocialPJ">
+                            <label>Razão Social</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s5 hoverable">
-                            <input type="text" name="txtNascimentoPF" class="datepicker">
-                            <label>Data de nascimento</label>
+                            <input type="text" name="txtCNPJPJ">
+                            <label>CNPJ</label>
                         </div>
                         <div class="input-field col s4 hoverable">
-                            <input type="text" name="txtCidadePF">
+                            <input type="text" name="txtCidadePJ">
                             <label>Cidade</label>
                         </div>
                         <div class="input-field col s3 hoverable">
-                            <input type="text" name="txtEstadoPF">
+                            <input type="text" name="txtEstadoPJ">
                             <label>Estado</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s3 hoverable">
-                            <input type="text" name="txtTelefonePF">
+                            <input type="text" name="txtTelefonePJ">
                             <label>Telefone</label>
                         </div>
                         <div class="input-field col s3 hoverable">
-                            <input type="text" name="txtCelularPF">
+                            <input type="text" name="txtCelularPJ">
                             <label>Celular</label>
                         </div>
                         <div class="input-field col s6 hoverable">
-                            <input type="text" name="txtEmailPF">
+                            <input type="text" name="txtEmailPJ">
                             <label>E-mail</label>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-field col s4 hoverable">
-                            <select name="cbCategoriaPF">
-                                <option value="Aperfeiçoando" selected>Aperfeiçoando</option>
-                                <option value="Residente">Residente</option>
-                                <option value="Coligado">Coligado</option>
-                                <option value="Aspirante">Aspirante</option>
-                                <option value="Titular">Titular</option>
-                                <option value="Estudante de Medicina">Estudante de Medicina</option>
-                                <option value="Médico">Médico</option>
-                                <option value="Físicos, Biólogos">Físicos, Biólogos</option>
-                                <option value="Técnicos e Tecnólogos">Técnicos e Tecnólogos</option>
-                                <option value="Entidades Parceiras">Entidades Parceiras</option>
-                            </select>
-                            <label>Categorias</label>
+                        <div class="input-field col s8 hoverable">
+                            <input type="text" name="txtSitePJ">
+                            <label>Site</label>
                         </div>
                         <div class="input-field col s4 hoverable">
-                            <select name="cbSituacaoPF">
-                                <option value="0" selected>Desligado</option>
-                                <option value="1">Aguardando Ativação</option>
-                                <option value="2">Ativo</option>
-                            </select>
-                            <label>Situação</label>
-                        </div>
-                        <div class="input-field col s4 hoverable">
-                            <input type="password" name="txtSenhaPF">
+                            <input type="password" name="txtSenhaPJ">
                             <label>Senha de acesso</label>
                         </div>
                     </div>
-                    <div class="center"><button class="waves-effect waves-light btn-large" type="submit" name="btnAddAssociado"><i class="material-icons">add</i>Adicionar</button>
+                    <div class="row">
+                        <div class="input-field col s12 hoverable center">
+                            <p><label><input type="checkbox" name="cbxSituacaoPJ"><span>Situação</span></label></p>
+                        </div>
+                    </div>
+                    <div class="center"><button class="waves-effect waves-light btn-large" type="submit" name="btnAddAssociadoPJ"><i class="material-icons">add</i>Adicionar</button>
                     </div>
                 </form>
             </div>
@@ -117,9 +98,9 @@
 
 
     <!-- Carrega e insere o rodapé do site -->
-    <?php require_once("padroes/footer.php"); ?>
+    <?php require_once("padroes/footer.php") ?>
 
-        <!--Scripts-->
+        <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>

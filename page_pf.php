@@ -40,7 +40,7 @@
     <main>
     <!-- Conteúdo em geral -->
     <br><div class="container center">
-      <a class="waves-effect waves-light btn-large" href="addpf.php"><i class="material-icons left">add</i>Adicionar associado</a><br><br>
+      <a class="waves-effect waves-light btn-large" href="add_page_pf.php"><i class="material-icons left">add</i>Adicionar associado</a><br><br>
       <div style="overflow-x:auto;">
         <table id="table">
           <tr>
@@ -67,7 +67,7 @@
             <td><b>CPF:</b> <?php echo $user['cpf'] ?><br><b>RG: </b><?php echo $user['rg'] ?><br><b>Nascimento: </b><?php echo $user['nascimento'] ?><br><b>Cadastro aqui: </b><?php echo $user['cadastroaqui'] ?></td>
             <td><b>Cidade:</b> <?php echo $user['cidade'] ?><br><b>Telefone:</b> <?php echo $user['telefone'] ?><br><?php echo $user['celular'] ?><br><b>E-mail: </b><?php echo $user['email'] ?><br></td>
           </form>
-            <form method="POST" action="editarpf.php">
+            <form method="POST" action="edit_page_pf.php">
             <td class="hoverable"><button class="btn tooltipped" data-tooltip="Editar" name="btnEditarPF" <?php echo 'value="'.$user['id'].'"' ?>><i class="material-icons">edit</i></button>
               </td>
             </form>

@@ -36,7 +36,7 @@
 		<nav class="red lighten-1" role="navigation"> 
 			<div class="nav-wrapper container">
 				<a href="index.php" class="breadcrumb"><i class="material-icons">home</i>Home</a>
-				<a href="projeto.php" class="breadcrumb">Projetos</a>
+				<a href="page_projetos.php" class="breadcrumb">Projetos</a>
 				<a class="breadcrumb">Editando: <div class="chip red darken-1"><?php echo $funcaoProjeto; ?></div></a>
 			</div>
 		</nav>	  		
@@ -47,7 +47,7 @@
 		<br>
 	<div class="container center">
 		<div class="row">
-			<form method="POST" action="usuarios.php" class="col s12">
+			<form method="POST" action="page_usuarios.php" class="col s12">
 				<div class="row">
 					<div class="input-field col s1">
 						<input disabled type="text" name="txtId" value=<?php echo "'".$user['id']."'"; ?> class="ative">

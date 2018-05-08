@@ -25,7 +25,7 @@
     <nav class="red lighten-1" role="navigation"> 
       <div class="nav-wrapper container">
         <a href="index.php" class="breadcrumb"><i class="material-icons">home</i>Home</a>
-        <a href="cursos.php" class="breadcrumb">Cursos</a>
+        <a href="page_cursos.php" class="breadcrumb">Cursos</a>
           <a class="breadcrumb">Criar Cursos</a>
         </div>
       </div>

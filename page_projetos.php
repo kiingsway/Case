@@ -58,7 +58,7 @@
           ?>
           <td><?php echo $user['criadoem']?></td>
           <td><?php echo $user['implementadaem']?></td>
-          <td><form method="POST" action="editarProjeto.php"><button name="btnEditProjeto" value=<?php echo $user['id']; ?> class="btn-small"><i class="material-icons">edit</i></button></form>
+          <td><form method="POST" action="edit_projeto.php"><button name="btnEditProjeto" value=<?php echo $user['id']; ?> class="btn-small"><i class="material-icons">edit</i></button></form>
             <button name="btnDeleteProjeto" value=<?php echo $user['id']; ?> class="btn-small"><i class="material-icons">delete</i> </td>
         </tr>
       <?php } ?>

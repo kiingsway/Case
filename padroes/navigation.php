@@ -45,11 +45,11 @@
 
     <!-- Dropdown Structure PC-->
     <ul id='dropdownPessoas' class='dropdown-content'>
-      <li <?php if (!in_array("1", $permissoes)) echo 'class="hide"' ?>><a href="pf.php"><i class="material-icons icon">account_circle</i>Pessoas Física</a></li>
-      <li <?php if (!in_array("2", $permissoes)) echo 'class="hide"' ?>><a href="pj.php"><i class="material-icons icon">account_box</i>Pessoas Jurídicas</a></li>
+      <li <?php if (!in_array("1", $permissoes)) echo 'class="hide"' ?>><a href="page_pf.php"><i class="material-icons icon">account_circle</i>Pessoas Física</a></li>
+      <li <?php if (!in_array("2", $permissoes)) echo 'class="hide"' ?>><a href="page_pj.php"><i class="material-icons icon">account_box</i>Pessoas Jurídicas</a></li>
     </ul>
     <ul id='dropdownAtividades' class='dropdown-content'>
-      <li <?php if (!in_array("3", $permissoes)) echo 'class="hide"' ?>><a href="cursos.php"><i class="material-icons icon">event_note</i>Cursos</a></li>
+      <li <?php if (!in_array("3", $permissoes)) echo 'class="hide"' ?>><a href="page_cursos.php"><i class="material-icons icon">event_note</i>Cursos</a></li>
       <li <?php if (!in_array("4", $permissoes)) echo 'class="hide"' ?>><a href="livros.php" class="disabled" style="color:grey"><i class="material-icons icon">book</i>Livros</a></li>
       <li <?php if (!in_array("5", $permissoes)) echo 'class="hide"' ?>><a href="inscr.php" class="disabled" style="color:grey"><i class="material-icons icon">assignment</i>Inscrições</a></li>
       <li <?php if (!in_array("6", $permissoes)) echo 'class="hide"' ?>><a href="voucher.php" class="disabled" style="color:grey"><i class="material-icons icon">style</i>Voucher</a></li>
@@ -59,8 +59,8 @@
       <li <?php if (!in_array("8", $permissoes)) echo 'class="hide"' ?>><a href="receber.php" class="disabled" style="color:grey"><i class="material-icons icon">monetization_on</i>Contas a Receber</a></li>
     </ul>
     <ul id='dropdownUtilitarios' class='dropdown-content'>
-      <li <?php if (!in_array("9", $permissoes)) echo 'class="hide"' ?>><a href="usuarios.php"><i class="material-icons icon">assignment_ind</i>Usuários</a></li>
-      <li <?php if (!in_array("10", $permissoes)) echo 'class="hide"' ?>><a href="projeto.php"><i class="material-icons icon">add_to_queue</i>Projeto</a></li>
+      <li <?php if (!in_array("9", $permissoes)) echo 'class="hide"' ?>><a href="page_usuarios.php"><i class="material-icons icon">assignment_ind</i>Usuários</a></li>
+      <li <?php if (!in_array("10", $permissoes)) echo 'class="hide"' ?>><a href="page_projetos.php"><i class="material-icons icon">add_to_queue</i>Projeto</a></li>
     </ul>
     <ul id='dropdownLogin' class='dropdown-content'>
       <li><a href="index.php?logout='1'"><i class="material-icons icon">exit_to_app</i>Sair</a></li>
@@ -69,11 +69,11 @@
 
     <!-- Dropdown Structure Mobile-->
     <ul id='dropdownPessoasMobile' class='dropdown-content'>
-      <li <?php if (!in_array("1", $permissoes)) echo 'class="hide"' ?>><a href="pf.php"><i class="material-icons icon">account_circle</i>Pessoas Física</a></li>
-      <li <?php if (!in_array("2", $permissoes)) echo 'class="hide"' ?>><a href="pj.php"><i class="material-icons icon">account_box</i>Pessoas Jurídicas</a></li>
+      <li <?php if (!in_array("1", $permissoes)) echo 'class="hide"' ?>><a href="page_pf.php"><i class="material-icons icon">account_circle</i>Pessoas Física</a></li>
+      <li <?php if (!in_array("2", $permissoes)) echo 'class="hide"' ?>><a href="page_pj.php"><i class="material-icons icon">account_box</i>Pessoas Jurídicas</a></li>
     </ul>
     <ul id='dropdownAtividadesMobile' class='dropdown-content'>
-      <li <?php if (!in_array("3", $permissoes)) echo 'class="hide"' ?>><a href="cursos.php"><i class="material-icons icon">event_note</i>Cursos</a></li>
+      <li <?php if (!in_array("3", $permissoes)) echo 'class="hide"' ?>><a href="page_cursos.php"><i class="material-icons icon">event_note</i>Cursos</a></li>
       <li <?php if (!in_array("4", $permissoes)) echo 'class="hide"' ?>><a href="livros.php" class="disabled"><i class="material-icons icon">book</i>Livros</a></li>
       <li <?php if (!in_array("5", $permissoes)) echo 'class="hide"' ?>><a href="inscr.php" class="disabled"><i class="material-icons icon">assignment</i>Inscrições</a></li>
       <li <?php if (!in_array("6", $permissoes)) echo 'class="hide"' ?>><a href="voucher.php" class="disabled"><i class="material-icons icon">style</i>Voucher</a></li>
@@ -83,8 +83,8 @@
       <li <?php if (!in_array("8", $permissoes)) echo 'class="hide"' ?>><a href="receber.php" class="disabled"><i class="material-icons icon">monetization_on</i>Contas a Receber</a></li>
     </ul>
     <ul id='dropdownUtilitariosMobile' class='dropdown-content'>
-      <li <?php if (!in_array("9", $permissoes)) echo 'class="hide"' ?>><a href="usuarios.php"><i class="material-icons icon">assignment_ind</i>Usuários</a></li>
-      <li <?php if (!in_array("10", $permissoes)) echo 'class="hide"' ?>><a href="projeto.php"><i class="material-icons icon">add_to_queue</i>Projeto</a></li>
+      <li <?php if (!in_array("9", $permissoes)) echo 'class="hide"' ?>><a href="page_usuarios.php"><i class="material-icons icon">assignment_ind</i>Usuários</a></li>
+      <li <?php if (!in_array("10", $permissoes)) echo 'class="hide"' ?>><a href="page_projetos.php"><i class="material-icons icon">add_to_queue</i>Projeto</a></li>
     </ul>
     <ul id='dropdownLoginMobile' class='dropdown-content'>
       <li><a href="index.php?logout='1'"><i class="material-icons icon">exit_to_app</i>Sair</a></li>
