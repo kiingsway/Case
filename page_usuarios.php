@@ -58,7 +58,7 @@
       		<td style="font-weight: bold"><?php echo $user['login'];?></td>
       		<td><?php echo $user['email'];?></td>
       		<td><?php
-                $perms = array('Sem permissões','Pessoas Física','Pessoas Jurídicas','Cursos','Livros','Inscrições','Voucher','Contas a Pagar','Contas a Receber',' Usuários','Projeto');
+                $perms = array('Sem permissões','Pessoas Física','Pessoas Jurídicas','Cursos','Livros','Inscrições','Voucher','Contas a Pagar','Contas a Receber',' Usuários','Projeto','Marketing');
                 $permissoes = explode(',',$user['permissoes']);
 
                 foreach ($permissoes as &$value) {

@@ -13,7 +13,7 @@
     <!-- Cor da barra de navegação do Chrome para Android -->
     <meta name="theme-color" content="#c62828">
     <!-- Título -->
-    <title>Case :: Cursos</title>
+    <title>Case :: Livros</title>
     <style>.disabled {color: black; pointer-events: none;cursor: default;}</style>
   </head>
 <body>
@@ -24,7 +24,7 @@
     <nav class="red lighten-1" role="navigation"> 
       <div class="nav-wrapper container">
         <a href="index.php" class="breadcrumb"><i class="material-icons">home</i>Home</a>
-        <a class="breadcrumb">Cursos</a>
+        <a class="breadcrumb">Livros</a>
       </div>
     </nav>        
     <!-- Fim Breadcrumb, caminho de navegação -->
@@ -35,7 +35,7 @@
     <main>
     <!-- Conteúdo em geral -->
     <br><div class="container center">
-      <a class="waves-effect waves-light btn-large" href="add_curso.php"><i class="material-icons left">add</i>Criar curso</a>
+      <a class="waves-effect waves-light btn-large" href="add_curso.php"><i class="material-icons left">add</i>Adicionar Livro</a>
 
         <table id="table" cellpadding="1">
           <tr class="hoverable">
@@ -50,7 +50,7 @@
           <?php
           $db = mysqli_connect('localhost', 'root', '', 'dbcollege');
           if (!$db) { die(mysql_error());}
-          $query = "SELECT id, nomeCurso, dataInicial, horaInicial, dataFinal, horaFinal, categorias, vagas, cargaHoraria, freqMinima, valor, valorSocio, valorParceiro, valorNaoQuite, tipoVencimento, vencimento, nDias, status FROM tb_cursos";
+          $query = "SELECT nomeCurso, dataInicial, horaInicial, dataFinal, horaFinal, categorias, vagas, cargaHoraria, freqMinima, valor, valorSocio, valorParceiro, valorNaoQuite, tipoVencimento, vencimento, nDias, status FROM tb_cursos";
           $result = mysqli_query($db, $query);
           while ($user = mysqli_fetch_assoc($result)){ ?>
           <tr class="hoverable">
@@ -84,10 +84,7 @@
               if ($user['status'] == 0) { echo '<td class="center hoverable"><a class="btn tooltipped red" data-tooltip="Offline" href="#"><i class="material-icons">cloud_off</i></a></td>';}
               if ($user['status'] == 1) { echo '<td class="center hoverable"><a class="btn tooltipped green" data-tooltip="Online" href="#"><i class="material-icons">cloud_done</i></a></td>';}
               ?>
-              <form method="POST" action="edit_cursos.php">
-            <td class="hoverable"><button class="btn tooltipped" data-tooltip="Editar" name="btnEditarCursos" <?php echo 'value="'.$user['id'].'"'; ?>><i class="material-icons">edit</i></button>
-              </td>
-            </form>
+              <td class="center hoverable"><a class="btn tooltipped" data-tooltip="Editar" href="#"><i class="material-icons">edit</i></a>
               </tr>
               <?php 
             }

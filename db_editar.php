@@ -41,7 +41,7 @@
 		$user = mysqli_fetch_assoc($results);
 		if ($user['status'] == '0') $statusUsuario ='1';
 		else $statusUsuario = '0';
-		$query = "UPDATE dbusuarios
+		$query = "UPDATE tb_users
 		SET status = '".$statusUsuario."'
 		WHERE id = '".$_POST['btnStatusUsuarios']."';";
 		mysqli_query($db, $query) or die('Erro: '.mysqli_error($db));

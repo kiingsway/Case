@@ -93,6 +93,7 @@
 									<td class="hoverable"><label><input type="checkbox" name="cbxPermissoes[]" value="4" <?php if (in_array("4", $permissoes)) echo 'checked' ?>/><span>Livros</span></label></td>
 									<td class="hoverable"><label><input type="checkbox" name="cbxPermissoes[]" value="5" <?php if (in_array("5", $permissoes)) echo 'checked' ?>/><span>Inscrições</span></label></td>
 									<td class="hoverable"><label><input type="checkbox" name="cbxPermissoes[]" value="6" <?php if (in_array("6", $permissoes)) echo 'checked' ?>/><span>Voucher</span></label></td>
+									<td class="hoverable"><label><input type="checkbox" name="cbxPermissoes[]" value="11" <?php if (in_array("11", $permissoes)) echo 'checked' ?>/><span>Marketing</span></label></td>
 								</tr>
 								<tr>
 								<th colspan="4" style="color: black">
