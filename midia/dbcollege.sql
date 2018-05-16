@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 08-Maio-2018 às 04:00
+-- Generation Time: 16-Maio-2018 às 14:08
 -- Versão do servidor: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -19,8 +19,44 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `dbpessoas`
+-- Database: `dbcollege`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tb_cursos`
+--
+
+CREATE TABLE `tb_cursos` (
+  `id` int(255) NOT NULL,
+  `nomeCurso` varchar(255) NOT NULL,
+  `localCurso` varchar(255) NOT NULL,
+  `dataInicial` date NOT NULL DEFAULT '0000-00-00',
+  `horaInicial` time DEFAULT NULL,
+  `dataFinal` date NOT NULL DEFAULT '0000-00-00',
+  `horaFinal` time DEFAULT NULL,
+  `vagas` int(10) NOT NULL,
+  `cargaHoraria` int(10) DEFAULT NULL,
+  `freqMinima` int(10) DEFAULT NULL,
+  `categorias` varchar(255) NOT NULL,
+  `valor` int(10) NOT NULL,
+  `valorSocio` int(10) NOT NULL,
+  `valorParceiro` int(10) NOT NULL,
+  `valorNaoQuite` int(10) NOT NULL,
+  `tipoVencimento` varchar(10) NOT NULL,
+  `vencimento` date DEFAULT '0000-00-00',
+  `nDias` int(10) DEFAULT NULL,
+  `status` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `tb_cursos`
+--
+
+INSERT INTO `tb_cursos` (`id`, `nomeCurso`, `localCurso`, `dataInicial`, `horaInicial`, `dataFinal`, `horaFinal`, `vagas`, `cargaHoraria`, `freqMinima`, `categorias`, `valor`, `valorSocio`, `valorParceiro`, `valorNaoQuite`, `tipoVencimento`, `vencimento`, `nDias`, `status`) VALUES
+(1, 'Radiologia', '', '2018-04-01', '08:00:00', '2018-04-03', '12:00:00', 24, 12, 100, '1,2,3,4,5,6,7,8,9,10', 300, 200, 250, 300, 'limite', '2018-03-29', 2, 1),
+(2, 'Densitometria', '', '2018-06-01', '07:00:00', '0000-00-00', NULL, 35, 12, 100, '1,2,3,4,5', 200, 200, 200, 200, 'fixo', '2018-05-30', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -91,9 +127,70 @@ INSERT INTO `tb_pj` (`id`, `nome_fantasia`, `razao_social`, `cnpj`, `site`, `ema
 (6, 'Heloise e Anderson Pizzaria', 'Heloise e Anderson Pizzaria Ltda', '19.037.164/0001-11', 'www.heloiseeandersonpizzarialtda.com.br', 'manutencao@heloiseeandersonpizzarialtda.com.br', '(11) 3596-4471', 1, '2018-04-24', '(11) 98326-8421', 'SÃ£o Paulo', 'SP', 'd41d8cd98f00b204e9800998ecf8427e'),
 (7, 'MaitÃª e Ian Transportes Ltda', 'MaitÃª e Ian Transportes', '45.789.242/0001-44', 'www.maiteeiantransportesltda.com.br', 'treinamento@maiteeiantransportesltda.com.br', '(13) 2528-2555', 1, '2018-04-24', '(13) 98119-9014', 'CubatÃ£o', 'SP', 'd41d8cd98f00b204e9800998ecf8427e');
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tb_projetos`
+--
+
+CREATE TABLE `tb_projetos` (
+  `id` int(255) NOT NULL,
+  `funcao` varchar(255) CHARACTER SET utf32 NOT NULL,
+  `implementada` int(1) NOT NULL DEFAULT '0',
+  `criadoem` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `implementadaem` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `tb_projetos`
+--
+
+INSERT INTO `tb_projetos` (`id`, `funcao`, `implementada`, `criadoem`, `implementadaem`) VALUES
+(1, 'Colorir botões do Dropdown', 0, '2018-04-11 10:56:11', NULL),
+(2, 'Botão de editar funcionando', 0, '2018-04-11 10:57:26', NULL),
+(3, 'Botão Status do Usuários funcionando igual o Implementada daqui', 1, '2018-04-11 11:00:45', NULL),
+(4, 'Acentuação aqui', 0, '2018-04-11 11:14:17', NULL),
+(5, 'Sites inseguros, é possível entrar neles sem passar pelo login', 0, '2018-04-11 11:17:05', NULL),
+(6, 'Table responsivo', 0, '2018-04-19 11:16:12', NULL),
+(7, 'BotÃ£o de editar e apagar projeto', 0, '2018-04-19 11:16:58', NULL),
+(8, 'Arrumar data de nascimento PF', 0, '2018-04-24 22:38:08', NULL),
+(9, 'Card Index: \"No prÃ³ximo curso temos x% das vagas confirmadas\"', 1, '2018-04-24 22:39:23', NULL),
+(11, 'Transformar o navigation todo em PHP', 0, '2018-05-09 11:33:31', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tb_users`
+--
+
+CREATE TABLE `tb_users` (
+  `id` int(11) NOT NULL,
+  `login` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `senha` varchar(255) NOT NULL,
+  `permissoes` varchar(255) NOT NULL DEFAULT '0' COMMENT '1 - PF 2 - PJ 3 - Cursos 4 - Livros 5 - Inscrições 6 - Voucher 7 - Contas a Pagar 8 - A Receber 9 - Usuários 10 - Projetos; 11 - Marketing',
+  `status` int(1) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `tb_users`
+--
+
+INSERT INTO `tb_users` (`id`, `login`, `email`, `senha`, `permissoes`, `status`) VALUES
+(5, 'king', 'king@sway.com', '5eac43aceba42c8757b54003a58277b5', '1,2,3,4,5,6,11,7,8,9,10', 1),
+(6, 'king12', 'kng@a.com', '5eac43aceba42c8757b54003a58277b5', '1,2,3,4,5,6,10', 1),
+(7, 'gi', 'gi@bcd.com', '827ccb0eea8a706c4c34a16891f84e7b', '4,5', 1),
+(8, 'king2', 'aaa@aaa.com', '5eac43aceba42c8757b54003a58277b5', '2,5', 0);
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `tb_cursos`
+--
+ALTER TABLE `tb_cursos`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tb_pf`
@@ -108,8 +205,26 @@ ALTER TABLE `tb_pj`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tb_projetos`
+--
+ALTER TABLE `tb_projetos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tb_users`
+--
+ALTER TABLE `tb_users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `tb_cursos`
+--
+ALTER TABLE `tb_cursos`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tb_pf`
@@ -122,6 +237,18 @@ ALTER TABLE `tb_pf`
 --
 ALTER TABLE `tb_pj`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `tb_projetos`
+--
+ALTER TABLE `tb_projetos`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `tb_users`
+--
+ALTER TABLE `tb_users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
