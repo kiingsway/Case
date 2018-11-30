@@ -35,7 +35,7 @@
     <main>
     <!-- Conteúdo em geral -->
     <br><div class="container center">
-      <a class="waves-effect waves-light btn-large" href="add_curso.php"><i class="material-icons left">add</i>Adicionar Livro</a>
+      <a class="waves-effect waves-light btn-large" href="#"><i class="material-icons left">add</i>Adicionar Livro</a>
 
         <table id="table" cellpadding="1">
           <tr class="hoverable">

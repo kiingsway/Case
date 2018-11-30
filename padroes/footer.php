@@ -8,7 +8,7 @@
 	<footer class="page-footer orange">
 		<div class="footer-copyright">
 			<div class="container">
-				Made by <a href="https://github.com/kiingsway" target="_blank">King Sway</a>
+				Made by <a href="https://github.com/kiingsway" target="_blank">Marcos Oranmiyan</a>
 			</div>
 		</div>
 	</footer>

@@ -40,7 +40,7 @@
     <main>
     <!-- Conteúdo em geral -->
     <br><div class="container center">
-      <a class="waves-effect waves-light btn-large" href="add_page_pf.php"><i class="material-icons left">add</i>Adicionar associado</a><br><br>
+      <a class="waves-effect waves-light btn-large" href="add_pf.php"><i class="material-icons left">add</i>Adicionar associado</a><br><br>
       <div style="overflow-x:auto;">
         <table id="table">
           <tr>

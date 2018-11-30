@@ -54,7 +54,7 @@
       <li <?php if (!in_array("5", $permissoes)) echo 'class="hide"' ?>><a href="inscr.php" class="disabled" style="color:grey"><i class="material-icons icon">assignment</i>Inscrições</a></li>
       <li <?php if (!in_array("6", $permissoes)) echo 'class="hide"' ?>><a href="voucher.php" class="disabled" style="color:grey"><i class="material-icons icon">style</i>Voucher</a></li>
       <li class="divider" tabindex="-1"></li>
-      <li <?php if (!in_array("11", $permissoes)) echo 'class="hide"' ?>><a href="#" class="disabled"><i class="material-icons icon">dvr</i>Marketing</a></li>
+      <li <?php if (!in_array("11", $permissoes)) echo 'class="hide"' ?>><a href="#" class="disabled" style="color:grey"><i class="material-icons icon">dvr</i>Marketing</a></li>
     </ul>
     <ul id='dropdownFinanceiro' class='dropdown-content'>
       <li <?php if (!in_array("7", $permissoes)) echo 'class="hide"' ?>><a href="pagar.php" class="disabled" style="color:grey"><i class="material-icons icon">attach_money</i>Contas a Pagar</a></li>

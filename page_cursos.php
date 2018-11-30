@@ -84,7 +84,7 @@
               if ($user['status'] == 0) { echo '<td class="center hoverable"><a class="btn tooltipped red" data-tooltip="Offline" href="#"><i class="material-icons">cloud_off</i></a></td>';}
               if ($user['status'] == 1) { echo '<td class="center hoverable"><a class="btn tooltipped green" data-tooltip="Online" href="#"><i class="material-icons">cloud_done</i></a></td>';}
               ?>
-              <form method="POST" action="edit_cursos.php">
+              <form method="POST" action="#.php">
             <td class="hoverable"><button class="btn tooltipped" data-tooltip="Editar" name="btnEditarCursos" <?php echo 'value="'.$user['id'].'"'; ?>><i class="material-icons">edit</i></button>
               </td>
             </form>
